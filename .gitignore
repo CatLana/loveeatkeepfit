@@ -1,0 +1,47 @@
+node_modules
+
+# Next.js
+.next
+out
+
+# Production
+build
+dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+.history
+
+# Env files
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Coverage
+coverage
+.nyc_output
+
+# Cache
+.cache
+.turbo
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc
+*.log
+*.swp
+*.swo

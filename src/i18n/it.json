@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "Love Eat Keep Fit — Gruppo di ricerca",
+    "description": "Partecipa a un gruppo di ricerca per testare un metodo di dimagrimento sostenibile e basato sulla neuroscienza. Niente diete pericolose. Mangia bene, goditi il cibo, perdi grasso."
+  },
+  "hero": {
+    "title": "Ciao, sono Lana.",
+    "subtitle": "Aiuto le persone a costruire uno stile di vita sano attraverso accountability, community e cucina semplice. Non sono una nutrizionista laureata, ma ho testato approcci su me stessa e con professionisti.",
+    "ctaPrimary": "Partecipa",
+    "ctaSecondary": "Prenota il tuo posto"
+  },
+  "story": {
+    "heading": "Perché ho creato questo metodo",
+    "paragraph1": "Non ho lottato tanto con il peso quanto con la mentalità “tutto o niente”, e ho visto persone intorno a me restare intrappolate in cicli di regole rigide, voglie incontrollate e riprese di peso.",
+    "paragraph2": "Una abitudine serale ha cambiato tutto: mangiare perfettamente tutto il giorno e poi abbuffarmi la sera. Quella dinamica mi ha insegnato che la restrizione genera ribellione. Quando ho adottato un approccio equilibrato — pasti gustosi e strategie per gestire i trigger — il mio corpo ha risposto e ho perso peso senza soffrire.",
+    "neuro": "Porto anche un po’ di neuroscienza nel metodo per spiegare perché nascono i craving e come ormoni e abitudini influenzano il comportamento.",
+    "mission": "Non devi soffrire per dimagrire. Puoi goderti il cibo e restare in salute. Puoi smettere di lottare contro te stesso."
+  },
+  "coreOffer": {
+    "heading": "Cosa ti offre davvero questo metodo",
+    "items": [
+      "Accountability che ti mantiene costante",
+      "Una community di supporto per non sentirti mai sola/o",
+      "Un nuovo modo di cucinare in modo facile, veloce e senza stress",
+      "Un sistema semplice per fare la spesa in pochi minuti",
+      "Uno stile di vita equilibrato senza restrizioni o sensi di colpa",
+      "Una comprensione neuroscientifica di craving e abitudini"
+    ]
+  },
+  "whatWeDo": {
+    "heading": "Cosa faremo insieme",
+    "items": [
+      "Identifichiamo il vostro obiettivo personale in modo chiaro.",
+      "Calcolo il consumo calorico giornaliero adattato al vostro stile di vita.",
+      "Spiego cosa sono i macros e perché contano con strumenti semplici.",
+      "Perdere grasso, non massa muscolare.",
+      "Gestire i cravings e capire i segnali del corpo.",
+      "Mangiare piatti buoni, veloci e senza stress.",
+      "Liste della spesa pronte per fare shopping in 5 minuti.",
+      "Check‑in settimanali e supporto costante.",
+      "Allenamenti sostenibili che non vi svuotano.",
+      "Lo sport NON è obbligatorio: potete camminare, fare attività leggere o niente sport. Senza movimento si mangia un po’ meno e il metabolismo è più difficile da aumentare senza massa muscolare o cardio.",
+      "Obiettivo: aumentare il metabolismo, non rallentarlo."
+    ]
+  },
+  "signup": {
+    "heading": "Partecipa al gruppo di ricerca",
+    "name": "Nome",
+    "email": "Email",
+    "goal": "Obiettivo",
+    "goalOptions": ["Dimagrire", "Mantenere peso", "Aumentare energia", "Altro"],
+    "why": "Perché vuoi partecipare? (opzionale)",
+    "submit": "Partecipa",
+    "success": "Grazie — abbiamo ricevuto la tua iscrizione. Controlla WhatsApp per i prossimi passi.",
+    "afterSubmitSecondaryCta": "Messaggia su Instagram"
+  },
+  "social": {
+    "instagramHandle": "loveeatkeepfit",
+    "instagramUrl": "https://instagram.com/loveeatkeepfit",
+    "instagramCta": "Messaggia su Instagram"
+  },
+  "footer": {
+    "disclaimer": "Non sono una nutrizionista laureata. Ho lavorato con nutrizionisti, testato approcci su me stessa e osservato persone reali. Questa è una fase di ricerca.",
+    "contact": "Contatto via WhatsApp",
+    "contactInstagram": "Instagram: @loveeatkeepfit"
+  }
+}

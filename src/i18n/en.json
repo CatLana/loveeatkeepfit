@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Love Eat Keep Fit — Research Group",
+    "description": "Join a research group to test a sustainable, neuroscience-informed weight loss method. No dangerous diets. Eat well, enjoy food, lose fat."
+  },
+  "hero": {
+    "title": "Hi, I’m Lana.",
+    "subtitle": "I help people build a healthy lifestyle through accountability, community, and simple cooking. Not a certified nutritionist, but I’ve tested approaches on myself and with professionals.",
+    "ctaPrimary": "Participate",
+    "ctaSecondary": "Book your spot"
+  },
+  "story": {
+    "heading": "Why I created this method",
+    "paragraph1": "I didn’t struggle with weight so much as with the “all or nothing” mindset — and I watched people I care about get trapped in cycles of strict rules, cravings, and rebound weight gain.",
+    "paragraph2": "One night habit changed everything for me: eating perfectly all day, then overeating at night. That pattern taught me the hard way that restriction creates rebellion. When I shifted to a balanced approach — tasty, satisfying meals and strategies to manage triggers — my body responded and the weight came off without suffering.",
+    "neuro": "I bring a bit of neuroscience into the method so you understand why cravings happen and how hormones and habits drive behaviour.",
+    "mission": "You don’t have to suffer to lose weight. You can enjoy food and still be healthy. You can stop fighting yourself."
+  },
+  "coreOffer": {
+    "heading": "What this method really gives you",
+    "items": [
+      "Accountability that keeps you consistent",
+      "A supportive community so you never feel alone",
+      "A new way to cook easily, quickly, and without stress",
+      "A simple system for healthy shopping in minutes",
+      "A balanced lifestyle without restriction or guilt",
+      "Neuroscience-based understanding of cravings and habits"
+    ]
+  },
+  "whatWeDo": {
+    "heading": "What we’ll do together",
+    "items": [
+      "Identify your personal goal clearly.",
+      "Calculate your daily calorie needs based on your lifestyle and activity.",
+      "Learn what macros are and why they matter with simple tools.",
+      "Lose fat without losing muscle.",
+      "Manage cravings and understand your body’s signals.",
+      "Eat tasty, quick, low‑stress meals.",
+      "Ready‑made shopping lists to shop in 5 minutes.",
+      "Weekly check‑ins and ongoing support.",
+      "Sustainable workouts that don’t drain your energy.",
+      "Exercise is NOT required: you can walk, do light activity, or no exercise — but without movement you’ll eat a bit less and increasing metabolism is harder without muscle or cardio.",
+      "Main goal: increase your metabolism, not slow it down."
+    ]
+  },
+  "signup": {
+    "heading": "Join the research group",
+    "name": "Name",
+    "email": "Email",
+    "goal": "Goal",
+    "goalOptions": [
+      "Lose weight",
+      "Get lean",
+      "Learn cooking for diet and fitness",
+      "Maintain weight (stop gaining)",
+      "Other"
+    ],
+    "why": "Why do you want to join? (optional)",
+    "submit": "Participate",
+    "success": "Thanks — we received your submission. Check your WhatsApp for next steps.",
+    "afterSubmitSecondaryCta": "Message on Instagram"
+  },
+  "social": {
+    "instagramHandle": "loveeatkeepfit",
+    "instagramUrl": "https://instagram.com/loveeatkeepfit",
+    "instagramCta": "Message on Instagram"
+  },
+  "footer": {
+    "disclaimer": "I’m not a certified nutritionist. I’ve worked with nutritionists, tested approaches on myself, and observed real people. This is a research phase.",
+    "contact": "Contact via WhatsApp",
+    "contactInstagram": "Instagram: @loveeatkeepfit"
+  }
+}

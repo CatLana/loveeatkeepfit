@@ -19,7 +19,18 @@ export default function LanguageSwitcher({ locale, onChange }) {
               : "border-beige bg-white hover:border-coral"
           }`}
         >
-          <span aria-hidden>{option.flag}</span>
+          {option.code === "en" ? (
+            <>
+              <span aria-hidden className="block md:hidden">
+                🇮🇪
+              </span>
+              <span aria-hidden className="hidden md:block">
+                EN
+              </span>
+            </>
+          ) : (
+            <span aria-hidden>{option.flag}</span>
+          )}
         </button>
       ))}
     </div>

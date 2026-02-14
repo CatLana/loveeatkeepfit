@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const whatsappUrl = "https://wa.me/+353834753468";
-
 export default function FormSignup({ content, social }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -36,11 +34,6 @@ export default function FormSignup({ content, social }) {
 
       setStatus("success");
 
-      const message = `Hi, I'm ${formData.name}. My goal is ${formData.goal}. ${
-        formData.why ? `Reason: ${formData.why}` : ""
-      }`;
-      const whatsappLink = `${whatsappUrl}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappLink, "_blank", "noopener,noreferrer");
     } catch (err) {
       setStatus("error");
       setError("Something went wrong. Please try again.");

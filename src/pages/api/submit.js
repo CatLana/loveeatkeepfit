@@ -2,6 +2,8 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const recipient = process.env.CONTACT_RECIPIENT || "loveeatkeepfitblog@gmail.com";
+const sender =
+  process.env.CONTACT_SENDER || "LoveEatKeepFit <no-reply@loveeatkeepfit.ie>";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -24,7 +26,7 @@ export default async function handler(req, res) {
 
   try {
     await resend.emails.send({
-      from: "LoveEatKeepFit <onboarding@resend.dev>",
+      from: sender,
       to: recipient,
       replyTo: email,
       subject: "New LoveEatKeepFit signup",

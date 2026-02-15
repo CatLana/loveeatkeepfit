@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { name, email, goal, why } = req.body || {};
+  const { name, email, phone, goal, why } = req.body || {};
 
   if (!name || !email || !goal) {
     return res.status(400).json({ message: "Missing required fields" });
@@ -20,6 +20,7 @@ export default async function handler(req, res) {
     <h2>New LoveEatKeepFit signup</h2>
     <p><strong>Name:</strong> ${name}</p>
     <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Phone:</strong> ${phone || "-"}</p>
     <p><strong>Goal:</strong> ${goal}</p>
     <p><strong>Why:</strong> ${why || "-"}</p>
   `;

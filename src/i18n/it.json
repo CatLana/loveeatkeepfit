@@ -47,6 +47,7 @@
     "heading": "Partecipa al gruppo di ricerca",
     "name": "Nome",
     "email": "Email",
+    "phone": "Telefono (opzionale)",
     "goal": "Obiettivo",
     "goalOptions": ["Dimagrire", "Mantenere peso", "Aumentare energia", "Altro"],
     "why": "Perché vuoi partecipare? (opzionale)",

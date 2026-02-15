@@ -5,6 +5,7 @@ export default function FormSignup({ content, social }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     goal: "",
     why: ""
   });
@@ -87,6 +88,16 @@ export default function FormSignup({ content, social }) {
                     name="email"
                     required
                     value={formData.email}
+                    onChange={handleChange}
+                    className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
+                  />
+                </label>
+                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
+                  {content.phone}
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   />

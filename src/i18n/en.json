@@ -47,6 +47,7 @@
     "heading": "Join the research group",
     "name": "Name",
     "email": "Email",
+    "phone": "Phone (optional)",
     "goal": "Goal",
     "goalOptions": [
       "Lose weight",

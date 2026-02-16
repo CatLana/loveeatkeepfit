@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/coaching/group": "pages/coaching/group.js",
-  "/coaching/digital": "pages/coaching/digital.js"
+  "/coaching/digital": "pages/coaching/digital.js",
+  "/coaching/individual": "pages/coaching/individual.js",
+  "/coaching/premium": "pages/coaching/premium.js",
+  "/": "pages/index.js"
 }

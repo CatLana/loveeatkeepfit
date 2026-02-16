@@ -10,25 +10,63 @@
     "ctaSecondary": "Book your spot"
   },
   "story": {
-    "heading": "Why I created this method",
-    "paragraph1": "I didn’t struggle with weight so much as with the “all or nothing” mindset — and I watched people I care about get trapped in cycles of strict rules, cravings, and rebound weight gain.",
-    "paragraph2": "One night habit changed everything for me: eating perfectly all day, then overeating at night. That pattern taught me the hard way that restriction creates rebellion. When I shifted to a balanced approach — tasty, satisfying meals and strategies to manage triggers — my body responded and the weight came off without suffering.",
-    "neuro": "I bring a bit of neuroscience into the method so you understand why cravings happen and how hormones and habits drive behaviour.",
-    "mission": "You don’t have to suffer to lose weight. You can enjoy food and still be healthy. You can stop fighting yourself."
+    "heading": "If any of these sounds like you…",
+    "short": "It’s not willpower. It’s the daily friction around food.",
+    "introHeading": "The real problem",
+    "intro": "If so, you're not alone. Maybe you need more motivation or accountability, but that's not the real problem. You need a system that actually fits real life. Diets do not work. Lifestyle changes do: new habits around food, a new way to organize your cooking, and new knowledge about food composition and how it affects us when approached improperly.",
+    "painHeading": "Where the struggle shows up",
+    "painPoints": [
+      {
+        "title": "Meal plan burnout",
+        "description": "You start strong, then fall off because cooking and grocery shopping take too much time and energy."
+      },
+      {
+        "title": "Life on pause",
+        "description": "It feels like you have to put your life on hold just to organize food for your goals."
+      },
+      {
+        "title": "Bland food fatigue",
+        "description": "Diets feel boring, so you slide back into fast food or sweets."
+      },
+      {
+        "title": "No grocery system",
+        "description": "You’re unsure how to plan groceries and end up at the shop every second day."
+      },
+      {
+        "title": "Calorie overload",
+        "description": "Tracking feels overwhelming — one more task on your to-do list."
+      },
+      {
+        "title": "Reset cycle",
+        "description": "You do well for a week, then life happens and everything resets."
+      },
+      {
+        "title": "Protein without meat",
+        "description": "You don’t eat meat and struggle to hit your protein needs."
+      },
+      {
+        "title": "No-workout preference",
+        "description": "You’re not into sport and want results without crazy workouts."
+      }
+    ],
+    "bridgeHeading": "You’re not the problem",
+    "bridge": "These aren’t personal failures — they’re design problems. Most plans ignore how busy life is and how your brain reacts to restriction.",
+    "solutionHeading": "A system that fits real life",
+    "solution": "Believe me, I was there. I know every pain on this list and more. That’s why I built a system that makes healthy eating simple, grocery shopping quick, food tasty, and weight-goal management sustainable long term. It fits into a busy lifestyle."
   },
   "coreOffer": {
-    "heading": "What this method really gives you",
+    "heading": "What my coaching gives you",
     "items": [
-      "Accountability that keeps you consistent",
-      "A supportive community so you never feel alone",
-      "A new way to cook easily, quickly, and without stress",
-      "A simple system for healthy shopping in minutes",
-      "A balanced lifestyle without restriction or guilt",
-      "Neuroscience-based understanding of cravings and habits"
+      "Personal accountability that keeps you consistent",
+      "Supportive community plus 1:1 guidance when you need it",
+      "Simple cooking routines with quick, tasty recipes",
+      "A grocery system that saves time and reduces stress",
+      "Sustainable weight management without restriction or guilt",
+      "Macro and calorie guidance tailored to your goals"
     ]
   },
   "whatWeDo": {
-    "heading": "What we’ll do together",
+    "heading": "Inside the coaching",
     "items": [
       "Identify your personal goal clearly.",
       "Calculate your daily calorie needs based on your lifestyle and activity.",
@@ -45,6 +83,8 @@
   },
   "signup": {
     "heading": "Join the research group",
+    "ctaHeading": "Ready to take the next step?",
+    "ctaText": "Fill out the form below to get started with my coaching and receive your next steps by email.",
     "name": "Name",
     "email": "Email",
     "phone": "Phone (optional)",

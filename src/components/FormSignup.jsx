@@ -44,6 +44,14 @@ export default function FormSignup({ content, social }) {
   return (
     <section id="join" className="py-16">
       <div className="mx-auto max-w-3xl px-4">
+        <div className="mb-8 rounded-3xl border border-beige bg-white p-6 shadow-soft">
+          <h3 className="text-2xl font-semibold text-charcoal">
+            {content.ctaHeading}
+          </h3>
+          <p className="mt-3 text-base leading-relaxed text-charcoal/80">
+            {content.ctaText}
+          </p>
+        </div>
         <div className="rounded-3xl border border-beige bg-white p-8 shadow-soft">
           <h2 className="text-3xl font-semibold text-charcoal">
             {content.heading}
@@ -138,7 +146,7 @@ export default function FormSignup({ content, social }) {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full rounded-full bg-coral px-6 py-3 text-sm font-semibold text-white transition hover:bg-darkgreen disabled:cursor-not-allowed disabled:opacity-70"
+                className="w-full rounded-full bg-darkgreen px-8 py-4 text-base font-semibold text-white shadow-soft transition hover:bg-coral disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {content.submit}
               </button>

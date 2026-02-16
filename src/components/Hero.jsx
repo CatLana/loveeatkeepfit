@@ -8,28 +8,28 @@ export default function Hero({ content, primaryCtaHref }) {
           <p className="text-sm font-semibold uppercase tracking-wide text-leaf">
             Love Eat Keep Fit
           </p>
-          <h1 className="mt-4 text-4xl font-semibold text-charcoal md:text-5xl">
+          <h1 className="mt-4 text-4xl font-semibold text-charcoal md:text-6xl">
             {content.title}
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-charcoal/80">
+          <p className="mt-4 text-lg leading-relaxed text-charcoal/80 md:text-xl">
             {content.subtitle}
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             <a
               href={primaryCtaHref}
-              className="rounded-full bg-coral px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-darkgreen"
+              className="rounded-full bg-darkgreen px-8 py-4 text-base font-semibold text-white shadow-soft transition hover:bg-coral"
             >
               {content.ctaPrimary}
             </a>
           </div>
         </div>
-        <div className="relative mx-auto w-full max-w-sm">
+        <div className="relative mx-auto w-full max-w-xs">
           <div className="absolute -inset-6 rounded-3xl bg-peach/30" />
           <Image
             src="/images/profile.jpg"
             alt="Lana profile"
-            width={420}
-            height={520}
+            width={360}
+            height={460}
             className="relative rounded-3xl object-cover shadow-soft"
             priority
           />

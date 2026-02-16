@@ -5,9 +5,18 @@ export default function Nav({ items }) {
         <a
           key={item.href}
           href={item.href}
-          className="transition-colors hover:text-coral"
+          className={
+            item.highlight
+              ? "rounded-full bg-peach/40 px-3 py-1 text-charcoal transition-colors hover:text-coral"
+              : "transition-colors hover:text-coral"
+          }
         >
-          {item.label}
+          <span className="inline-flex items-center gap-2">
+            {item.label}
+            {item.highlight && (
+              <span className="h-2 w-2 rounded-full bg-coral" aria-hidden="true" />
+            )}
+          </span>
         </a>
       ))}
     </nav>

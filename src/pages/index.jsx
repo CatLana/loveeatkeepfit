@@ -19,26 +19,26 @@ const navLabels = {
   en: {
     home: "Home",
     about: "About",
-    method: "Method",
+    method: "Coaching",
     join: "Join",
     contact: "Contact",
-    howItWorks: "How it works"
+    howItWorks: "How coaching works"
   },
   it: {
     home: "Home",
     about: "Chi sono",
-    method: "Metodo",
+    method: "Coaching",
     join: "Partecipa",
     contact: "Contatti",
-    howItWorks: "Come funziona"
+    howItWorks: "Come funziona il coaching"
   },
   ru: {
     home: "Главная",
     about: "Обо мне",
-    method: "Метод",
+    method: "Коучинг",
     join: "Записаться",
     contact: "Контакты",
-    howItWorks: "Как это работает"
+    howItWorks: "Как проходит коучинг"
   }
 };
 
@@ -74,7 +74,7 @@ export default function HomePage() {
     () => [
       { label: labels.home, href: "#home" },
       { label: labels.about, href: "#about" },
-      { label: labels.method, href: "#method" },
+      { label: labels.method, href: "#coaching", highlight: true },
       { label: labels.join, href: "#join" },
       { label: labels.contact, href: "#contact" }
     ],
@@ -103,7 +103,7 @@ export default function HomePage() {
         />
         <StoryBlock content={content.story} />
 
-        <section id="method" className="bg-beige/40">
+        <section id="coaching" className="bg-beige/40">
           <CoreOffer content={content.coreOffer} />
           <HowItWorks
             heading={labels.howItWorks}
@@ -112,14 +112,6 @@ export default function HomePage() {
         </section>
 
         <WhatWeDo content={content.whatWeDo} />
-        <section className="py-10">
-          <div className="mx-auto max-w-5xl px-4">
-            <div className="rounded-3xl border border-beige bg-white p-8 shadow-soft">
-              <p className="text-base text-charcoal/80">{content.story.neuro}</p>
-              <p className="mt-4 text-base text-charcoal/80">{content.story.mission}</p>
-            </div>
-          </div>
-        </section>
         <FormSignup content={content.signup} social={content.social} />
       </main>
 

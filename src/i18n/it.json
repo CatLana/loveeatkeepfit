@@ -10,25 +10,63 @@
     "ctaSecondary": "Prenota il tuo posto"
   },
   "story": {
-    "heading": "Perché ho creato questo metodo",
-    "paragraph1": "Non ho lottato tanto con il peso quanto con la mentalità “tutto o niente”, e ho visto persone intorno a me restare intrappolate in cicli di regole rigide, voglie incontrollate e riprese di peso.",
-    "paragraph2": "Una abitudine serale ha cambiato tutto: mangiare perfettamente tutto il giorno e poi abbuffarmi la sera. Quella dinamica mi ha insegnato che la restrizione genera ribellione. Quando ho adottato un approccio equilibrato — pasti gustosi e strategie per gestire i trigger — il mio corpo ha risposto e ho perso peso senza soffrire.",
-    "neuro": "Porto anche un po’ di neuroscienza nel metodo per spiegare perché nascono i craving e come ormoni e abitudini influenzano il comportamento.",
-    "mission": "Non devi soffrire per dimagrire. Puoi goderti il cibo e restare in salute. Puoi smettere di lottare contro te stesso."
+    "heading": "Se ti riconosci in qualcosa di questo…",
+    "short": "Non è questione di forza di volontà. È l'attrito quotidiano con il cibo.",
+    "introHeading": "Il vero problema",
+    "intro": "Se sì, non sei sola/o. Forse ti serve più motivazione o accountability, ma non è questo il vero problema. Ti serve un sistema che si adatti alla vita reale. Le diete non funzionano. Funzionano i cambiamenti di stile di vita: nuove abitudini con il cibo, un nuovo modo di organizzare la cucina e più conoscenza sulla composizione degli alimenti e su come ci influenzano quando li affrontiamo nel modo sbagliato.",
+    "painHeading": "Dove la fatica si vede",
+    "painPoints": [
+      {
+        "title": "Burnout da meal plan",
+        "description": "Parti forte, poi molli perché cucinare e fare la spesa richiedono troppo tempo ed energia."
+      },
+      {
+        "title": "Vita in pausa",
+        "description": "Ti sembra di dover mettere in pausa la vita solo per organizzare il cibo in funzione degli obiettivi."
+      },
+      {
+        "title": "Stanchezza da cibo insipido",
+        "description": "Le diete sono noiose e torni al fast food o ai dolci."
+      },
+      {
+        "title": "Nessun sistema per la spesa",
+        "description": "Non sai come pianificare la spesa e finisci al negozio ogni due giorni."
+      },
+      {
+        "title": "Sovraccarico calorie",
+        "description": "Contare le calorie è opprimente: un'altra cosa nella lista."
+      },
+      {
+        "title": "Ciclo di reset",
+        "description": "Vai bene per una settimana, poi la vita succede e tutto si azzera."
+      },
+      {
+        "title": "Proteine senza carne",
+        "description": "Non mangi carne e fai fatica a raggiungere le proteine necessarie."
+      },
+      {
+        "title": "Zero allenamenti folli",
+        "description": "Non ami lo sport e vuoi risultati senza allenamenti estremi."
+      }
+    ],
+    "bridgeHeading": "Non sei tu il problema",
+    "bridge": "Questi non sono fallimenti personali: sono problemi di progettazione. La maggior parte dei piani ignora quanto sia piena la vita e come il cervello reagisce alla restrizione.",
+    "solutionHeading": "Un sistema che si adatta alla vita reale",
+    "solution": "Credimi, ci sono passata. Conosco ogni dolore di questa lista e molti altri. Per questo ho creato un sistema che rende l'alimentazione sana semplice, la spesa veloce, il cibo gustoso e la gestione del peso sostenibile nel lungo periodo. Si adatta a uno stile di vita impegnato."
   },
   "coreOffer": {
-    "heading": "Cosa ti offre davvero questo metodo",
+    "heading": "Cosa ti offre il mio coaching",
     "items": [
-      "Accountability che ti mantiene costante",
-      "Una community di supporto per non sentirti mai sola/o",
-      "Un nuovo modo di cucinare in modo facile, veloce e senza stress",
-      "Un sistema semplice per fare la spesa in pochi minuti",
-      "Uno stile di vita equilibrato senza restrizioni o sensi di colpa",
-      "Una comprensione neuroscientifica di craving e abitudini"
+      "Accountability personale che ti mantiene costante",
+      "Community di supporto e guida 1:1 quando serve",
+      "Routine di cucina semplici con ricette veloci e gustose",
+      "Un sistema di spesa che fa risparmiare tempo e stress",
+      "Gestione del peso sostenibile senza restrizioni o sensi di colpa",
+      "Guida su macro e calorie su misura per i tuoi obiettivi"
     ]
   },
   "whatWeDo": {
-    "heading": "Cosa faremo insieme",
+    "heading": "Cosa faremo nel coaching",
     "items": [
       "Identifichiamo il vostro obiettivo personale in modo chiaro.",
       "Calcolo il consumo calorico giornaliero adattato al vostro stile di vita.",
@@ -45,6 +83,8 @@
   },
   "signup": {
     "heading": "Partecipa al gruppo di ricerca",
+    "ctaHeading": "Pronta/o a fare il prossimo passo?",
+    "ctaText": "Compila il modulo qui sotto per iniziare il coaching e ricevere i prossimi passi via email.",
     "name": "Nome",
     "email": "Email",
     "phone": "Telefono (opzionale)",

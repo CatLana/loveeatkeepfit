@@ -120,19 +120,25 @@ export default function StoryBlock({ content }) {
   ];
 
   return (
-    <section id="about" className="py-12 md:py-16">
-      <div className="mx-auto max-w-5xl px-4">
-        <h2 className="text-2xl font-semibold text-charcoal md:text-4xl">
+    <section id="pain" className="py-12 md:py-16">
+      <div className="mx-auto max-w-6xl px-4">
+        <h2 className="text-2xl font-semibold text-charcoal md:text-3xl">
           {content.heading}
         </h2>
         {content.short && (
-          <p className="mt-4 text-base font-semibold text-charcoal md:text-lg">
+          <p className="mt-4 text-base font-semibold text-charcoal md:text-base">
             {content.short}
           </p>
         )}
-        <div className="mt-5 space-y-5 text-base leading-relaxed text-charcoal/80 md:mt-6 md:space-y-6 md:text-lg">
+        <div className="mt-5 space-y-5 text-base leading-relaxed text-charcoal/80 md:mt-6 md:space-y-6 md:text-base">
+          {content.problemHeading && (
+            <h3 className="text-base font-semibold text-charcoal md:text-lg">
+              {content.problemHeading}
+            </h3>
+          )}
+          {content.problemText && <p>{content.problemText}</p>}
           {content.painHeading && (
-            <h3 className="text-lg font-semibold text-charcoal md:text-xl">
+            <h3 className="text-base font-semibold text-charcoal md:text-lg">
               {content.painHeading}
             </h3>
           )}
@@ -145,7 +151,7 @@ export default function StoryBlock({ content }) {
                 >
                   <div className="flex items-start gap-3">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-peach/30">
-                      {icons[index % icons.length]}
+                      {icons[index]}
                     </div>
                     <div className="space-y-2">
                       <p className="text-base font-semibold text-charcoal md:text-lg">
@@ -160,24 +166,38 @@ export default function StoryBlock({ content }) {
               ))}
             </div>
           )}
-          {content.introHeading && (
-            <h3 className="text-lg font-semibold text-charcoal md:text-xl">
-              {content.introHeading}
+          {content.empathyHeading && (
+            <h3 className="text-base font-semibold text-charcoal md:text-lg">
+              {content.empathyHeading}
             </h3>
           )}
-          {content.intro && <p>{content.intro}</p>}
-          {content.bridgeHeading && (
-            <h3 className="text-lg font-semibold text-charcoal md:text-xl">
-              {content.bridgeHeading}
+          {content.empathyText && <p>{content.empathyText}</p>}
+          {content.consequenceHeading && (
+            <h3 className="text-base font-semibold text-charcoal md:text-lg">
+              {content.consequenceHeading}
             </h3>
           )}
-          {content.bridge && <p>{content.bridge}</p>}
+          {content.consequenceText && <p>{content.consequenceText}</p>}
           {content.solutionHeading && (
-            <h3 className="text-lg font-semibold text-charcoal md:text-xl">
+            <h3 className="text-base font-semibold text-charcoal md:text-lg">
               {content.solutionHeading}
             </h3>
           )}
           {content.solution && <p>{content.solution}</p>}
+          {content.bridgeHeading && (
+            <h3 className="text-base font-semibold text-charcoal md:text-lg">
+              {content.bridgeHeading}
+            </h3>
+          )}
+          {content.bridge && <p>{content.bridge}</p>}
+          {content.ctaLabel && content.ctaHref && (
+            <a
+              href={content.ctaHref}
+              className="inline-flex rounded-full bg-darkgreen px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-coral"
+            >
+              {content.ctaLabel}
+            </a>
+          )}
         </div>
       </div>
     </section>

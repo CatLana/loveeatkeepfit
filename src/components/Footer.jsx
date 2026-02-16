@@ -6,7 +6,16 @@ export default function Footer({ footer, social }) {
   return (
     <footer id="contact" className="border-t border-beige bg-warmwhite py-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between">
-        <p className="text-sm text-charcoal/70 max-w-md">{footer.disclaimer}</p>
+        <div className="flex items-center gap-4">
+          <Image
+            src="/images/logo.jpg"
+            alt="Love Eat Keep Fit"
+            width={48}
+            height={48}
+            className="rounded-full object-cover"
+          />
+          <p className="text-sm text-charcoal/70 max-w-md">{footer.disclaimer}</p>
+        </div>
         <div className="flex items-center gap-4">
           <a
             href={whatsappUrl}

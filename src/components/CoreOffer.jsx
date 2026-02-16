@@ -2,7 +2,7 @@ export default function CoreOffer({ content }) {
   const icons = [
     (
       <svg
-        key="coaching"
+        key="accountability"
         viewBox="0 0 24 24"
         className="h-8 w-8 text-leaf"
         fill="none"
@@ -10,14 +10,14 @@ export default function CoreOffer({ content }) {
         strokeWidth="1.5"
         aria-hidden="true"
       >
-        <circle cx="12" cy="7" r="3" />
-        <path d="M5 20c0-3.3 3.1-6 7-6s7 2.7 7 6" />
-        <path d="M16 5h6v6" />
+        <circle cx="12" cy="12" r="8" />
+        <circle cx="12" cy="12" r="2.5" />
+        <path d="M12 4v4" />
       </svg>
     ),
     (
       <svg
-        key="growth"
+        key="community"
         viewBox="0 0 24 24"
         className="h-8 w-8 text-coral"
         fill="none"
@@ -25,13 +25,15 @@ export default function CoreOffer({ content }) {
         strokeWidth="1.5"
         aria-hidden="true"
       >
-        <path d="M4 18l6-6 4 4 6-8" />
-        <path d="M4 6h6" />
+        <circle cx="9" cy="8" r="3" />
+        <circle cx="17" cy="9" r="2.5" />
+        <path d="M4 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5" />
+        <path d="M14 16c0-2 1.7-3.5 3.8-3.5 1.2 0 2.2.4 2.9 1.1" />
       </svg>
     ),
     (
       <svg
-        key="success"
+        key="cooking"
         viewBox="0 0 24 24"
         className="h-8 w-8 text-sunset"
         fill="none"
@@ -39,8 +41,53 @@ export default function CoreOffer({ content }) {
         strokeWidth="1.5"
         aria-hidden="true"
       >
-        <path d="M7 12l3 3 7-7" />
-        <circle cx="12" cy="12" r="9" />
+        <path d="M4 8h16" />
+        <path d="M6 8v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" />
+        <path d="M9 5h6v3H9z" />
+      </svg>
+    ),
+    (
+      <svg
+        key="shopping"
+        viewBox="0 0 24 24"
+        className="h-8 w-8 text-leaf"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        aria-hidden="true"
+      >
+        <path d="M6 8h12l-1 11H7L6 8z" />
+        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+      </svg>
+    ),
+    (
+      <svg
+        key="sustainable"
+        viewBox="0 0 24 24"
+        className="h-8 w-8 text-coral"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        aria-hidden="true"
+      >
+        <path d="M4 14c6-8 12-8 16-8-1 7-5 13-12 14-2 .2-3-1.5-4-6z" />
+        <path d="M9 17c2-2 5-4 7-5" />
+      </svg>
+    ),
+    (
+      <svg
+        key="insight"
+        viewBox="0 0 24 24"
+        className="h-8 w-8 text-sunset"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="7" />
+        <path d="M12 8v4l2.5 2" />
+        <path d="M6 6l-2 2" />
+        <path d="M18 6l2 2" />
       </svg>
     )
   ];
@@ -59,7 +106,7 @@ export default function CoreOffer({ content }) {
             >
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-warmwhite">
-                  {icons[index % icons.length]}
+                  {icons[index]}
                 </div>
                 <p className="text-base leading-relaxed text-charcoal/80 md:text-lg">
                   {item}

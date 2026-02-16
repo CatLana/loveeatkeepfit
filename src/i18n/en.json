@@ -12,9 +12,9 @@
   "story": {
     "heading": "If any of these sounds like you…",
     "short": "It’s not willpower. It’s the daily friction around food.",
-    "introHeading": "The real problem",
-    "intro": "If so, you're not alone. Maybe you need more motivation or accountability, but that's not the real problem. You need a system that actually fits real life. Diets do not work. Lifestyle changes do: new habits around food, a new way to organize your cooking, and new knowledge about food composition and how it affects us when approached improperly.",
-    "painHeading": "Where the struggle shows up",
+    "problemHeading": "The real problem",
+    "problemText": "Most plans are built for perfect days. Real life is busy, and food decisions happen under stress.",
+    "painHeading": "Do these feel familiar?",
     "painPoints": [
       {
         "title": "Meal plan burnout",
@@ -49,11 +49,44 @@
         "description": "You’re not into sport and want results without crazy workouts."
       }
     ],
-    "bridgeHeading": "You’re not the problem",
-    "bridge": "These aren’t personal failures — they’re design problems. Most plans ignore how busy life is and how your brain reacts to restriction.",
+    "empathyHeading": "You’re not alone",
+    "empathyText": "If so, you're not alone. Maybe you need more motivation or accountability, but that is not the real problem.",
+    "consequenceHeading": "What this creates",
+    "consequenceText": "You start, stop, and reset — not because you failed, but because the system never fit your life.",
     "solutionHeading": "A system that fits real life",
-    "solution": "Believe me, I was there. I know every pain on this list and more. That’s why I built a system that makes healthy eating simple, grocery shopping quick, food tasty, and weight-goal management sustainable long term. It fits into a busy lifestyle."
+    "solution": "That’s why I built coaching that makes healthy eating simple, grocery shopping quick, and routines sustainable long term.",
+    "bridgeHeading": "What changes when you have a system",
+    "bridge": "More consistency, fewer cravings, and a routine you can actually keep.",
+    "ctaLabel": "See how coaching works",
+    "ctaHref": "#coaching"
   },
+  "approach": {
+    "heading": "My approach",
+    "intro": "If those struggles sound familiar, my approach focuses on simplicity, taste, and consistency so you can stick to your goals without stress.",
+    "points": [
+      {
+        "title": "Simplify the system",
+        "description": "Shopping lists, quick recipes, and routines that save time instead of taking over your week."
+      },
+      {
+        "title": "Align with your goals",
+        "description": "Macros and calories tailored to your body and lifestyle, without obsession or confusion."
+      },
+      {
+        "title": "Make it sustainable",
+        "description": "Support, accountability, and habits that work long term — even when life gets busy."
+      }
+    ]
+  },
+    "coachingFlow": {
+      "items": [
+        "You fill in a private interest form with your food preferences, lifestyle, goals, struggles, and measurements. It is confidential and read only by me.",
+        "I calculate your macros and calorie targets and send them back to you.",
+        "You join the group where I publish weekly guidance and tips to transform your food routine.",
+        "You get first access to coaching videos and exercises, and confirm homework completion with quick feedback.",
+        "We work together for two months, compare day 1 to day 60, and close with a testimonial if you're happy with the experience."
+      ]
+    },
   "coreOffer": {
     "heading": "What my coaching gives you",
     "items": [
@@ -64,6 +97,202 @@
       "Sustainable weight management without restriction or guilt",
       "Macro and calorie guidance tailored to your goals"
     ]
+  },
+  "coachingCommon": {
+    "eyebrow": "Love Eat Keep Fit Coaching",
+    "otherTitle": "Other coaching options",
+    "otherText": "Explore the other ways we can work together."
+  },
+  "coachingPages": {
+    "group": {
+      "slug": "/coaching/group",
+      "title": "Group Coaching",
+      "short": "Community-driven coaching with weekly structure.",
+      "metaTitle": "Group Coaching — Love Eat Keep Fit",
+      "metaDescription": "Join the Love Eat Keep Fit group coaching program. A simple, sustainable way to eat well, stay accountable, and reach your goals.",
+      "subtitle": "A guided coaching experience designed to help you build habits that fit real life — with weekly structure, clear steps, and a supportive community.",
+      "freeNote": {
+        "label": "Research phase",
+        "text": "Group coaching is currently free while I run this research phase. Spots are limited to keep the group focused and supportive."
+      },
+      "sections": [
+        {
+          "heading": "Who it is for",
+          "body": "You want structure, accountability, and a plan that does not take over your life.",
+          "bullets": [
+            "You want to eat well without hours in the kitchen",
+            "You want clear guidance, not confusion",
+            "You want motivation from a group that gets it"
+          ]
+        },
+        {
+          "heading": "What you get each week",
+          "bullets": [
+            "Simple meal structure and grocery guidance",
+            "Quick, tasty recipes that fit your goals",
+            "Macro and calorie guidance tailored to you",
+            "Weekly accountability and check-ins"
+          ]
+        },
+        {
+          "heading": "The outcome",
+          "body": "You build a sustainable routine that makes healthy eating feel normal — not stressful.",
+          "bullets": [
+            "More consistency with less effort",
+            "Fewer cravings and less overeating",
+            "A system you can keep long term"
+          ]
+        }
+      ],
+      "ctaHeading": "Ready to join the group?",
+      "ctaText": "Fill out the form and I will send you the next steps by email.",
+      "ctaLabel": "Join group coaching",
+      "ctaHref": "/#join"
+    },
+    "individual": {
+      "slug": "/coaching/individual",
+      "title": "1:1 Individual Coaching",
+      "short": "Personalized coaching and direct guidance.",
+      "metaTitle": "1:1 Coaching — Love Eat Keep Fit",
+      "metaDescription": "Work one-on-one with Lana for a personalized food strategy, accountability, and sustainable weight management.",
+      "subtitle": "Private coaching for people who want a tailored plan, direct feedback, and fast clarity.",
+      "price": {
+        "badge": "Limited offer",
+        "original": "EUR 299",
+        "current": "EUR 149",
+        "note": "Discounted for a total of 3 months.",
+        "ctaLabel": "Claim the offer",
+        "ctaHref": "/#join"
+      },
+      "sections": [
+        {
+          "heading": "Personal strategy",
+          "body": "We build a plan around your goals, schedule, preferences, and current habits.",
+          "bullets": [
+            "Personal macro and calorie targets",
+            "Flexible structure that fits your lifestyle",
+            "Simple routines you can keep"
+          ]
+        },
+        {
+          "heading": "Food system and recipes",
+          "bullets": [
+            "Efficient grocery planning",
+            "Quick, tasty recipes that match your goals",
+            "Solutions for busy days"
+          ]
+        },
+        {
+          "heading": "Accountability and support",
+          "body": "Direct feedback and adjustments so you stay on track.",
+          "bullets": [
+            "Regular check-ins",
+            "Progress reviews and tweaks",
+            "Mindset and habit coaching"
+          ]
+        }
+      ],
+      "ctaHeading": "Want private coaching?",
+      "ctaText": "Fill out the form and tell me your goals. I will reply with next steps.",
+      "ctaLabel": "Apply for 1:1 coaching",
+      "ctaHref": "/#join"
+    },
+    "premium": {
+      "slug": "/coaching/premium",
+      "title": "In-Person Premium Coaching",
+      "short": "High-touch, in-person support for faster progress.",
+      "metaTitle": "In-Person Premium — Love Eat Keep Fit",
+      "metaDescription": "Premium in-person coaching with cooking routines, grocery strategy, and personalized support.",
+      "subtitle": "For clients who want hands-on guidance, in-person sessions, and the highest level of accountability.",
+      "price": {
+        "badge": "Limited offer",
+        "original": "EUR 1200",
+        "current": "EUR 499",
+        "note": "Discount available right now.",
+        "limit": "Only 2 people can join at this price.",
+        "ctaLabel": "Apply for premium",
+        "ctaHref": "/#join"
+      },
+      "sections": [
+        {
+          "heading": "High-touch support",
+          "body": "We build your routine together and remove friction fast.",
+          "bullets": [
+            "Custom plan built in real time",
+            "Direct observation and feedback",
+            "Fast implementation"
+          ]
+        },
+        {
+          "heading": "In-person sessions",
+          "bullets": [
+            "Cooking routines and recipe walk-throughs",
+            "Grocery planning and real-world setup",
+            "Practical habits that stick"
+          ]
+        },
+        {
+          "heading": "Ongoing coaching",
+          "body": "Follow-up support so the changes last.",
+          "bullets": [
+            "Personal check-ins",
+            "Adjustments as your goals evolve",
+            "Accountability when motivation dips"
+          ]
+        }
+      ],
+      "ctaHeading": "Interested in premium coaching?",
+      "ctaText": "Fill out the form and tell me where you are based. I will confirm availability.",
+      "ctaLabel": "Apply for premium coaching",
+      "ctaHref": "/#join"
+    },
+    "digital": {
+      "slug": "/coaching/digital",
+      "title": "Digital Product",
+      "short": "Self-paced course, macros calculator, and recipes.",
+      "metaTitle": "Digital Product — Love Eat Keep Fit",
+      "metaDescription": "Get personalized macros, a self-paced course, and a recipe book with grocery lists for your goals.",
+      "subtitle": "A self-paced digital program with personal macro and calorie calculations, videos, exercises, and a recipe book with ready-made grocery lists.",
+      "price": {
+        "badge": "One-year access",
+        "original": "EUR 89",
+        "current": "EUR 89",
+        "note": "Includes 1 year of course access and a downloadable recipe book.",
+        "ctaLabel": "Get instant access",
+        "ctaHref": "/#join"
+      },
+      "sections": [
+        {
+          "heading": "Personalized starting point",
+          "body": "Complete a short form so I can calculate your calories and macros based on your goals.",
+          "bullets": [
+            "Personal calorie and macro targets",
+            "Clear guidance on how to use them"
+          ]
+        },
+        {
+          "heading": "Self-paced course",
+          "bullets": [
+            "Video lessons and exercises",
+            "Step-by-step routine setup",
+            "Learn at your own pace"
+          ]
+        },
+        {
+          "heading": "Recipe book + grocery lists",
+          "body": "Choose from recipes with prebuilt grocery lists that fit your macros and calories.",
+          "bullets": [
+            "Tasty, simple meals",
+            "Ready-to-shop lists",
+            "Designed for real life"
+          ]
+        }
+      ],
+      "ctaHeading": "Ready to start?",
+      "ctaText": "Get the digital product and start building your routine today.",
+      "ctaLabel": "Buy the digital product",
+      "ctaHref": "/#join"
+    }
   },
   "whatWeDo": {
     "heading": "Inside the coaching",

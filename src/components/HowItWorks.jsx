@@ -5,7 +5,7 @@ export default function HowItWorks({ heading, items }) {
         <h3 className="text-2xl font-semibold text-charcoal md:text-3xl">
           {heading}
         </h3>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className="mt-6 grid gap-4">
           {items.map((item, index) => (
             <div
               key={`${item}-${index}`}

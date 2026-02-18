@@ -327,7 +327,8 @@
     ],
     "why": "Why do you want to join? (optional)",
     "submit": "Participate",
-    "success": "Thanks! I received your submission and will get back to you shortly with the next steps. Please check your email in a little while.",
+    "success": "Thanks! I received your submission. Please complete the detailed intake form so I can calculate your personalized macros and create your tailored plan.",
+    "afterSubmitPrimaryCta": "Complete Intake Form",
     "afterSubmitSecondaryCta": "Message on Instagram"
   },
   "social": {

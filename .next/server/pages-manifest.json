@@ -2,8 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/coaching/digital": "pages/coaching/digital.js",
-  "/coaching/individual": "pages/coaching/individual.js",
-  "/coaching/premium": "pages/coaching/premium.js",
-  "/": "pages/index.js"
+  "/api/intake": "pages/api/intake.js",
+  "/": "pages/index.js",
+  "/intake": "pages/intake.js"
 }

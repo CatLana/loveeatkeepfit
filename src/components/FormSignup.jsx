@@ -61,20 +61,28 @@ export default function FormSignup({ content, social }) {
             {status === "success" ? (
               <div className="mt-6 space-y-4">
                 <p className="text-base text-charcoal/80">{content.success}</p>
-                <a
-                  href={social.instagramUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-coral px-5 py-3 text-sm font-semibold text-coral transition hover:bg-coral hover:text-white"
-                >
-                  <Image
-                    src="/icons/instagram.svg"
-                    alt="Instagram"
-                    width={20}
-                    height={20}
-                  />
-                  {content.afterSubmitSecondaryCta}
-                </a>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href="/intake"
+                    className="inline-flex items-center rounded-full bg-darkgreen px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-coral"
+                  >
+                    {content.afterSubmitPrimaryCta}
+                  </a>
+                  <a
+                    href={social.instagramUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-coral px-5 py-3 text-sm font-semibold text-coral transition hover:bg-coral hover:text-white"
+                  >
+                    <Image
+                      src="/icons/instagram.svg"
+                      alt="Instagram"
+                      width={20}
+                      height={20}
+                    />
+                    {content.afterSubmitSecondaryCta}
+                  </a>
+                </div>
               </div>
             ) : (
               <form className="mt-6 space-y-4" onSubmit={handleSubmit}>

@@ -24,20 +24,10 @@ self.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/coaching/digital": [
+    "/intake": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/coaching/digital.js"
-    ],
-    "/coaching/individual": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/coaching/individual.js"
-    ],
-    "/coaching/premium": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/coaching/premium.js"
+      "static/chunks/pages/intake.js"
     ]
   },
   "ampFirstPages": []

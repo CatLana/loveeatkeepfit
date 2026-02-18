@@ -25,17 +25,25 @@ export default async function handler(req, res) {
     <p><strong>Why:</strong> ${why || "-"}</p>
   `;
 
-  try {
-    await resend.emails.send({
-      from: sender,
-      to: recipient,
-      replyTo: email,
-      subject: "New LoveEatKeepFit signup",
-      html
-    });
-  } catch (error) {
-    console.error("Resend error:", error);
-    return res.status(500).json({ message: "Email failed to send" });
+  // For local testing - comment out email sending if no API key
+  if (process.env.RESEND_API_KEY) {
+    try {
+      await resend.emails.send({
+        from: sender,
+        to: recipient,
+        replyTo: email,
+        subject: "New LoveEatKeepFit signup",
+        html
+      });
+    } catch (error) {
+      console.error("Resend error:", error);
+      return res.status(500).json({ message: "Email failed to send" });
+    }
+  } else {
+    console.log("📧 Email would be sent (no RESEND_API_KEY):");
+    console.log("To:", recipient);
+    console.log("From:", sender);
+    console.log("Data:", { name, email, phone, goal, why });
   }
 
   return res.status(200).json({ success: true });

@@ -321,7 +321,8 @@
     "goalOptions": ["Dimagrire", "Mantenere peso", "Aumentare energia", "Altro"],
     "why": "Perché vuoi partecipare? (opzionale)",
     "submit": "Partecipa",
-    "success": "Grazie! Ho ricevuto la tua iscrizione e ti rispondo a breve con i prossimi passi. Controlla la tua email tra poco.",
+    "success": "Grazie! Ho ricevuto la tua richiesta. Per favore completa il modulo dettagliato in modo che io possa calcolare le tue macro personalizzate e creare il tuo piano su misura.",
+    "afterSubmitPrimaryCta": "Completa il Modulo",
     "afterSubmitSecondaryCta": "Messaggia su Instagram"
   },
   "social": {

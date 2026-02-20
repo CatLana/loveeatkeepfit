@@ -177,11 +177,11 @@ export default function IntakeForm({ content }) {
 
             <div className="rounded-2xl border-2 border-coral bg-coral/5 p-6">
               <h3 className="text-lg font-semibold text-charcoal">
-                What's Next?
+                What&apos;s Next?
               </h3>
               <p className="mt-2 text-base leading-relaxed text-charcoal/80">
-                I've received your intake form and calculated your personalized
-                macros. I'll review all your details and send you a personalized
+                I&apos;ve received your intake form and calculated your personalized
+                macros. I&apos;ll review all your details and send you a personalized
                 plan within 24 hours via email. Check your inbox for next steps!
               </p>
             </div>
@@ -569,7 +569,7 @@ export default function IntakeForm({ content }) {
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Foods you dislike or won't eat (optional)
+                Foods you dislike or won&apos;t eat (optional)
                 <input
                   type="text"
                   name="dislikedFoods"
@@ -876,7 +876,7 @@ export default function IntakeForm({ content }) {
                   required
                   value={formData.whyImportant}
                   onChange={handleChange}
-                  placeholder="Share what's driving you to make this change"
+                  placeholder="Share what&apos;s driving you to make this change"
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 />
               </label>

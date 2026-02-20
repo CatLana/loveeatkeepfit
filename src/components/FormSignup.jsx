@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FormSignup({ content, social }) {
   const [formData, setFormData] = useState({
@@ -62,12 +63,12 @@ export default function FormSignup({ content, social }) {
               <div className="mt-6 space-y-4">
                 <p className="text-base text-charcoal/80">{content.success}</p>
                 <div className="flex flex-wrap gap-3">
-                  <a
+                  <Link
                     href="/intake"
                     className="inline-flex items-center rounded-full bg-darkgreen px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-coral"
                   >
                     {content.afterSubmitPrimaryCta}
-                  </a>
+                  </Link>
                   <a
                     href={social.instagramUrl}
                     target="_blank"

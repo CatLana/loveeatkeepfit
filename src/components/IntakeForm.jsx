@@ -181,9 +181,10 @@ export default function IntakeForm({ content }) {
                 What&apos;s Next?
               </h3>
               <p className="mt-2 text-base leading-relaxed text-charcoal/80">
-                I&apos;ve received your intake form and calculated your personalized
-                macros. I&apos;ll review all your details and send you a personalized
-                plan within 24 hours via email. Check your inbox for next steps!
+                I&apos;ve received your intake form and generated an approximate automatic
+                calculation above. This is just a starting point - I&apos;ll review all your 
+                details personally and get back to you with my personalized recommendations 
+                within 24 hours via email. Check your inbox for next steps!
               </p>
             </div>
           </div>

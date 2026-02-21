@@ -16,6 +16,7 @@ export default function IntakeForm({ content }) {
     heightUnit: "cm",
     goalWeight: "",
     bodyType: "",
+    leanMuscleMass: "",
 
     // Activity Level
     activityLevel: "",
@@ -363,6 +364,17 @@ export default function IntakeForm({ content }) {
                   </select>
                 </label>
               </div>
+              <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
+                Lean muscle mass (if known)
+                <textarea
+                  name="leanMuscleMass"
+                  value={formData.leanMuscleMass}
+                  onChange={handleChange}
+                  placeholder="Only if done body scan recently, you can find this data on your print out..."
+                  rows={3}
+                  className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral resize-vertical"
+                />
+              </label>
             </div>
           </section>
 

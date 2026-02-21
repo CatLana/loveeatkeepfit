@@ -364,17 +364,34 @@ export default function IntakeForm({ content }) {
                   </select>
                 </label>
               </div>
-              <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Lean muscle mass (if known)
-                <textarea
-                  name="leanMuscleMass"
-                  value={formData.leanMuscleMass}
-                  onChange={handleChange}
-                  placeholder="Only if done body scan recently, you can find this data on your print out..."
-                  rows={3}
-                  className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral resize-vertical"
-                />
-              </label>
+              <fieldset className="space-y-3">
+                <legend className="text-sm font-medium text-charcoal">
+                  Lean muscle mass (body scan data)
+                </legend>
+                <div className="space-y-2">
+                  {[
+                    { value: "under", label: "Under average" },
+                    { value: "normal", label: "Normal range" },
+                    { value: "over", label: "Above average" },
+                    { value: "no-scan", label: "I have not done body scan" }
+                  ].map((option) => (
+                    <label
+                      key={option.value}
+                      className="flex items-center gap-2 text-sm text-charcoal cursor-pointer"
+                    >
+                      <input
+                        type="radio"
+                        name="leanMuscleMass"
+                        value={option.value}
+                        checked={formData.leanMuscleMass === option.value}
+                        onChange={handleChange}
+                        className="h-4 w-4 border-beige text-coral focus:ring-coral"
+                      />
+                      {option.label}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
             </div>
           </section>
 

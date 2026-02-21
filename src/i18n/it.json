@@ -330,6 +330,288 @@
     "instagramUrl": "https://instagram.com/loveeatkeepfit",
     "instagramCta": "Messaggia su Instagram"
   },
+  "intake": {
+    "title": "Modulo di Iscrizione",
+    "description": "Compila questo modulo dettagliato così posso calcolare le tue calorie giornaliere personalizzate e i macro, e creare un piano di coaching su misura per te.",
+    "sections": {
+      "basicInfo": {
+        "title": "1. Informazioni di Base",
+        "fields": {
+          "name": "Il Tuo Nome",
+          "email": "Email",
+          "phone": "Telefono (opzionale)",
+          "age": "Età",
+          "gender": "Genere",
+          "genderOptions": {
+            "": "Seleziona",
+            "female": "Femminile",
+            "male": "Maschile", 
+            "non-binary": "Non binario",
+            "prefer-not-to-say": "Preferisco non rispondere"
+          }
+        }
+      },
+      "physicalMeasurements": {
+        "title": "2. Misure Fisiche",
+        "fields": {
+          "weight": "Peso Attuale",
+          "weightPlaceholder": "es., 75",
+          "height": "Altezza", 
+          "heightPlaceholder": "es., 170",
+          "goalWeight": "Peso Obiettivo (opzionale)",
+          "goalWeightPlaceholder": "es., 65 kg o 143 lbs",
+          "bodyType": "Tipo di Corpo",
+          "bodyTypeOptions": {
+            "": "Seleziona",
+            "ectomorph": "Ectomorfo (naturalmente magro)",
+            "mesomorph": "Mesomorfo (fisico atletico)", 
+            "endomorph": "Endomorfo (ingrassa facilmente)",
+            "not-sure": "Non sono sicuro/a"
+          },
+          "leanMuscleMass": "Massa magra (dati body scan)",
+          "leanMuscleMassOptions": {
+            "under": "Sotto la media",
+            "normal": "Range normale",
+            "over": "Sopra la media",
+            "no-scan": "Non ho fatto body scan"
+          }
+        }
+      },
+      "activityLevel": {
+        "title": "3. Livello di Attività",
+        "fields": {
+          "activityLevel": "Cosa descrive meglio la tua giornata tipo?",
+          "activityOptions": {
+            "": "Seleziona",
+            "sedentary": "Sedentario (lavoro da scrivania, poco esercizio)",
+            "lightly-active": "Lievemente attivo (esercizio leggero 1-3 giorni/settimana)",
+            "moderately-active": "Moderatamente attivo (esercizio moderato 3-5 giorni/settimana)",
+            "very-active": "Molto attivo (esercizio intenso 6-7 giorni/settimana)",
+            "extremely-active": "Estremamente attivo (lavoro fisico + allenamento quotidiano)"
+          },
+          "exerciseRoutine": "Che tipo di esercizio fai? (seleziona tutto quello che si applica)",
+          "exerciseOptions": {
+            "strength": "Allenamento di forza / pesi",
+            "cardio": "Cardio (corsa, ciclismo, nuoto)",
+            "yoga": "Yoga o Pilates",
+            "walking": "Camminata o movimento leggero",
+            "sports": "Sport/attività ricreative"
+          },
+          "exerciseDays": "Quanti giorni alla settimana ti alleni?",
+          "exerciseDaysOptions": {
+            "": "Seleziona",
+            "0": "0 giorni",
+            "1": "1 giorno",
+            "2": "2 giorni",
+            "3": "3 giorni",
+            "4": "4 giorni",
+            "5": "5 giorni",
+            "6": "6 giorni",
+            "7": "7 giorni"
+          }
+        }
+      },
+      "goals": {
+        "title": "4. Obiettivi",
+        "fields": {
+          "primaryGoal": "Qual&apos;è il tuo obiettivo principale?",
+          "primaryGoalOptions": {
+            "": "Seleziona",
+            "lose-fat": "Perdere grasso/peso",
+            "build-muscle": "Costruire muscoli",
+            "maintain-weight": "Mantenere il peso attuale",
+            "improve-health": "Migliorare la salute generale",
+            "increase-energy": "Aumentare i livelli di energia",
+            "learn-cooking": "Imparare abitudini culinarie sane"
+          },
+          "weightToLose": "Quanto peso vuoi perdere? (opzionale)",
+          "weightToLosePlaceholder": "es., 5-10 kg o 10-20 lbs",
+          "timeline": "Qual&apos;è la tua tempistica realistica per raggiungere l&apos;obiettivo?",
+          "timelineOptions": {
+            "": "Seleziona",
+            "1-3-months": "1-3 mesi",
+            "3-6-months": "3-6 mesi", 
+            "6-12-months": "6-12 mesi",
+            "1-year-plus": "Più di 1 anno",
+            "no-rush": "Nessuna tempistica specifica"
+          },
+          "triedBefore": "Hai mai provato a perdere peso/metterti in forma prima? Cos&apos;è successo?"
+        }
+      },
+      "eatingHabits": {
+        "title": "5. Abitudini Alimentari &amp; Preferenze",
+        "fields": {
+          "dietaryPreference": "Segui qualche dieta specifica o hai restrizioni alimentari? (seleziona tutto quello che si applica)",
+          "dietaryOptions": {
+            "omnivore": "Onnivoro (mangio tutto)",
+            "vegetarian": "Vegetariano (no carne)",
+            "vegan": "Vegano (no prodotti animali)",
+            "pescatarian": "Pescetariano (pesce ma no carne)",
+            "keto": "Keto/Low-carb",
+            "paleo": "Paleo",
+            "mediterranean": "Mediterranea",
+            "intermittent-fasting": "Digiuno intermittente",
+            "other": "Altre restrizioni alimentari"
+          },
+          "allergies": "Allergie o intolleranze alimentari (opzionale)",
+          "allergiesPlaceholder": "es., glutine, latticini, frutta secca",
+          "dislikedFoods": "Cibi che non ti piacciono o non mangi (opzionale)",
+          "mealsPerDay": "Quanti pasti mangi tipicamente al giorno?",
+          "mealsOptions": {
+            "": "Seleziona",
+            "1": "1 pasto",
+            "2": "2 pasti", 
+            "3": "3 pasti",
+            "4": "4 pasti",
+            "5": "5+ pasti",
+            "varies": "Varia"
+          },
+          "mealPrep": "Prepari i pasti in anticipo o preferisci cucinare fresco ogni giorno?",
+          "mealPrepOptions": {
+            "": "Seleziona",
+            "meal-prep": "Preparo i pasti per la settimana",
+            "daily-cooking": "Cucino pasti freschi ogni giorno",
+            "mix": "Mix di entrambi",
+            "minimal-cooking": "Cucino il minimo indispensabile",
+            "takeout-mostly": "Mi consegno principalmente a take-away/cibi pronti"
+          },
+          "cookingTime": "Quanto tempo puoi realisticamente dedicare alla cucina al giorno?",
+          "cookingTimeOptions": {
+            "": "Seleziona",
+            "15-min": "15 minuti o meno",
+            "15-30-min": "15-30 minuti",
+            "30-60-min": "30-60 minuti",
+            "60-plus-min": "Più di 1 ora",
+            "varies": "Varia in base al giorno"
+          },
+          "eatingOut": "Quanto spesso mangi fuori o ordini da asporto?",
+          "eatingOutOptions": {
+            "": "Seleziona",
+            "daily": "Ogni giorno",
+            "few-times-week": "Qualche volta a settimana",
+            "once-week": "Una volta a settimana",
+            "few-times-month": "Qualche volta al mese",
+            "rarely": "Raramente",
+            "never": "Mai"
+          }
+        }
+      },
+      "challenges": {
+        "title": "6. Sfide &amp; Abitudini",
+        "fields": {
+          "biggestStruggle": "Qual&apos;è la tua maggiore difficoltà nel mangiare sano? (seleziona tutto quello che si applica)",
+          "challengeOptions": {
+            "time": "Non abbastanza tempo per cucinare",
+            "planning": "Scarsa pianificazione/preparazione pasti",
+            "cravings": "Voglie di cibi non sani",
+            "emotional-eating": "Mangiare emotivo",
+            "portion-control": "Controllo delle porzioni",
+            "knowledge": "Mancanza di conoscenze nutrizionali",
+            "motivation": "Mancanza di motivazione/coerenza",
+            "budget": "Limitazioni di budget",
+            "family": "Preferenze famiglia/casa",
+            "eating-out": "Mangiare sociale/fuori casa"
+          },
+          "trackedBefore": "Hai mai monitorato il tuo cibo/calorie prima?",
+          "trackedBeforeOptions": {
+            "": "Seleziona",
+            "never": "Mai monitorato prima",
+            "tried-gave-up": "Provato ma ho mollato",
+            "on-off": "Monitoraggio ad intermittenza",
+            "regularly": "Sì, monitoro regolarmente",
+            "used-to": "Monitoravo con coerenza in passato"
+          },
+          "trackingApp": "Se hai mai monitorato, quale app hai usato? (opzionale)",
+          "trackingAppPlaceholder": "es., MyFitnessPal, Cronometer, Lose It"
+        }
+      },
+      "lifestyle": {
+        "title": "7. Stile di Vita &amp; Contesto",
+        "fields": {
+          "sleepQuality": "Come valuti la qualità del tuo sonno?",
+          "sleepOptions": {
+            "": "Seleziona",
+            "excellent": "Eccellente (7-9 ore, mi sveglio riposato/a)",
+            "good": "Buona (sonno decente la maggior parte delle notti)",
+            "fair": "Discreta (qualche notte buona, qualche cattiva)",
+            "poor": "Scarsa (spesso stanco/a/non riposato/a)",
+            "very-poor": "Molto scarsa (problemi cronici di sonno)"
+          },
+          "stressLevel": "Qual&apos;è il tuo livello di stress tipico?",
+          "stressOptions": {
+            "": "Seleziona",
+            "very-low": "Molto basso",
+            "low": "Basso",
+            "moderate": "Moderato",
+            "high": "Alto",
+            "very-high": "Molto alto"
+          },
+          "scheduleType": "Cosa descrive meglio la tua routine quotidiana?",
+          "scheduleOptions": {
+            "": "Seleziona",
+            "consistent": "Routine coerente (stesso orario ogni giorno)",
+            "somewhat-consistent": "Abbastanza coerente (per lo più prevedibile)",
+            "variable": "Variabile (cambia settimana per settimana)",
+            "unpredictable": "Imprevedibile (turni, viaggi, ecc.)",
+            "chaotic": "Caotica (nessuna routine reale)"
+          },
+          "cookForOthers": "Cucini per altre persone? (famiglia, coinquilini, ecc.)",
+          "cookForOthersOptions": {
+            "": "Seleziona",
+            "just-me": "Solo per me",
+            "partner": "Partner/coniuge",
+            "family-kids": "Famiglia con bambini",
+            "roommates": "Coinquilini",
+            "varies": "Varia"
+          }
+        }
+      },
+      "motivation": {
+        "title": "8. Motivazione &amp; Supporto",
+        "fields": {
+          "whyImportant": "Perché è importante per te raggiungere il tuo obiettivo di salute/forma fisica ora?",
+          "whyImportantPlaceholder": "Condividi cosa ti spinge a fare questo cambiamento",
+          "previousAttempts": "Cosa ti ha fermato dal raggiungere i tuoi obiettivi in passato?",
+          "previousAttemptsPlaceholder": "es., mancanza di tempo, situazioni sociali, stress eating",
+          "supportSystem": "Hai supporto da famiglia/amici per i tuoi obiettivi di salute?",
+          "supportOptions": {
+            "": "Seleziona",
+            "very-supportive": "Molto di supporto",
+            "somewhat-supportive": "Abbastanza di supporto",
+            "neutral": "Neutrale/indifferente",
+            "somewhat-resistant": "Abbastanza resistente",
+            "very-resistant": "Molto resistente/sabotante"
+          },
+          "accountabilityPreference": "Che tipo di responsabilizzazione funziona meglio per te?",
+          "accountabilityOptions": {
+            "": "Seleziona",
+            "daily-check-ins": "Controlli quotidiani",
+            "weekly-check-ins": "Controlli settimanali",
+            "progress-photos": "Foto dei progressi/misurazioni",
+            "group-support": "Supporto di gruppo/comunità",
+            "one-on-one": "Coaching individuale",
+            "self-directed": "Auto-diretto (controlli minimi)"
+          }
+        }
+      }
+    },
+    "submitButton": "Calcola il Mio Piano",
+    "submitting": "Calcolando...",
+    "required": "*",
+    "resultsTitle": "Il Tuo Piano Personalizzato di Macro &amp; Calorie",
+    "resultsSubtitle": "Basato sui tuoi dettagli, ecco il tuo punto di partenza:",
+    "macros": {
+      "calories": "Calorie Giornaliere",
+      "protein": "Proteine",
+      "carbs": "Carboidrati", 
+      "fat": "Grassi"
+    },
+    "resultsNote": "Questi sono calcoli approssimativi basati sui tuoi dati. Perfezionerò queste raccomandazioni in base ai tuoi progressi.",
+    "nextSteps": {
+      "title": "Cosa Succede Dopo?",
+      "description": "Ho ricevuto il tuo modulo di iscrizione e generato un calcolo automatico approssimativo sopra. Questo è solo un punto di partenza - esaminerò tutti i tuoi dettagli personalmente e ti risponderò con le mie raccomandazioni personalizzate entro 24 ore via email. Controlla la tua casella di posta per i prossimi passi!"
+    }
+  },
   "footer": {
     "disclaimer": "Non sono una nutrizionista laureata. Ho lavorato con nutrizionisti, testato approcci su me stessa e osservato persone reali. Questa è una fase di ricerca.",
     "contact": "Contatto via WhatsApp",

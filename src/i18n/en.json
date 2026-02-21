@@ -331,6 +331,288 @@
     "afterSubmitPrimaryCta": "Complete Intake Form",
     "afterSubmitSecondaryCta": "Message on Instagram"
   },
+  "intake": {
+    "title": "Client Intake Form",
+    "description": "Fill out this comprehensive form so I can calculate your personalized daily calories and macros, and create a tailored coaching plan for you.",
+    "sections": {
+      "basicInfo": {
+        "title": "1. Basic Information",
+        "fields": {
+          "name": "Your Name",
+          "email": "Email",
+          "phone": "Phone (optional)",
+          "age": "Age",
+          "gender": "Gender",
+          "genderOptions": {
+            "": "Select",
+            "female": "Female",
+            "male": "Male", 
+            "non-binary": "Non-binary",
+            "prefer-not-to-say": "Prefer not to say"
+          }
+        }
+      },
+      "physicalMeasurements": {
+        "title": "2. Physical Measurements",
+        "fields": {
+          "weight": "Current Weight",
+          "weightPlaceholder": "e.g., 75",
+          "height": "Height", 
+          "heightPlaceholder": "e.g., 170",
+          "goalWeight": "Goal Weight (optional)",
+          "goalWeightPlaceholder": "e.g., 65 kg or 143 lbs",
+          "bodyType": "Body Type",
+          "bodyTypeOptions": {
+            "": "Select",
+            "ectomorph": "Ectomorph (naturally thin)",
+            "mesomorph": "Mesomorph (athletic build)", 
+            "endomorph": "Endomorph (gains weight easily)",
+            "not-sure": "Not sure"
+          },
+          "leanMuscleMass": "Lean muscle mass (body scan data)",
+          "leanMuscleMassOptions": {
+            "under": "Under average",
+            "normal": "Normal range",
+            "over": "Above average",
+            "no-scan": "I have not done body scan"
+          }
+        }
+      },
+      "activityLevel": {
+        "title": "3. Activity Level",
+        "fields": {
+          "activityLevel": "What best describes your typical day?",
+          "activityOptions": {
+            "": "Select",
+            "sedentary": "Sedentary (desk job, little exercise)",
+            "lightly-active": "Lightly active (light exercise 1-3 days/week)",
+            "moderately-active": "Moderately active (moderate exercise 3-5 days/week)",
+            "very-active": "Very active (intense exercise 6-7 days/week)",
+            "extremely-active": "Extremely active (physical job + daily training)"
+          },
+          "exerciseRoutine": "What type of exercise do you do? (select all that apply)",
+          "exerciseOptions": {
+            "strength": "Strength training / weight lifting",
+            "cardio": "Cardio (running, cycling, swimming)",
+            "yoga": "Yoga or Pilates",
+            "walking": "Walking or light movement",
+            "sports": "Sports/recreational activities"
+          },
+          "exerciseDays": "How many days per week do you exercise?",
+          "exerciseDaysOptions": {
+            "": "Select",
+            "0": "0 days",
+            "1": "1 day",
+            "2": "2 days",
+            "3": "3 days",
+            "4": "4 days",
+            "5": "5 days",
+            "6": "6 days",
+            "7": "7 days"
+          }
+        }
+      },
+      "goals": {
+        "title": "4. Goals",
+        "fields": {
+          "primaryGoal": "What&apos;s your primary goal?",
+          "primaryGoalOptions": {
+            "": "Select",
+            "lose-fat": "Lose fat/weight",
+            "build-muscle": "Build muscle",
+            "maintain-weight": "Maintain current weight",
+            "improve-health": "Improve overall health",
+            "increase-energy": "Increase energy levels",
+            "learn-cooking": "Learn healthy cooking habits"
+          },
+          "weightToLose": "How much weight do you want to lose? (optional)",
+          "weightToLosePlaceholder": "e.g., 5-10 kg or 10-20 lbs",
+          "timeline": "What&apos;s your realistic timeline for reaching your goal?",
+          "timelineOptions": {
+            "": "Select",
+            "1-3-months": "1-3 months",
+            "3-6-months": "3-6 months", 
+            "6-12-months": "6-12 months",
+            "1-year-plus": "More than 1 year",
+            "no-rush": "No specific timeline"
+          },
+          "triedBefore": "Have you tried losing weight/getting fit before? What happened?"
+        }
+      },
+      "eatingHabits": {
+        "title": "5. Eating Habits &amp; Preferences",
+        "fields": {
+          "dietaryPreference": "Do you follow any specific diet or have dietary restrictions? (select all that apply)",
+          "dietaryOptions": {
+            "omnivore": "Omnivore (eat everything)",
+            "vegetarian": "Vegetarian (no meat)",
+            "vegan": "Vegan (no animal products)",
+            "pescatarian": "Pescatarian (fish but no meat)",
+            "keto": "Keto/Low-carb",
+            "paleo": "Paleo",
+            "mediterranean": "Mediterranean",
+            "intermittent-fasting": "Intermittent fasting",
+            "other": "Other dietary restrictions"
+          },
+          "allergies": "Food allergies or intolerances (optional)",
+          "allergiesPlaceholder": "e.g., gluten, dairy, nuts",
+          "dislikedFoods": "Foods you dislike or won&apos;t eat (optional)",
+          "mealsPerDay": "How many meals do you typically eat per day?",
+          "mealsOptions": {
+            "": "Select",
+            "1": "1 meal",
+            "2": "2 meals", 
+            "3": "3 meals",
+            "4": "4 meals",
+            "5": "5+ meals",
+            "varies": "It varies"
+          },
+          "mealPrep": "Do you meal prep or prefer cooking fresh daily?",
+          "mealPrepOptions": {
+            "": "Select",
+            "meal-prep": "I meal prep for the week",
+            "daily-cooking": "I cook fresh meals daily",
+            "mix": "Mix of both",
+            "minimal-cooking": "I do minimal cooking",
+            "takeout-mostly": "I rely mostly on takeout/prepared foods"
+          },
+          "cookingTime": "How much time can you realistically spend cooking per day?",
+          "cookingTimeOptions": {
+            "": "Select",
+            "15-min": "15 minutes or less",
+            "15-30-min": "15-30 minutes",
+            "30-60-min": "30-60 minutes",
+            "60-plus-min": "More than 1 hour",
+            "varies": "It varies by day"
+          },
+          "eatingOut": "How often do you eat out or order takeout?",
+          "eatingOutOptions": {
+            "": "Select",
+            "daily": "Daily",
+            "few-times-week": "A few times a week",
+            "once-week": "Once a week",
+            "few-times-month": "A few times a month",
+            "rarely": "Rarely",
+            "never": "Never"
+          }
+        }
+      },
+      "challenges": {
+        "title": "6. Challenges &amp; Habits",
+        "fields": {
+          "biggestStruggle": "What&apos;s your biggest struggle with eating healthy? (select all that apply)",
+          "challengeOptions": {
+            "time": "Not enough time to cook",
+            "planning": "Poor planning/meal prep",
+            "cravings": "Cravings for unhealthy foods",
+            "emotional-eating": "Emotional eating",
+            "portion-control": "Portion control",
+            "knowledge": "Lack of nutrition knowledge",
+            "motivation": "Lack of motivation/consistency",
+            "budget": "Budget constraints",
+            "family": "Family/household preferences",
+            "eating-out": "Social eating/dining out"
+          },
+          "trackedBefore": "Have you tracked your food/calories before?",
+          "trackedBeforeOptions": {
+            "": "Select",
+            "never": "Never tracked before",
+            "tried-gave-up": "Tried but gave up",
+            "on-off": "On and off tracking",
+            "regularly": "Yes, I track regularly",
+            "used-to": "Used to track consistently"
+          },
+          "trackingApp": "If you&apos;ve tracked before, which app did you use? (optional)",
+          "trackingAppPlaceholder": "e.g., MyFitnessPal, Cronometer, Lose It"
+        }
+      },
+      "lifestyle": {
+        "title": "7. Lifestyle &amp; Context",
+        "fields": {
+          "sleepQuality": "How would you rate your sleep quality?",
+          "sleepOptions": {
+            "": "Select",
+            "excellent": "Excellent (7-9 hrs, wake refreshed)",
+            "good": "Good (decent sleep most nights)",
+            "fair": "Fair (some good nights, some bad)",
+            "poor": "Poor (often tired/unrested)",
+            "very-poor": "Very poor (chronic sleep issues)"
+          },
+          "stressLevel": "What&apos;s your typical stress level?",
+          "stressOptions": {
+            "": "Select",
+            "very-low": "Very low",
+            "low": "Low",
+            "moderate": "Moderate",
+            "high": "High",
+            "very-high": "Very high"
+          },
+          "scheduleType": "Which best describes your daily schedule?",
+          "scheduleOptions": {
+            "": "Select",
+            "consistent": "Consistent routine (same schedule daily)",
+            "somewhat-consistent": "Somewhat consistent (mostly predictable)",
+            "variable": "Variable (changes week to week)",
+            "unpredictable": "Unpredictable (shift work, travel, etc.)",
+            "chaotic": "Chaotic (no real routine)"
+          },
+          "cookForOthers": "Are you cooking for other people? (family, roommates, etc.)",
+          "cookForOthersOptions": {
+            "": "Select",
+            "just-me": "Just for myself",
+            "partner": "Partner/spouse",
+            "family-kids": "Family with children",
+            "roommates": "Roommates",
+            "varies": "It varies"
+          }
+        }
+      },
+      "motivation": {
+        "title": "8. Motivation &amp; Support",
+        "fields": {
+          "whyImportant": "Why is reaching your health/fitness goal important to you right now?",
+          "whyImportantPlaceholder": "Share what&apos;s driving you to make this change",
+          "previousAttempts": "What&apos;s stopped you from reaching your goals in the past?",
+          "previousAttemptsPlaceholder": "e.g., lack of time, social situations, stress eating",
+          "supportSystem": "Do you have support from family/friends for your health goals?",
+          "supportOptions": {
+            "": "Select",
+            "very-supportive": "Very supportive",
+            "somewhat-supportive": "Somewhat supportive",
+            "neutral": "Neutral/indifferent",
+            "somewhat-resistant": "Somewhat resistant",
+            "very-resistant": "Very resistant/sabotaging"
+          },
+          "accountabilityPreference": "What type of accountability works best for you?",
+          "accountabilityOptions": {
+            "": "Select",
+            "daily-check-ins": "Daily check-ins",
+            "weekly-check-ins": "Weekly check-ins",
+            "progress-photos": "Progress photos/measurements",
+            "group-support": "Group support/community",
+            "one-on-one": "One-on-one coaching",
+            "self-directed": "Self-directed (minimal check-ins)"
+          }
+        }
+      }
+    },
+    "submitButton": "Calculate My Plan",
+    "submitting": "Calculating...",
+    "required": "*",
+    "resultsTitle": "Your Personalized Macro &amp; Calorie Plan",
+    "resultsSubtitle": "Based on your details, here&apos;s your starting point:",
+    "macros": {
+      "calories": "Daily Calories",
+      "protein": "Protein",
+      "carbs": "Carbohydrates", 
+      "fat": "Fat"
+    },
+    "resultsNote": "These are approximate calculations based on your input. I&apos;ll fine-tune these recommendations based on your progress.",
+    "nextSteps": {
+      "title": "What&apos;s Next?",
+      "description": "I&apos;ve received your intake form and generated an approximate automatic calculation above. This is just a starting point - I&apos;ll review all your details personally and get back to you with my personalized recommendations within 24 hours via email. Check your inbox for next steps!"
+    }
+  },
   "social": {
     "instagramHandle": "loveeatkeepfit",
     "instagramUrl": "https://instagram.com/loveeatkeepfit",

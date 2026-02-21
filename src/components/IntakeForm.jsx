@@ -120,23 +120,23 @@ export default function IntakeForm({ content }) {
       <div className="mx-auto max-w-3xl px-4 py-16">
         <div className="rounded-3xl border border-beige bg-white p-8 shadow-soft">
           <h2 className="text-3xl font-semibold text-charcoal">
-            Your Personalized Results
+            {content.intake?.results?.title || "Your Personalized Results"}
           </h2>
 
           <div className="mt-6 space-y-6">
             <div className="rounded-2xl bg-warmwhite p-6">
               <h3 className="text-xl font-semibold text-darkgreen">
-                Daily Calorie Target
+                {content.intake?.results?.dailyCalories || "Daily Calorie Target"}
               </h3>
               <p className="mt-2 text-4xl font-bold text-charcoal">
-                {results.calories} <span className="text-xl">calories</span>
+                {results.calories} <span className="text-xl">{content.intake?.results?.calories || "calories"}</span>
               </p>
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
               <div className="rounded-2xl bg-coral/10 p-6">
                 <h4 className="text-sm font-semibold uppercase tracking-wider text-coral">
-                  Protein
+                  {content.intake?.results?.protein || "Protein"}
                 </h4>
                 <p className="mt-2 text-3xl font-bold text-charcoal">
                   {results.macros.protein}g
@@ -144,7 +144,7 @@ export default function IntakeForm({ content }) {
               </div>
               <div className="rounded-2xl bg-darkgreen/10 p-6">
                 <h4 className="text-sm font-semibold uppercase tracking-wider text-darkgreen">
-                  Carbs
+                  {content.intake?.results?.carbs || "Carbs"}
                 </h4>
                 <p className="mt-2 text-3xl font-bold text-charcoal">
                   {results.macros.carbs}g
@@ -152,7 +152,7 @@ export default function IntakeForm({ content }) {
               </div>
               <div className="rounded-2xl bg-beige p-6">
                 <h4 className="text-sm font-semibold uppercase tracking-wider text-charcoal">
-                  Fats
+                  {content.intake?.results?.fats || "Fats"}
                 </h4>
                 <p className="mt-2 text-3xl font-bold text-charcoal">
                   {results.macros.fats}g
@@ -162,29 +162,26 @@ export default function IntakeForm({ content }) {
 
             <div className="rounded-2xl border border-beige bg-warmwhite p-6">
               <h3 className="text-lg font-semibold text-charcoal">
-                Additional Metrics
+                {content.intake?.results?.additionalMetrics || "Additional Metrics"}
               </h3>
               <div className="mt-4 space-y-2 text-sm text-charcoal/80">
                 <p>
-                  <strong>BMR (Basal Metabolic Rate):</strong> {results.bmr}{" "}
-                  calories/day
+                  <strong>{content.intake?.results?.bmr || "BMR (Basal Metabolic Rate)"}:</strong> {results.bmr}{" "}
+                  {content.intake?.results?.caloriesPerDay || "calories/day"}
                 </p>
                 <p>
-                  <strong>TDEE (Total Daily Energy Expenditure):</strong>{" "}
-                  {results.tdee} calories/day
+                  <strong>{content.intake?.results?.tdee || "TDEE (Total Daily Energy Expenditure)"}:</strong>{" "}
+                  {results.tdee} {content.intake?.results?.caloriesPerDay || "calories/day"}
                 </p>
               </div>
             </div>
 
             <div className="rounded-2xl border-2 border-coral bg-coral/5 p-6">
               <h3 className="text-lg font-semibold text-charcoal">
-                What&apos;s Next?
+                {content.intake?.results?.whatsNext || "What's Next?"}
               </h3>
               <p className="mt-2 text-base leading-relaxed text-charcoal/80">
-                I&apos;ve received your intake form and generated an approximate automatic
-                calculation above. This is just a starting point - I&apos;ll review all your 
-                details personally and get back to you with my personalized recommendations 
-                within 24 hours via email. Check your inbox for next steps!
+                {content.intake?.results?.nextStepsMessage || "I've received your intake form and generated an approximate automatic calculation above. This is just a starting point - I'll review all your details personally and get back to you with my personalized recommendations within 24 hours via email. Check your inbox for next steps!"}
               </p>
             </div>
           </div>
@@ -197,24 +194,22 @@ export default function IntakeForm({ content }) {
     <div className="mx-auto max-w-4xl px-4 py-16">
       <div className="rounded-3xl border border-beige bg-white p-8 shadow-soft">
         <h1 className="text-3xl font-semibold text-charcoal">
-          Client Intake Form
+          {content.intake?.title || "Client Intake Form"}
         </h1>
         <p className="mt-3 text-base leading-relaxed text-charcoal/80">
-          Fill out this comprehensive form so I can calculate your personalized
-          daily calories and macros, and create a tailored coaching plan for
-          you.
+          {content.intake?.description || "Fill out this comprehensive form so I can calculate your personalized daily calories and macros, and create a tailored coaching plan for you."}
         </p>
 
         <form className="mt-8 space-y-10" onSubmit={handleSubmit}>
           {/* Section 1: Basic Information */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-darkgreen">
-              1. Basic Information
+              {content.intake?.sections?.basicInfo?.title || "1. Basic Information"}
             </h2>
             <div className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Your Name *
+                  {content.intake?.sections?.basicInfo?.fields?.name || "Your Name"} {content.intake?.required || "*"}
                   <input
                     type="text"
                     name="name"
@@ -225,7 +220,7 @@ export default function IntakeForm({ content }) {
                   />
                 </label>
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Email *
+                  {content.intake?.sections?.basicInfo?.fields?.email || "Email"} {content.intake?.required || "*"}
                   <input
                     type="email"
                     name="email"
@@ -238,7 +233,7 @@ export default function IntakeForm({ content }) {
               </div>
               <div className="grid gap-4 md:grid-cols-3">
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Phone (optional)
+                  {content.intake?.sections?.basicInfo?.fields?.phone || "Phone (optional)"}
                   <input
                     type="tel"
                     name="phone"
@@ -248,7 +243,7 @@ export default function IntakeForm({ content }) {
                   />
                 </label>
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Age *
+                  {content.intake?.sections?.basicInfo?.fields?.age || "Age"} {content.intake?.required || "*"}
                   <input
                     type="number"
                     name="age"
@@ -261,7 +256,7 @@ export default function IntakeForm({ content }) {
                   />
                 </label>
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Gender *
+                  {content.intake?.sections?.basicInfo?.fields?.gender || "Gender"} {content.intake?.required || "*"}
                   <select
                     name="gender"
                     required
@@ -269,10 +264,10 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                    <option value="prefer-not-say">Prefer not to say</option>
+                    <option value="">{content.intake?.sections?.basicInfo?.fields?.genderOptions?.[""] || "Select"}</option>
+                    <option value="female">{content.intake?.sections?.basicInfo?.fields?.genderOptions?.female || "Female"}</option>
+                    <option value="male">{content.intake?.sections?.basicInfo?.fields?.genderOptions?.male || "Male"}</option>
+                    <option value="prefer-not-say">{content.intake?.sections?.basicInfo?.fields?.genderOptions?.["prefer-not-to-say"] || "Prefer not to say"}</option>
                   </select>
                 </label>
               </div>
@@ -282,12 +277,12 @@ export default function IntakeForm({ content }) {
           {/* Section 2: Physical Measurements */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-darkgreen">
-              2. Physical Measurements
+              {content.intake?.sections?.physicalMeasurements?.title || "2. Physical Measurements"}
             </h2>
             <div className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Current Weight *
+                  {content.intake?.sections?.physicalMeasurements?.fields?.weight || "Current Weight"} {content.intake?.required || "*"}
                   <div className="flex gap-2">
                     <input
                       type="number"
@@ -296,7 +291,7 @@ export default function IntakeForm({ content }) {
                       required
                       value={formData.weight}
                       onChange={handleChange}
-                      placeholder="e.g., 75"
+                      placeholder={content.intake?.sections?.physicalMeasurements?.fields?.weightPlaceholder || "e.g., 75"}
                       className="flex-1 rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                     />
                     <select
@@ -311,7 +306,7 @@ export default function IntakeForm({ content }) {
                   </div>
                 </label>
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Height *
+                  {content.intake?.sections?.physicalMeasurements?.fields?.height || "Height"} {content.intake?.required || "*"}
                   <div className="flex gap-2">
                     <input
                       type="number"
@@ -320,7 +315,7 @@ export default function IntakeForm({ content }) {
                       required
                       value={formData.height}
                       onChange={handleChange}
-                      placeholder="e.g., 170"
+                      placeholder={content.intake?.sections?.physicalMeasurements?.fields?.heightPlaceholder || "e.g., 170"}
                       className="flex-1 rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                     />
                     <select
@@ -337,19 +332,19 @@ export default function IntakeForm({ content }) {
               </div>
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Goal Weight (optional)
+                  {content.intake?.sections?.physicalMeasurements?.fields?.goalWeight || "Goal Weight (optional)"}
                   <input
                     type="number"
                     name="goalWeight"
                     step="0.1"
                     value={formData.goalWeight}
                     onChange={handleChange}
-                    placeholder="e.g., 65 kg or 143 lbs"
+                    placeholder={content.intake?.sections?.physicalMeasurements?.fields?.goalWeightPlaceholder || "e.g., 65 kg or 143 lbs"}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   />
                 </label>
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Body Type *
+                  {content.intake?.sections?.physicalMeasurements?.fields?.bodyType || "Body Type"} {content.intake?.required || "*"}
                   <select
                     name="bodyType"
                     required
@@ -357,24 +352,24 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="ectomorph">Ectomorph (naturally thin)</option>
-                    <option value="mesomorph">Mesomorph (athletic build)</option>
-                    <option value="endomorph">Endomorph (gains weight easily)</option>
-                    <option value="not-sure">Not sure</option>
+                    <option value="">{content.intake?.sections?.physicalMeasurements?.fields?.bodyTypeOptions?.[""] || "Select"}</option>
+                    <option value="ectomorph">{content.intake?.sections?.physicalMeasurements?.fields?.bodyTypeOptions?.ectomorph || "Ectomorph (naturally thin)"}</option>
+                    <option value="mesomorph">{content.intake?.sections?.physicalMeasurements?.fields?.bodyTypeOptions?.mesomorph || "Mesomorph (athletic build)"}</option>
+                    <option value="endomorph">{content.intake?.sections?.physicalMeasurements?.fields?.bodyTypeOptions?.endomorph || "Endomorph (gains weight easily)"}</option>
+                    <option value="not-sure">{content.intake?.sections?.physicalMeasurements?.fields?.bodyTypeOptions?.["not-sure"] || "Not sure"}</option>
                   </select>
                 </label>
               </div>
               <fieldset className="space-y-3">
                 <legend className="text-sm font-medium text-charcoal">
-                  Lean muscle mass (body scan data)
+                  {content.intake?.sections?.physicalMeasurements?.fields?.leanMuscleMass || "Lean muscle mass (body scan data)"}
                 </legend>
                 <div className="space-y-2">
                   {[
-                    { value: "under", label: "Under average" },
-                    { value: "normal", label: "Normal range" },
-                    { value: "over", label: "Above average" },
-                    { value: "no-scan", label: "I have not done body scan" }
+                    { value: "under", label: content.intake?.sections?.physicalMeasurements?.fields?.leanMuscleMassOptions?.under || "Under average" },
+                    { value: "normal", label: content.intake?.sections?.physicalMeasurements?.fields?.leanMuscleMassOptions?.normal || "Normal range" },
+                    { value: "over", label: content.intake?.sections?.physicalMeasurements?.fields?.leanMuscleMassOptions?.over || "Above average" },
+                    { value: "no-scan", label: content.intake?.sections?.physicalMeasurements?.fields?.leanMuscleMassOptions?.["no-scan"] || "I have not done body scan" }
                   ].map((option) => (
                     <label
                       key={option.value}
@@ -399,11 +394,11 @@ export default function IntakeForm({ content }) {
           {/* Section 3: Activity Level */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-darkgreen">
-              3. Activity Level
+              {content.intake?.sections?.activityLevel?.title || "3. Activity Level"}
             </h2>
             <div className="space-y-4">
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                What best describes your typical day? *
+                {content.intake?.sections?.activityLevel?.fields?.activityLevel || "What best describes your typical day?"} {content.intake?.required || "*"}
                 <select
                   name="activityLevel"
                   required
@@ -411,36 +406,35 @@ export default function IntakeForm({ content }) {
                   onChange={handleChange}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 >
-                  <option value="">Select</option>
+                  <option value="">{content.intake?.sections?.activityLevel?.fields?.activityOptions?.[""] || "Select"}</option>
                   <option value="sedentary">
-                    Sedentary (desk job, little exercise)
+                    {content.intake?.sections?.activityLevel?.fields?.activityOptions?.sedentary || "Sedentary (desk job, little exercise)"}
                   </option>
                   <option value="lightly-active">
-                    Lightly active (light exercise 1-3 days/week)
+                    {content.intake?.sections?.activityLevel?.fields?.activityOptions?.["lightly-active"] || "Lightly active (light exercise 1-3 days/week)"}
                   </option>
                   <option value="moderately-active">
-                    Moderately active (moderate exercise 3-5 days/week)
+                    {content.intake?.sections?.activityLevel?.fields?.activityOptions?.["moderately-active"] || "Moderately active (moderate exercise 3-5 days/week)"}
                   </option>
                   <option value="very-active">
-                    Very active (intense exercise 6-7 days/week)
+                    {content.intake?.sections?.activityLevel?.fields?.activityOptions?.["very-active"] || "Very active (intense exercise 6-7 days/week)"}
                   </option>
                   <option value="extremely-active">
-                    Extremely active (physical job + daily training)
+                    {content.intake?.sections?.activityLevel?.fields?.activityOptions?.["extremely-active"] || "Extremely active (physical job + daily training)"}
                   </option>
                 </select>
               </label>
               <div>
                 <p className="mb-2 text-sm font-medium text-charcoal">
-                  Current Exercise Routine * (select all that apply)
+                  {content.intake?.sections?.activityLevel?.fields?.exerciseRoutine || "Current Exercise Routine"} {content.intake?.required || "*"} ({content.intake?.sections?.activityLevel?.fields?.exerciseOptions && "select all that apply" || "select all that apply"})
                 </p>
                 <div className="space-y-2">
                   {[
-                    { value: "none", label: "No regular exercise" },
-                    { value: "walking", label: "Walking/light cardio" },
-                    { value: "strength", label: "Strength training" },
-                    { value: "hiit", label: "HIIT/Intense cardio" },
-                    { value: "yoga", label: "Yoga/Pilates" },
-                    { value: "sports", label: "Sports/recreational activities" }
+                    { value: "strength", label: content.intake?.sections?.activityLevel?.fields?.exerciseOptions?.strength || "Strength training / weight lifting" },
+                    { value: "cardio", label: content.intake?.sections?.activityLevel?.fields?.exerciseOptions?.cardio || "Cardio (running, cycling, swimming)" },
+                    { value: "yoga", label: content.intake?.sections?.activityLevel?.fields?.exerciseOptions?.yoga || "Yoga or Pilates" },
+                    { value: "walking", label: content.intake?.sections?.activityLevel?.fields?.exerciseOptions?.walking || "Walking or light movement" },
+                    { value: "sports", label: content.intake?.sections?.activityLevel?.fields?.exerciseOptions?.sports || "Sports/recreational activities" }
                   ].map((option) => (
                     <label
                       key={option.value}
@@ -460,7 +454,7 @@ export default function IntakeForm({ content }) {
                 </div>
               </div>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                How many days per week do you exercise? *
+                {content.intake?.sections?.activityLevel?.fields?.exerciseDays || "How many days per week do you exercise?"} {content.intake?.required || "*"}
                 <select
                   name="exerciseDays"
                   required
@@ -468,12 +462,15 @@ export default function IntakeForm({ content }) {
                   onChange={handleChange}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 >
-                  <option value="">Select</option>
-                  <option value="0">0 days</option>
-                  <option value="1-2">1-2 days</option>
-                  <option value="3-4">3-4 days</option>
-                  <option value="5-6">5-6 days</option>
-                  <option value="7">7 days</option>
+                  <option value="">{content.intake?.sections?.activityLevel?.fields?.exerciseDaysOptions?.[""] || "Select"}</option>
+                  <option value="0">{content.intake?.sections?.activityLevel?.fields?.exerciseDaysOptions?.["0"] || "0 days"}</option>
+                  <option value="1">{content.intake?.sections?.activityLevel?.fields?.exerciseDaysOptions?.["1"] || "1 day"}</option>
+                  <option value="2">{content.intake?.sections?.activityLevel?.fields?.exerciseDaysOptions?.["2"] || "2 days"}</option>
+                  <option value="3">{content.intake?.sections?.activityLevel?.fields?.exerciseDaysOptions?.["3"] || "3 days"}</option>
+                  <option value="4">{content.intake?.sections?.activityLevel?.fields?.exerciseDaysOptions?.["4"] || "4 days"}</option>
+                  <option value="5">{content.intake?.sections?.activityLevel?.fields?.exerciseDaysOptions?.["5"] || "5 days"}</option>
+                  <option value="6">{content.intake?.sections?.activityLevel?.fields?.exerciseDaysOptions?.["6"] || "6 days"}</option>
+                  <option value="7">{content.intake?.sections?.activityLevel?.fields?.exerciseDaysOptions?.["7"] || "7 days"}</option>
                 </select>
               </label>
             </div>
@@ -482,11 +479,11 @@ export default function IntakeForm({ content }) {
           {/* Section 4: Goals & Timeline */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-darkgreen">
-              4. Goals & Timeline
+              {content.intake?.sections?.goals?.title || "4. Goals"}
             </h2>
             <div className="space-y-4">
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Primary Goal *
+                {content.intake?.sections?.goals?.fields?.primaryGoal || "What's your primary goal?"} {content.intake?.required || "*"}
                 <select
                   name="primaryGoal"
                   required
@@ -494,28 +491,28 @@ export default function IntakeForm({ content }) {
                   onChange={handleChange}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 >
-                  <option value="">Select</option>
-                  <option value="lose-weight">Lose weight/fat</option>
-                  <option value="build-muscle">Build muscle</option>
-                  <option value="get-lean">Get lean/toned</option>
-                  <option value="maintain-weight">Maintain current weight</option>
-                  <option value="improve-energy">Improve energy and health</option>
-                  <option value="learn-habits">Learn sustainable eating habits</option>
+                  <option value="">{content.intake?.sections?.goals?.fields?.primaryGoalOptions?.[""] || "Select"}</option>
+                  <option value="lose-fat">{content.intake?.sections?.goals?.fields?.primaryGoalOptions?.["lose-fat"] || "Lose fat/weight"}</option>
+                  <option value="build-muscle">{content.intake?.sections?.goals?.fields?.primaryGoalOptions?.["build-muscle"] || "Build muscle"}</option>
+                  <option value="maintain-weight">{content.intake?.sections?.goals?.fields?.primaryGoalOptions?.["maintain-weight"] || "Maintain current weight"}</option>
+                  <option value="improve-health">{content.intake?.sections?.goals?.fields?.primaryGoalOptions?.["improve-health"] || "Improve overall health"}</option>
+                  <option value="increase-energy">{content.intake?.sections?.goals?.fields?.primaryGoalOptions?.["increase-energy"] || "Increase energy levels"}</option>
+                  <option value="learn-cooking">{content.intake?.sections?.goals?.fields?.primaryGoalOptions?.["learn-cooking"] || "Learn healthy cooking habits"}</option>
                 </select>
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                If weight loss, how much do you want to lose? (optional)
+                {content.intake?.sections?.goals?.fields?.weightToLose || "How much weight do you want to lose? (optional)"}
                 <input
                   type="text"
                   name="weightToLose"
                   value={formData.weightToLose}
                   onChange={handleChange}
-                  placeholder="e.g., 10 kg or 22 lbs"
+                  placeholder={content.intake?.sections?.goals?.fields?.weightToLosePlaceholder || "e.g., 5-10 kg or 10-20 lbs"}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Timeline *
+                {content.intake?.sections?.goals?.fields?.timeline || "What's your realistic timeline for reaching your goal?"} {content.intake?.required || "*"}
                 <select
                   name="timeline"
                   required
@@ -523,24 +520,23 @@ export default function IntakeForm({ content }) {
                   onChange={handleChange}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 >
-                  <option value="">Select</option>
-                  <option value="no-rush">No rush, sustainable approach</option>
-                  <option value="2-3-months">2-3 months</option>
-                  <option value="4-6-months">4-6 months</option>
-                  <option value="6-12-months">6-12 months</option>
-                  <option value="1-year-plus">1+ year commitment</option>
+                  <option value="">{content.intake?.sections?.goals?.fields?.timelineOptions?.[""] || "Select"}</option>
+                  <option value="1-3-months">{content.intake?.sections?.goals?.fields?.timelineOptions?.["1-3-months"] || "1-3 months"}</option>
+                  <option value="3-6-months">{content.intake?.sections?.goals?.fields?.timelineOptions?.["3-6-months"] || "3-6 months"}</option>
+                  <option value="6-12-months">{content.intake?.sections?.goals?.fields?.timelineOptions?.["6-12-months"] || "6-12 months"}</option>
+                  <option value="1-year-plus">{content.intake?.sections?.goals?.fields?.timelineOptions?.["1-year-plus"] || "More than 1 year"}</option>
+                  <option value="no-rush">{content.intake?.sections?.goals?.fields?.timelineOptions?.["no-rush"] || "No specific timeline"}</option>
                 </select>
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Have you tried to reach this goal before? *
+                {content.intake?.sections?.goals?.fields?.triedBefore || "Have you tried losing weight/getting fit before? What happened?"}
                 <select
                   name="triedBefore"
-                  required
                   value={formData.triedBefore}
                   onChange={handleChange}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 >
-                  <option value="">Select</option>
+                  <option value="">{content.intake?.sections?.goals?.fields?.primaryGoalOptions?.[""] || "Select"}</option>
                   <option value="multiple">Yes, multiple times</option>
                   <option value="once-twice">Yes, once or twice</option>
                   <option value="no">No, this is my first time</option>
@@ -552,23 +548,24 @@ export default function IntakeForm({ content }) {
           {/* Section 5: Eating Habits */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-darkgreen">
-              5. Eating Habits & Preferences
+              {content.intake?.sections?.eatingHabits?.title || "5. Eating Habits & Preferences"}
             </h2>
             <div className="space-y-4">
               <div>
                 <p className="mb-2 text-sm font-medium text-charcoal">
-                  Dietary Preference * (select all that apply)
+                  {content.intake?.sections?.eatingHabits?.fields?.dietaryPreference || "Do you follow any specific diet or have dietary restrictions?"} {content.intake?.required || "*"} ({content.intake?.sections?.eatingHabits?.fields?.dietaryOptions && "select all that apply" || "select all that apply"})
                 </p>
                 <div className="space-y-2">
                   {[
-                    { value: "no-restrictions", label: "No restrictions" },
-                    { value: "vegetarian", label: "Vegetarian" },
-                    { value: "vegan", label: "Vegan" },
-                    { value: "pescatarian", label: "Pescatarian" },
-                    { value: "reduce-meat", label: "Reduce meat consumption" },
-                    { value: "low-carb", label: "Low carb" },
-                    { value: "gluten-free", label: "Gluten-free" },
-                    { value: "dairy-free", label: "Dairy-free" }
+                    { value: "omnivore", label: content.intake?.sections?.eatingHabits?.fields?.dietaryOptions?.omnivore || "Omnivore (eat everything)" },
+                    { value: "vegetarian", label: content.intake?.sections?.eatingHabits?.fields?.dietaryOptions?.vegetarian || "Vegetarian (no meat)" },
+                    { value: "vegan", label: content.intake?.sections?.eatingHabits?.fields?.dietaryOptions?.vegan || "Vegan (no animal products)" },
+                    { value: "pescatarian", label: content.intake?.sections?.eatingHabits?.fields?.dietaryOptions?.pescatarian || "Pescatarian (fish but no meat)" },
+                    { value: "keto", label: content.intake?.sections?.eatingHabits?.fields?.dietaryOptions?.keto || "Keto/Low-carb" },
+                    { value: "paleo", label: content.intake?.sections?.eatingHabits?.fields?.dietaryOptions?.paleo || "Paleo" },
+                    { value: "mediterranean", label: content.intake?.sections?.eatingHabits?.fields?.dietaryOptions?.mediterranean || "Mediterranean" },
+                    { value: "intermittent-fasting", label: content.intake?.sections?.eatingHabits?.fields?.dietaryOptions?.["intermittent-fasting"] || "Intermittent fasting" },
+                    { value: "other", label: content.intake?.sections?.eatingHabits?.fields?.dietaryOptions?.other || "Other dietary restrictions" }
                   ].map((option) => (
                     <label
                       key={option.value}
@@ -588,18 +585,18 @@ export default function IntakeForm({ content }) {
                 </div>
               </div>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Food Allergies or Intolerances (optional)
+                {content.intake?.sections?.eatingHabits?.fields?.allergies || "Food allergies or intolerances (optional)"}
                 <input
                   type="text"
                   name="allergies"
                   value={formData.allergies}
                   onChange={handleChange}
-                  placeholder="e.g., nuts, shellfish, lactose"
+                  placeholder={content.intake?.sections?.eatingHabits?.fields?.allergiesPlaceholder || "e.g., gluten, dairy, nuts"}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Foods you dislike or won&apos;t eat (optional)
+                {content.intake?.sections?.eatingHabits?.fields?.dislikedFoods || "Foods you dislike or won't eat (optional)"}
                 <input
                   type="text"
                   name="dislikedFoods"
@@ -611,7 +608,7 @@ export default function IntakeForm({ content }) {
               </label>
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Meals per day *
+                  {content.intake?.sections?.eatingHabits?.fields?.mealsPerDay || "How many meals do you typically eat per day?"} {content.intake?.required || "*"}
                   <select
                     name="mealsPerDay"
                     required
@@ -619,15 +616,17 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="1-2">1-2 meals</option>
-                    <option value="3">3 meals</option>
-                    <option value="4-5">4-5 meals</option>
-                    <option value="grazing">Constant grazing/snacking</option>
+                    <option value="">{content.intake?.sections?.eatingHabits?.fields?.mealsOptions?.[""] || "Select"}</option>
+                    <option value="1">{content.intake?.sections?.eatingHabits?.fields?.mealsOptions?.["1"] || "1 meal"}</option>
+                    <option value="2">{content.intake?.sections?.eatingHabits?.fields?.mealsOptions?.["2"] || "2 meals"}</option>
+                    <option value="3">{content.intake?.sections?.eatingHabits?.fields?.mealsOptions?.["3"] || "3 meals"}</option>
+                    <option value="4">{content.intake?.sections?.eatingHabits?.fields?.mealsOptions?.["4"] || "4 meals"}</option>
+                    <option value="5">{content.intake?.sections?.eatingHabits?.fields?.mealsOptions?.["5"] || "5+ meals"}</option>
+                    <option value="varies">{content.intake?.sections?.eatingHabits?.fields?.mealsOptions?.varies || "It varies"}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Do you meal prep? *
+                  {content.intake?.sections?.eatingHabits?.fields?.mealPrep || "Do you meal prep or prefer cooking fresh daily?"} {content.intake?.required || "*"}
                   <select
                     name="mealPrep"
                     required
@@ -635,18 +634,18 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="regularly">Yes, regularly</option>
-                    <option value="sometimes">Sometimes</option>
-                    <option value="rarely">Rarely</option>
-                    <option value="never">Never</option>
-                    <option value="want-to-learn">Want to learn</option>
+                    <option value="">{content.intake?.sections?.eatingHabits?.fields?.mealPrepOptions?.[""] || "Select"}</option>
+                    <option value="meal-prep">{content.intake?.sections?.eatingHabits?.fields?.mealPrepOptions?.["meal-prep"] || "I meal prep for the week"}</option>
+                    <option value="daily-cooking">{content.intake?.sections?.eatingHabits?.fields?.mealPrepOptions?.["daily-cooking"] || "I cook fresh meals daily"}</option>
+                    <option value="mix">{content.intake?.sections?.eatingHabits?.fields?.mealPrepOptions?.mix || "Mix of both"}</option>
+                    <option value="minimal-cooking">{content.intake?.sections?.eatingHabits?.fields?.mealPrepOptions?.["minimal-cooking"] || "I do minimal cooking"}</option>
+                    <option value="takeout-mostly">{content.intake?.sections?.eatingHabits?.fields?.mealPrepOptions?.["takeout-mostly"] || "I rely mostly on takeout/prepared foods"}</option>
                   </select>
                 </label>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Cooking time available per day *
+                  {content.intake?.sections?.eatingHabits?.fields?.cookingTime || "How much time can you realistically spend cooking per day?"} {content.intake?.required || "*"}
                   <select
                     name="cookingTime"
                     required
@@ -654,16 +653,16 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="less-15">Less than 15 minutes</option>
-                    <option value="15-30">15-30 minutes</option>
-                    <option value="30-60">30-60 minutes</option>
-                    <option value="1-plus">1+ hours</option>
-                    <option value="varies">Varies day to day</option>
+                    <option value="">{content.intake?.sections?.eatingHabits?.fields?.cookingTimeOptions?.[""] || "Select"}</option>
+                    <option value="15-min">{content.intake?.sections?.eatingHabits?.fields?.cookingTimeOptions?.["15-min"] || "15 minutes or less"}</option>
+                    <option value="15-30-min">{content.intake?.sections?.eatingHabits?.fields?.cookingTimeOptions?.["15-30-min"] || "15-30 minutes"}</option>
+                    <option value="30-60-min">{content.intake?.sections?.eatingHabits?.fields?.cookingTimeOptions?.["30-60-min"] || "30-60 minutes"}</option>
+                    <option value="60-plus-min">{content.intake?.sections?.eatingHabits?.fields?.cookingTimeOptions?.["60-plus-min"] || "More than 1 hour"}</option>
+                    <option value="varies">{content.intake?.sections?.eatingHabits?.fields?.cookingTimeOptions?.varies || "It varies by day"}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  How often do you eat out? *
+                  {content.intake?.sections?.eatingHabits?.fields?.eatingOut || "How often do you eat out or order takeout?"} {content.intake?.required || "*"}
                   <select
                     name="eatingOut"
                     required
@@ -671,11 +670,13 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="rarely">Rarely (0-1/week)</option>
-                    <option value="sometimes">Sometimes (2-3/week)</option>
-                    <option value="often">Often (4-5/week)</option>
-                    <option value="very-often">Very often (6+/week)</option>
+                    <option value="">{content.intake?.sections?.eatingHabits?.fields?.eatingOutOptions?.[""] || "Select"}</option>
+                    <option value="daily">{content.intake?.sections?.eatingHabits?.fields?.eatingOutOptions?.daily || "Daily"}</option>
+                    <option value="few-times-week">{content.intake?.sections?.eatingHabits?.fields?.eatingOutOptions?.["few-times-week"] || "A few times a week"}</option>
+                    <option value="once-week">{content.intake?.sections?.eatingHabits?.fields?.eatingOutOptions?.["once-week"] || "Once a week"}</option>
+                    <option value="few-times-month">{content.intake?.sections?.eatingHabits?.fields?.eatingOutOptions?.["few-times-month"] || "A few times a month"}</option>
+                    <option value="rarely">{content.intake?.sections?.eatingHabits?.fields?.eatingOutOptions?.rarely || "Rarely"}</option>
+                    <option value="never">{content.intake?.sections?.eatingHabits?.fields?.eatingOutOptions?.never || "Never"}</option>
                   </select>
                 </label>
               </div>
@@ -685,24 +686,25 @@ export default function IntakeForm({ content }) {
           {/* Section 6: Challenges */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-darkgreen">
-              6. Current Challenges
+              {content.intake?.sections?.challenges?.title || "6. Challenges & Habits"}
             </h2>
             <div className="space-y-4">
               <div>
                 <p className="mb-2 text-sm font-medium text-charcoal">
-                  Biggest struggles * (select all that apply)
+                  {content.intake?.sections?.challenges?.fields?.biggestStruggle || "What's your biggest struggle with eating healthy?"} {content.intake?.required || "*"} ({content.intake?.sections?.challenges?.fields?.challengeOptions && "select all that apply" || "select all that apply"})
                 </p>
                 <div className="space-y-2">
                   {[
-                    { value: "time-to-cook", label: "Finding time to cook" },
-                    { value: "meal-planning", label: "Planning meals and groceries" },
-                    { value: "consistency", label: "Staying consistent" },
-                    { value: "cravings", label: "Cravings and overeating" },
-                    { value: "boring-food", label: "Eating boring/bland food" },
-                    { value: "tracking", label: "Tracking calories/macros" },
-                    { value: "eating-out", label: "Eating out/social situations" },
-                    { value: "emotional-eating", label: "Emotional eating" },
-                    { value: "energy-crashes", label: "Energy crashes" }
+                    { value: "time", label: content.intake?.sections?.challenges?.fields?.challengeOptions?.time || "Not enough time to cook" },
+                    { value: "planning", label: content.intake?.sections?.challenges?.fields?.challengeOptions?.planning || "Poor planning/meal prep" },
+                    { value: "cravings", label: content.intake?.sections?.challenges?.fields?.challengeOptions?.cravings || "Cravings for unhealthy foods" },
+                    { value: "emotional-eating", label: content.intake?.sections?.challenges?.fields?.challengeOptions?.["emotional-eating"] || "Emotional eating" },
+                    { value: "portion-control", label: content.intake?.sections?.challenges?.fields?.challengeOptions?.["portion-control"] || "Portion control" },
+                    { value: "knowledge", label: content.intake?.sections?.challenges?.fields?.challengeOptions?.knowledge || "Lack of nutrition knowledge" },
+                    { value: "motivation", label: content.intake?.sections?.challenges?.fields?.challengeOptions?.motivation || "Lack of motivation/consistency" },
+                    { value: "budget", label: content.intake?.sections?.challenges?.fields?.challengeOptions?.budget || "Budget constraints" },
+                    { value: "family", label: content.intake?.sections?.challenges?.fields?.challengeOptions?.family || "Family/household preferences" },
+                    { value: "eating-out", label: content.intake?.sections?.challenges?.fields?.challengeOptions?.["eating-out"] || "Social eating/dining out" }
                   ].map((option) => (
                     <label
                       key={option.value}
@@ -722,7 +724,7 @@ export default function IntakeForm({ content }) {
                 </div>
               </div>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Have you tracked calories or macros before? *
+                {content.intake?.sections?.challenges?.fields?.trackedBefore || "Have you tracked your food/calories before?"} {content.intake?.required || "*"}
                 <select
                   name="trackedBefore"
                   required
@@ -730,22 +732,22 @@ export default function IntakeForm({ content }) {
                   onChange={handleChange}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 >
-                  <option value="">Select</option>
-                  <option value="currently">Yes, currently tracking</option>
-                  <option value="stopped">Yes, but stopped</option>
-                  <option value="briefly">Tried briefly</option>
-                  <option value="never">Never tried</option>
-                  <option value="no-idea">No idea what macros are</option>
+                  <option value="">{content.intake?.sections?.challenges?.fields?.trackedBeforeOptions?.[""] || "Select"}</option>
+                  <option value="never">{content.intake?.sections?.challenges?.fields?.trackedBeforeOptions?.never || "Never tracked before"}</option>
+                  <option value="tried-gave-up">{content.intake?.sections?.challenges?.fields?.trackedBeforeOptions?.["tried-gave-up"] || "Tried but gave up"}</option>
+                  <option value="on-off">{content.intake?.sections?.challenges?.fields?.trackedBeforeOptions?.["on-off"] || "On and off tracking"}</option>
+                  <option value="regularly">{content.intake?.sections?.challenges?.fields?.trackedBeforeOptions?.regularly || "Yes, I track regularly"}</option>
+                  <option value="used-to">{content.intake?.sections?.challenges?.fields?.trackedBeforeOptions?.["used-to"] || "Used to track consistently"}</option>
                 </select>
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                If yes, what tracking app did you use? (optional)
+                {content.intake?.sections?.challenges?.fields?.trackingApp || "If you've tracked before, which app did you use? (optional)"}
                 <input
                   type="text"
                   name="trackingApp"
                   value={formData.trackingApp}
                   onChange={handleChange}
-                  placeholder="e.g., MyFitnessPal, Cronometer"
+                  placeholder={content.intake?.sections?.challenges?.fields?.trackingAppPlaceholder || "e.g., MyFitnessPal, Cronometer, Lose It"}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 />
               </label>
@@ -755,12 +757,12 @@ export default function IntakeForm({ content }) {
           {/* Section 7: Lifestyle */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-darkgreen">
-              7. Lifestyle Factors
+              {content.intake?.sections?.lifestyle?.title || "7. Lifestyle & Context"}
             </h2>
             <div className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Sleep Quality *
+                  {content.intake?.sections?.lifestyle?.fields?.sleepQuality || "How would you rate your sleep quality?"} {content.intake?.required || "*"}
                   <select
                     name="sleepQuality"
                     required
@@ -768,15 +770,16 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="good">Good (7-9 hours, restful)</option>
-                    <option value="fair">Fair (6-7 hours, sometimes restless)</option>
-                    <option value="poor">Poor (less than 6 hours or restless)</option>
-                    <option value="irregular">Irregular schedule</option>
+                    <option value="">{content.intake?.sections?.lifestyle?.fields?.sleepOptions?.[""] || "Select"}</option>
+                    <option value="excellent">{content.intake?.sections?.lifestyle?.fields?.sleepOptions?.excellent || "Excellent (7-9 hrs, wake refreshed)"}</option>
+                    <option value="good">{content.intake?.sections?.lifestyle?.fields?.sleepOptions?.good || "Good (decent sleep most nights)"}</option>
+                    <option value="fair">{content.intake?.sections?.lifestyle?.fields?.sleepOptions?.fair || "Fair (some good nights, some bad)"}</option>
+                    <option value="poor">{content.intake?.sections?.lifestyle?.fields?.sleepOptions?.poor || "Poor (often tired/unrested)"}</option>
+                    <option value="very-poor">{content.intake?.sections?.lifestyle?.fields?.sleepOptions?.["very-poor"] || "Very poor (chronic sleep issues)"}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Stress Level *
+                  {content.intake?.sections?.lifestyle?.fields?.stressLevel || "What's your typical stress level?"} {content.intake?.required || "*"}
                   <select
                     name="stressLevel"
                     required
@@ -784,17 +787,18 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="low">Low</option>
-                    <option value="moderate">Moderate</option>
-                    <option value="high">High</option>
-                    <option value="very-high">Very high/chronic</option>
+                    <option value="">{content.intake?.sections?.lifestyle?.fields?.stressOptions?.[""] || "Select"}</option>
+                    <option value="very-low">{content.intake?.sections?.lifestyle?.fields?.stressOptions?.["very-low"] || "Very low"}</option>
+                    <option value="low">{content.intake?.sections?.lifestyle?.fields?.stressOptions?.low || "Low"}</option>
+                    <option value="moderate">{content.intake?.sections?.lifestyle?.fields?.stressOptions?.moderate || "Moderate"}</option>
+                    <option value="high">{content.intake?.sections?.lifestyle?.fields?.stressOptions?.high || "High"}</option>
+                    <option value="very-high">{content.intake?.sections?.lifestyle?.fields?.stressOptions?.["very-high"] || "Very high"}</option>
                   </select>
                 </label>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Schedule Type *
+                  {content.intake?.sections?.lifestyle?.fields?.scheduleType || "Which best describes your daily schedule?"} {content.intake?.required || "*"}
                   <select
                     name="scheduleType"
                     required
@@ -802,14 +806,16 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="consistent">Consistent schedule</option>
-                    <option value="sometimes">Sometimes unpredictable</option>
-                    <option value="very-busy">Very busy and irregular</option>
+                    <option value="">{content.intake?.sections?.lifestyle?.fields?.scheduleOptions?.[""] || "Select"}</option>
+                    <option value="consistent">{content.intake?.sections?.lifestyle?.fields?.scheduleOptions?.consistent || "Consistent routine (same schedule daily)"}</option>
+                    <option value="somewhat-consistent">{content.intake?.sections?.lifestyle?.fields?.scheduleOptions?.["somewhat-consistent"] || "Somewhat consistent (mostly predictable)"}</option>
+                    <option value="variable">{content.intake?.sections?.lifestyle?.fields?.scheduleOptions?.variable || "Variable (changes week to week)"}</option>
+                    <option value="unpredictable">{content.intake?.sections?.lifestyle?.fields?.scheduleOptions?.unpredictable || "Unpredictable (shift work, travel, etc.)"}</option>
+                    <option value="chaotic">{content.intake?.sections?.lifestyle?.fields?.scheduleOptions?.chaotic || "Chaotic (no real routine)"}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Do you cook for others? *
+                  {content.intake?.sections?.lifestyle?.fields?.cookForOthers || "Are you cooking for other people? (family, roommates, etc.)"} {content.intake?.required || "*"}
                   <select
                     name="cookForOthers"
                     required
@@ -817,11 +823,12 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="myself">No, just for myself</option>
-                    <option value="partner">Yes, for a partner</option>
-                    <option value="family">Yes, for family/children</option>
-                    <option value="large">Yes, for a large household</option>
+                    <option value="">{content.intake?.sections?.lifestyle?.fields?.cookForOthersOptions?.[""] || "Select"}</option>
+                    <option value="just-me">{content.intake?.sections?.lifestyle?.fields?.cookForOthersOptions?.["just-me"] || "Just for myself"}</option>
+                    <option value="partner">{content.intake?.sections?.lifestyle?.fields?.cookForOthersOptions?.partner || "Partner/spouse"}</option>
+                    <option value="family-kids">{content.intake?.sections?.lifestyle?.fields?.cookForOthersOptions?.["family-kids"] || "Family with children"}</option>
+                    <option value="roommates">{content.intake?.sections?.lifestyle?.fields?.cookForOthersOptions?.roommates || "Roommates"}</option>
+                    <option value="varies">{content.intake?.sections?.lifestyle?.fields?.cookForOthersOptions?.varies || "It varies"}</option>
                   </select>
                 </label>
               </div>
@@ -831,34 +838,34 @@ export default function IntakeForm({ content }) {
           {/* Section 8: Health & Medical */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-darkgreen">
-              8. Health & Medical
+              {content.intake?.sections?.health?.title || "8. Health & Medical"}
             </h2>
             <div className="space-y-4">
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Any medical conditions? (optional)
+                {content.intake?.sections?.health?.fields?.medicalConditions || "Any medical conditions? (optional)"}
                 <input
                   type="text"
                   name="medicalConditions"
                   value={formData.medicalConditions}
                   onChange={handleChange}
-                  placeholder="e.g., PCOS, thyroid issues, diabetes"
+                  placeholder={content.intake?.sections?.health?.placeholders?.medicalConditions || "e.g., PCOS, thyroid issues, diabetes"}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Current medications? (optional)
+                {content.intake?.sections?.health?.fields?.medications || "Current medications? (optional)"}
                 <input
                   type="text"
                   name="medications"
                   value={formData.medications}
                   onChange={handleChange}
-                  placeholder="List any relevant medications"
+                  placeholder={content.intake?.sections?.health?.placeholders?.medications || "List any relevant medications"}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 />
               </label>
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Pregnancy Status *
+                  {content.intake?.sections?.health?.fields?.pregnancyStatus || "Pregnancy Status *"}
                   <select
                     name="pregnancyStatus"
                     required
@@ -866,15 +873,15 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="no">No</option>
-                    <option value="pregnant">Pregnant</option>
-                    <option value="breastfeeding">Breastfeeding</option>
-                    <option value="planning">Planning pregnancy</option>
+                    <option value="">{content.intake?.common?.select || "Select"}</option>
+                    <option value="no">{content.intake?.sections?.health?.options?.pregnancyStatus?.no || "No"}</option>
+                    <option value="pregnant">{content.intake?.sections?.health?.options?.pregnancyStatus?.pregnant || "Pregnant"}</option>
+                    <option value="breastfeeding">{content.intake?.sections?.health?.options?.pregnancyStatus?.breastfeeding || "Breastfeeding"}</option>
+                    <option value="planning">{content.intake?.sections?.health?.options?.pregnancyStatus?.planning || "Planning pregnancy"}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                  Doctor cleared for diet changes? *
+                  {content.intake?.sections?.health?.fields?.doctorCleared || "Doctor cleared for diet changes? *"}
                   <select
                     name="doctorCleared"
                     required
@@ -882,10 +889,10 @@ export default function IntakeForm({ content }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   >
-                    <option value="">Select</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="not-applicable">Not applicable/no issues</option>
+                    <option value="">{content.intake?.common?.select || "Select"}</option>
+                    <option value="yes">{content.intake?.common?.yes || "Yes"}</option>
+                    <option value="no">{content.intake?.common?.no || "No"}</option>
+                    <option value="not-applicable">{content.intake?.sections?.health?.options?.doctorCleared?.notApplicable || "Not applicable/no issues"}</option>
                   </select>
                 </label>
               </div>
@@ -895,46 +902,46 @@ export default function IntakeForm({ content }) {
           {/* Section 9: Motivation */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-darkgreen">
-              9. Motivation & Support
+              {content.intake?.sections?.motivation?.title || "9. Motivation & Support"}
             </h2>
             <div className="space-y-4">
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Why is reaching this goal important to you right now? *
+                {content.intake?.sections?.motivation?.fields?.whyImportant || "Why is reaching this goal important to you right now? *"}
                 <textarea
                   name="whyImportant"
                   rows={4}
                   required
                   value={formData.whyImportant}
                   onChange={handleChange}
-                  placeholder="Share what&apos;s driving you to make this change"
+                  placeholder={content.intake?.sections?.motivation?.placeholders?.whyImportant || "Share what's driving you to make this change"}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                What would success look like in 2-3 months? *
+                {content.intake?.sections?.motivation?.fields?.successLooks || "What would success look like in 2-3 months? *"}
                 <textarea
                   name="successLooks"
                   rows={4}
                   required
                   value={formData.successLooks}
                   onChange={handleChange}
-                  placeholder="Describe how you'd like to feel and what you'd like to achieve"
+                  placeholder={content.intake?.sections?.motivation?.placeholders?.successLooks || "Describe how you'd like to feel and what you'd like to achieve"}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 />
               </label>
               <div>
                 <p className="mb-2 text-sm font-medium text-charcoal">
-                  Support needed * (select all that apply)
+                  {content.intake?.sections?.motivation?.fields?.supportNeeded || "Support needed * (select all that apply)"}
                 </p>
                 <div className="space-y-2">
                   {[
-                    { value: "accountability", label: "Accountability" },
-                    { value: "motivation", label: "Motivation" },
-                    { value: "education", label: "Education about nutrition" },
-                    { value: "meal-planning", label: "Meal planning guidance" },
-                    { value: "recipes", label: "Recipe ideas" },
-                    { value: "community", label: "Community support" },
-                    { value: "1-on-1", label: "1:1 guidance" }
+                    { value: "accountability", label: content.intake?.sections?.motivation?.options?.supportNeeded?.accountability || "Accountability" },
+                    { value: "motivation", label: content.intake?.sections?.motivation?.options?.supportNeeded?.motivation || "Motivation" },
+                    { value: "education", label: content.intake?.sections?.motivation?.options?.supportNeeded?.education || "Education about nutrition" },
+                    { value: "meal-planning", label: content.intake?.sections?.motivation?.options?.supportNeeded?.mealPlanning || "Meal planning guidance" },
+                    { value: "recipes", label: content.intake?.sections?.motivation?.options?.supportNeeded?.recipes || "Recipe ideas" },
+                    { value: "community", label: content.intake?.sections?.motivation?.options?.supportNeeded?.community || "Community support" },
+                    { value: "1-on-1", label: content.intake?.sections?.motivation?.options?.supportNeeded?.oneOnOne || "1:1 guidance" }
                   ].map((option) => (
                     <label
                       key={option.value}
@@ -954,21 +961,21 @@ export default function IntakeForm({ content }) {
                 </div>
               </div>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                How did you hear about us? (optional)
+                {content.intake?.sections?.motivation?.fields?.hearAbout || "How did you hear about us? (optional)"}
                 <select
                   name="hearAbout"
                   value={formData.hearAbout}
                   onChange={handleChange}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 >
-                  <option value="">Select</option>
-                  <option value="instagram">Instagram</option>
-                  <option value="referral">Friend/family referral</option>
-                  <option value="google">Google search</option>
-                  <option value="facebook">Facebook</option>
-                  <option value="tiktok">TikTok</option>
-                  <option value="other-social">Other social media</option>
-                  <option value="other">Other</option>
+                  <option value="">{content.intake?.common?.select || "Select"}</option>
+                  <option value="instagram">{content.intake?.sections?.motivation?.options?.hearAbout?.instagram || "Instagram"}</option>
+                  <option value="referral">{content.intake?.sections?.motivation?.options?.hearAbout?.referral || "Friend/family referral"}</option>
+                  <option value="google">{content.intake?.sections?.motivation?.options?.hearAbout?.google || "Google search"}</option>
+                  <option value="facebook">{content.intake?.sections?.motivation?.options?.hearAbout?.facebook || "Facebook"}</option>
+                  <option value="tiktok">{content.intake?.sections?.motivation?.options?.hearAbout?.tiktok || "TikTok"}</option>
+                  <option value="other-social">{content.intake?.sections?.motivation?.options?.hearAbout?.otherSocial || "Other social media"}</option>
+                  <option value="other">{content.intake?.sections?.motivation?.options?.hearAbout?.other || "Other"}</option>
                 </select>
               </label>
             </div>
@@ -977,11 +984,11 @@ export default function IntakeForm({ content }) {
           {/* Section 10: Commitment */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-darkgreen">
-              10. Commitment
+              {content.intake?.sections?.commitment?.title || "10. Commitment"}
             </h2>
             <div className="space-y-4">
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                Ready to commit for at least 2 months? *
+                {content.intake?.sections?.commitment?.fields?.readyToCommit || "Ready to commit for at least 2 months? *"}
                 <select
                   name="readyToCommit"
                   required
@@ -989,21 +996,21 @@ export default function IntakeForm({ content }) {
                   onChange={handleChange}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 >
-                  <option value="">Select</option>
-                  <option value="yes-absolutely">Yes, absolutely</option>
-                  <option value="yes-concerns">Yes, but I have concerns</option>
-                  <option value="not-sure">Not sure yet</option>
-                  <option value="no">No</option>
+                  <option value="">{content.intake?.common?.select || "Select"}</option>
+                  <option value="yes-absolutely">{content.intake?.sections?.commitment?.options?.readyToCommit?.yesAbsolutely || "Yes, absolutely"}</option>
+                  <option value="yes-concerns">{content.intake?.sections?.commitment?.options?.readyToCommit?.yesConcerns || "Yes, but I have concerns"}</option>
+                  <option value="not-sure">{content.intake?.sections?.commitment?.options?.readyToCommit?.notSure || "Not sure yet"}</option>
+                  <option value="no">{content.intake?.common?.no || "No"}</option>
                 </select>
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
-                If you have concerns, what are they? (optional)
+                {content.intake?.sections?.commitment?.fields?.concerns || "If you have concerns, what are they? (optional)"}
                 <textarea
                   name="concerns"
                   rows={3}
                   value={formData.concerns}
                   onChange={handleChange}
-                  placeholder="Share any worries or questions"
+                  placeholder={content.intake?.sections?.commitment?.placeholders?.concerns || "Share any worries or questions"}
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 />
               </label>
@@ -1011,7 +1018,7 @@ export default function IntakeForm({ content }) {
           </section>
 
           {status === "error" && (
-            <p className="text-sm text-coral">{error}</p>
+            <p className="text-sm text-coral">{content.intake?.messages?.error || error}</p>
           )}
 
           <button
@@ -1019,7 +1026,7 @@ export default function IntakeForm({ content }) {
             disabled={status === "loading"}
             className="w-full rounded-full bg-darkgreen px-8 py-4 text-base font-semibold text-white shadow-soft transition hover:bg-coral disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {status === "loading" ? "Submitting..." : "Submit Intake Form"}
+            {status === "loading" ? (content.intake?.messages?.submitting || "Submitting...") : (content.intake?.messages?.submitButton || "Submit Intake Form")}
           </button>
         </form>
       </div>

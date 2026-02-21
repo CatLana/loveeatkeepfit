@@ -13,7 +13,7 @@
     "heading": "Se ti riconosci in qualcosa di questo…",
     "short": "Non è questione di forza di volontà. È l'attrito quotidiano con il cibo.",
     "problemHeading": "Il vero problema",
-    "problemText": "La maggior parte dei piani è pensata per giornate perfette. La vita reale è piena e le scelte alimentari avvengono sotto stress.",
+    "problemText": "La maggior parte dei piani è pensata per giornate perfette. La vita reale è caotica e le scelte alimentari avvengono sotto stress.",
     "painHeading": "Ti riconosci in questi punti?",
     "painPoints": [
       {
@@ -50,19 +50,19 @@
       }
     ],
     "empathyHeading": "Non sei sola/o",
-    "empathyText": "Se sì, non sei sola/o. Forse ti serve più motivazione o accountability, ma non è questo il vero problema.",
+    "empathyText": "Se sì, non sei sola/o. Forse ti serve più motivazione o responsabilizzazione, ma non è questo il vero problema.",
     "consequenceHeading": "Cosa succede",
     "consequenceText": "Inizi, ti fermi e ricominci — non perché hai fallito, ma perché il sistema non si adatta alla tua vita.",
     "solutionHeading": "Un sistema che si adatta alla vita reale",
     "solution": "Per questo ho creato un coaching che rende l'alimentazione sana semplice, la spesa veloce e le routine sostenibili nel lungo periodo.",
     "bridgeHeading": "Cosa cambia con un sistema",
-    "bridge": "Più costanza, meno craving e una routine che puoi mantenere.",
+    "bridge": "Più coerenza, meno voglie improvvise e una routine che puoi davvero mantenere.",
     "ctaLabel": "Scopri come funziona il coaching",
     "ctaHref": "#coaching"
   },
   "approach": {
     "heading": "Il mio approccio",
-    "intro": "Se queste difficolta ti suonano familiari, il mio approccio punta su semplicita, gusto e costanza per restare in linea senza stress.",
+    "intro": "Se queste difficoltà ti suonano familiari, il mio approccio punta su semplicità, gusto e coerenza per restare in linea senza stress.",
     "points": [
       {
         "title": "Semplificare il sistema",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Renderlo sostenibile",
-        "description": "Supporto, accountability e abitudini che funzionano nel lungo periodo, anche quando la vita e piena."
+        "description": "Supporto, responsabilizzazione e abitudini che funzionano nel lungo periodo, anche quando la vita è frenetica."
       }
     ]
   },
@@ -83,15 +83,15 @@
         "Compili un modulo riservato con preferenze alimentari, stile di vita, obiettivi, difficoltà e misure. È confidenziale e lo leggo solo io.",
         "Calcolo i tuoi macro e le calorie e te li invio.",
         "Entri nel gruppo dove pubblico guide e consigli settimanali per trasformare la tua routine alimentare.",
-        "Hai accesso in anteprima ai video e agli esercizi, e confermi i compiti con feedback veloci.",
+        "Hai accesso in anteprima ai video e agli esercizi, e confermi i compiti con riscontri veloci.",
         "Lavoriamo insieme per due mesi, confrontiamo il giorno 1 con il giorno 60 e, se sei felice, chiudiamo con una testimonianza."
       ]
     },
   "coreOffer": {
     "heading": "Cosa ti offre il mio coaching",
     "items": [
-      "Accountability personale che ti mantiene costante",
-      "Community di supporto e guida 1:1 quando serve",
+      "Responsabilizzazione personale che ti mantiene costante",
+      "Comunità di supporto e guida individuale quando serve",
       "Routine di cucina semplici con ricette veloci e gustose",
       "Un sistema di spesa che fa risparmiare tempo e stress",
       "Gestione del peso sostenibile senza restrizioni o sensi di colpa",
@@ -109,7 +109,7 @@
       "title": "Coaching di Gruppo",
       "short": "Coaching con struttura settimanale e community.",
       "metaTitle": "Coaching di Gruppo — Love Eat Keep Fit",
-      "metaDescription": "Un percorso di coaching di gruppo con supporto, accountability e un piano sostenibile.",
+      "metaDescription": "Un percorso di coaching di gruppo con supporto, responsabilizzazione e un piano sostenibile.",
       "subtitle": "Un percorso guidato per costruire abitudini che si adattano alla vita reale, con struttura settimanale e una community di supporto.",
       "freeNote": {
         "label": "Fase di ricerca",
@@ -118,7 +118,7 @@
       "sections": [
         {
           "heading": "A chi è rivolto",
-          "body": "Vuoi struttura, accountability e un piano che non ti rubi la vita.",
+          "body": "Vuoi struttura, responsabilizzazione e un piano che non ti rubi la vita.",
           "bullets": [
             "Vuoi mangiare bene senza ore ai fornelli",
             "Vuoi chiarezza, non confusione",
@@ -131,7 +131,7 @@
             "Struttura dei pasti e guida alla spesa",
             "Ricette rapide e gustose per i tuoi obiettivi",
             "Macro e calorie su misura",
-            "Accountability e check-in settimanali"
+            "Responsabilizzazione e controlli settimanali"
           ]
         },
         {
@@ -151,11 +151,11 @@
     },
     "individual": {
       "slug": "/coaching/individual",
-      "title": "Coaching Individuale 1:1",
+      "title": "Coaching Individuale",
       "short": "Coaching personalizzato e guida diretta.",
-      "metaTitle": "Coaching 1:1 — Love Eat Keep Fit",
+      "metaTitle": "Coaching Individuale — Love Eat Keep Fit",
       "metaDescription": "Coaching individuale per una strategia personalizzata, supporto e gestione del peso sostenibile.",
-      "subtitle": "Percorso privato per chi vuole un piano su misura, feedback diretto e chiarezza veloce.",
+      "subtitle": "Percorso privato per chi vuole un piano su misura, riscontri diretti e chiarezza veloce.",
       "price": {
         "badge": "Offerta limitata",
         "original": "EUR 299",
@@ -184,9 +184,9 @@
         },
         {
           "heading": "Accountability e supporto",
-          "body": "Feedback diretto e aggiustamenti per restare in rotta.",
+          "body": "Riscontri diretti e aggiustamenti per restare in rotta.",
           "bullets": [
-            "Check-in regolari",
+            "Controlli regolari",
             "Revisione dei progressi",
             "Coaching su abitudini e mindset"
           ]
@@ -219,7 +219,7 @@
           "body": "Costruiamo insieme la tua routine e rimuoviamo gli ostacoli velocemente.",
           "bullets": [
             "Piano personalizzato in tempo reale",
-            "Osservazione diretta e feedback",
+            "Osservazione diretta e riscontri",
             "Implementazione rapida"
           ]
         },
@@ -235,7 +235,7 @@
           "heading": "Coaching continuo",
           "body": "Supporto nel tempo per far durare i risultati.",
           "bullets": [
-            "Check-in personali",
+            "Controlli personali",
             "Aggiustamenti in base agli obiettivi",
             "Accountability quando la motivazione cala"
           ]

@@ -191,24 +191,24 @@ export default function IntakeForm({ content }) {
   }
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16">
-      <div className="rounded-3xl border border-beige bg-white p-8 shadow-soft">
-        <h1 className="text-3xl font-semibold text-charcoal">
+    <div className="mx-auto max-w-4xl px-4 py-8 sm:py-16">
+      <div className="rounded-3xl border border-beige bg-white p-4 sm:p-8 shadow-soft">
+        <h1 className="text-2xl sm:text-3xl font-semibold text-charcoal break-words">
           {content.intake?.title || "Client Intake Form"}
         </h1>
-        <p className="mt-3 text-base leading-relaxed text-charcoal/80">
+        <p className="mt-3 text-sm sm:text-base leading-relaxed text-charcoal/80 break-words">
           {content.intake?.description || "Fill out this comprehensive form so I can calculate your personalized daily calories and macros, and create a tailored coaching plan for you."}
         </p>
 
         <form className="mt-8 space-y-10" onSubmit={handleSubmit}>
           {/* Section 1: Basic Information */}
           <section>
-            <h2 className="mb-4 text-xl font-semibold text-darkgreen">
+            <h2 className="mb-4 text-lg sm:text-xl font-semibold text-darkgreen break-words">
               {content.intake?.sections?.basicInfo?.title || "1. Basic Information"}
             </h2>
             <div className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2">
-                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
+                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal break-words">
                   {content.intake?.sections?.basicInfo?.fields?.name || "Your Name"} {content.intake?.required || "*"}
                   <input
                     type="text"
@@ -219,7 +219,7 @@ export default function IntakeForm({ content }) {
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   />
                 </label>
-                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
+                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal break-words">
                   {content.intake?.sections?.basicInfo?.fields?.email || "Email"} {content.intake?.required || "*"}
                   <input
                     type="email"
@@ -232,7 +232,7 @@ export default function IntakeForm({ content }) {
                 </label>
               </div>
               <div className="grid gap-4 md:grid-cols-3">
-                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
+                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal break-words">
                   {content.intake?.sections?.basicInfo?.fields?.phone || "Phone (optional)"}
                   <input
                     type="tel"
@@ -242,7 +242,7 @@ export default function IntakeForm({ content }) {
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   />
                 </label>
-                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
+                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal break-words">
                   {content.intake?.sections?.basicInfo?.fields?.age || "Age"} {content.intake?.required || "*"}
                   <input
                     type="number"
@@ -255,7 +255,7 @@ export default function IntakeForm({ content }) {
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   />
                 </label>
-                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
+                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal break-words">
                   {content.intake?.sections?.basicInfo?.fields?.gender || "Gender"} {content.intake?.required || "*"}
                   <select
                     name="gender"
@@ -276,7 +276,7 @@ export default function IntakeForm({ content }) {
 
           {/* Section 2: Physical Measurements */}
           <section>
-            <h2 className="mb-4 text-xl font-semibold text-darkgreen">
+            <h2 className="mb-4 text-lg sm:text-xl font-semibold text-darkgreen break-words">
               {content.intake?.sections?.physicalMeasurements?.title || "2. Physical Measurements"}
             </h2>
             <div className="space-y-4">
@@ -393,11 +393,11 @@ export default function IntakeForm({ content }) {
 
           {/* Section 3: Activity Level */}
           <section>
-            <h2 className="mb-4 text-xl font-semibold text-darkgreen">
+            <h2 className="mb-4 text-lg sm:text-xl font-semibold text-darkgreen break-words">
               {content.intake?.sections?.activityLevel?.title || "3. Activity Level"}
             </h2>
             <div className="space-y-4">
-              <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
+              <label className="flex flex-col gap-2 text-sm font-medium text-charcoal break-words">
                 {content.intake?.sections?.activityLevel?.fields?.activityLevel || "What best describes your typical day?"} {content.intake?.required || "*"}
                 <select
                   name="activityLevel"
@@ -425,7 +425,7 @@ export default function IntakeForm({ content }) {
                 </select>
               </label>
               <div>
-                <p className="mb-2 text-sm font-medium text-charcoal">
+                <p className="mb-2 text-sm font-medium text-charcoal break-words">
                   {content.intake?.sections?.activityLevel?.fields?.exerciseRoutine || "Current Exercise Routine"} {content.intake?.required || "*"} ({content.intake?.sections?.activityLevel?.fields?.exerciseOptions && "select all that apply" || "select all that apply"})
                 </p>
                 <div className="space-y-2">
@@ -438,7 +438,7 @@ export default function IntakeForm({ content }) {
                   ].map((option) => (
                     <label
                       key={option.value}
-                      className="flex items-center gap-2 text-sm text-charcoal"
+                      className="flex items-center gap-2 text-sm text-charcoal break-words"
                     >
                       <input
                         type="checkbox"
@@ -569,7 +569,7 @@ export default function IntakeForm({ content }) {
                   ].map((option) => (
                     <label
                       key={option.value}
-                      className="flex items-center gap-2 text-sm text-charcoal"
+                      className="flex items-center gap-2 text-sm text-charcoal break-words"
                     >
                       <input
                         type="checkbox"
@@ -708,7 +708,7 @@ export default function IntakeForm({ content }) {
                   ].map((option) => (
                     <label
                       key={option.value}
-                      className="flex items-center gap-2 text-sm text-charcoal"
+                      className="flex items-center gap-2 text-sm text-charcoal break-words"
                     >
                       <input
                         type="checkbox"
@@ -880,7 +880,7 @@ export default function IntakeForm({ content }) {
                     <option value="planning">{content.intake?.sections?.health?.options?.pregnancyStatus?.planning || "Planning pregnancy"}</option>
                   </select>
                 </label>
-                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
+                <label className="flex flex-col gap-2 text-sm font-medium text-charcoal break-words">
                   {content.intake?.sections?.health?.fields?.doctorCleared || "Doctor cleared for diet changes? *"}
                   <select
                     name="doctorCleared"
@@ -905,7 +905,7 @@ export default function IntakeForm({ content }) {
               {content.intake?.sections?.motivation?.title || "9. Motivation & Support"}
             </h2>
             <div className="space-y-4">
-              <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
+              <label className="flex flex-col gap-2 text-sm font-medium text-charcoal break-words">
                 {content.intake?.sections?.motivation?.fields?.whyImportant || "Why is reaching this goal important to you right now? *"}
                 <textarea
                   name="whyImportant"
@@ -917,7 +917,7 @@ export default function IntakeForm({ content }) {
                   className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                 />
               </label>
-              <label className="flex flex-col gap-2 text-sm font-medium text-charcoal">
+              <label className="flex flex-col gap-2 text-sm font-medium text-charcoal break-words">
                 {content.intake?.sections?.motivation?.fields?.successLooks || "What would success look like in 2-3 months? *"}
                 <textarea
                   name="successLooks"
@@ -945,7 +945,7 @@ export default function IntakeForm({ content }) {
                   ].map((option) => (
                     <label
                       key={option.value}
-                      className="flex items-center gap-2 text-sm text-charcoal"
+                      className="flex items-center gap-2 text-sm text-charcoal break-words"
                     >
                       <input
                         type="checkbox"

@@ -390,7 +390,7 @@
             "very-active": "Very active (intense exercise 6-7 days/week)",
             "extremely-active": "Extremely active (physical job + daily training)"
           },
-          "exerciseRoutine": "What type of exercise do you do? (select all that apply)",
+          "exerciseRoutine": "What type of exercise do you do?",
           "exerciseOptions": {
             "strength": "Strength training / weight lifting",
             "cardio": "Cardio (running, cycling, swimming)",
@@ -415,7 +415,7 @@
       "goals": {
         "title": "4. Goals",
         "fields": {
-          "primaryGoal": "What&apos;s your primary goal?",
+          "primaryGoal": "What's your primary goal?",
           "primaryGoalOptions": {
             "": "Select",
             "lose-fat": "Lose fat/weight",
@@ -427,7 +427,7 @@
           },
           "weightToLose": "How much weight do you want to lose? (optional)",
           "weightToLosePlaceholder": "e.g., 5-10 kg or 10-20 lbs",
-          "timeline": "What&apos;s your realistic timeline for reaching your goal?",
+          "timeline": "What's your realistic timeline for reaching your goal?",
           "timelineOptions": {
             "": "Select",
             "1-3-months": "1-3 months",
@@ -440,9 +440,9 @@
         }
       },
       "eatingHabits": {
-        "title": "5. Eating Habits &amp; Preferences",
+        "title": "5. Eating Habits & Preferences",
         "fields": {
-          "dietaryPreference": "Do you follow any specific diet or have dietary restrictions? (select all that apply)",
+          "dietaryPreference": "Do you follow any specific diet or have dietary restrictions?",
           "dietaryOptions": {
             "omnivore": "Omnivore (eat everything)",
             "vegetarian": "Vegetarian (no meat)",
@@ -456,7 +456,7 @@
           },
           "allergies": "Food allergies or intolerances (optional)",
           "allergiesPlaceholder": "e.g., gluten, dairy, nuts",
-          "dislikedFoods": "Foods you dislike or won&apos;t eat (optional)",
+          "dislikedFoods": "Foods you dislike or won't eat (optional)",
           "mealsPerDay": "How many meals do you typically eat per day?",
           "mealsOptions": {
             "": "Select",
@@ -498,9 +498,9 @@
         }
       },
       "challenges": {
-        "title": "6. Challenges &amp; Habits",
+        "title": "6. Challenges & Habits",
         "fields": {
-          "biggestStruggle": "What&apos;s your biggest struggle with eating healthy? (select all that apply)",
+          "biggestStruggle": "What's your biggest struggle with eating healthy?",
           "challengeOptions": {
             "time": "Not enough time to cook",
             "planning": "Poor planning/meal prep",
@@ -522,12 +522,12 @@
             "regularly": "Yes, I track regularly",
             "used-to": "Used to track consistently"
           },
-          "trackingApp": "If you&apos;ve tracked before, which app did you use? (optional)",
+          "trackingApp": "If you've tracked before, which app did you use? (optional)",
           "trackingAppPlaceholder": "e.g., MyFitnessPal, Cronometer, Lose It"
         }
       },
       "lifestyle": {
-        "title": "7. Lifestyle &amp; Context",
+        "title": "7. Lifestyle & Context",
         "fields": {
           "sleepQuality": "How would you rate your sleep quality?",
           "sleepOptions": {
@@ -538,7 +538,7 @@
             "poor": "Poor (often tired/unrested)",
             "very-poor": "Very poor (chronic sleep issues)"
           },
-          "stressLevel": "What&apos;s your typical stress level?",
+          "stressLevel": "What's your typical stress level?",
           "stressOptions": {
             "": "Select",
             "very-low": "Very low",
@@ -568,11 +568,15 @@
         }
       },
       "motivation": {
-        "title": "8. Motivation &amp; Support",
+        "title": "8. Motivation & Support",
         "fields": {
           "whyImportant": "Why is reaching your health/fitness goal important to you right now?",
-          "whyImportantPlaceholder": "Share what&apos;s driving you to make this change",
-          "previousAttempts": "What&apos;s stopped you from reaching your goals in the past?",
+          "whyImportantPlaceholder": "Share what's driving you to make this change",
+          "successLooks": "What would success look like in 2-3 months?",
+          "successLooksPlaceholder": "Describe how you'd like to feel and what you'd like to achieve",
+          "supportNeeded": "Support needed",
+          "hearAbout": "How did you hear about us? (optional)",
+          "previousAttempts": "What's stopped you from reaching your goals in the past?",
           "previousAttemptsPlaceholder": "e.g., lack of time, social situations, stress eating",
           "supportSystem": "Do you have support from family/friends for your health goals?",
           "supportOptions": {
@@ -593,24 +597,71 @@
             "one-on-one": "One-on-one coaching",
             "self-directed": "Self-directed (minimal check-ins)"
           }
+        },
+        "options": {
+          "supportNeeded": {
+            "accountability": "Accountability",
+            "motivation": "Motivation",
+            "education": "Education about nutrition",
+            "mealPlanning": "Meal planning guidance",
+            "recipes": "Recipe ideas",
+            "community": "Community support",
+            "oneOnOne": "1:1 guidance"
+          },
+          "hearAbout": {
+            "instagram": "Instagram",
+            "referral": "Friend/family referral",
+            "google": "Google search",
+            "facebook": "Facebook",
+            "tiktok": "TikTok",
+            "otherSocial": "Other social media",
+            "other": "Other"
+          }
+        },
+        "placeholders": {
+          "whyImportant": "Share what's driving you to make this change",
+          "successLooks": "Describe how you'd like to feel and what you'd like to achieve"
+        }
+      },
+      "commitment": {
+        "title": "10. Commitment",
+        "fields": {
+          "readyToCommit": "Ready to commit for at least 2 months?",
+          "concerns": "If you have concerns, what are they? (optional)"
+        },
+        "options": {
+          "readyToCommit": {
+            "yesAbsolutely": "Yes, absolutely",
+            "yesConcerns": "Yes, but I have concerns",
+            "notSure": "Not sure yet"
+          }
+        },
+        "placeholders": {
+          "concerns": "Share any worries or questions"
         }
       }
     },
-    "submitButton": "Calculate My Plan",
+    "submitButton": "Submit",
     "submitting": "Calculating...",
     "required": "*",
-    "resultsTitle": "Your Personalized Macro &amp; Calorie Plan",
-    "resultsSubtitle": "Based on your details, here&apos;s your starting point:",
+    "resultsTitle": "Your Personalized Macro & Calorie Plan",
+    "resultsSubtitle": "Based on your details, here's your starting point:",
     "macros": {
       "calories": "Daily Calories",
       "protein": "Protein",
       "carbs": "Carbohydrates", 
       "fat": "Fat"
     },
-    "resultsNote": "These are approximate calculations based on your input. I&apos;ll fine-tune these recommendations based on your progress.",
+    "resultsNote": "These are approximate calculations based on your input. I'll fine-tune these recommendations based on your progress.",
     "nextSteps": {
-      "title": "What&apos;s Next?",
-      "description": "I&apos;ve received your intake form and generated an approximate automatic calculation above. This is just a starting point - I&apos;ll review all your details personally and get back to you with my personalized recommendations within 24 hours via email. Check your inbox for next steps!"
+      "title": "What's Next?",
+      "description": "I've received your intake form and generated an approximate automatic calculation above. This is just a starting point - I'll review all your details personally and get back to you with my personalized recommendations within 24 hours via email. Check your inbox for next steps!"
+    },
+    "common": {
+      "select": "Select",
+      "yes": "Yes", 
+      "no": "No",
+      "selectAllThatApply": "select all that apply"
     }
   },
   "social": {

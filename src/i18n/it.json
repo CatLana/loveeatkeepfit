@@ -389,7 +389,7 @@
             "very-active": "Molto attivo (esercizio intenso 6-7 giorni/settimana)",
             "extremely-active": "Estremamente attivo (lavoro fisico + allenamento quotidiano)"
           },
-          "exerciseRoutine": "Che tipo di esercizio fai? (seleziona tutto quello che si applica)",
+          "exerciseRoutine": "Che tipo di esercizio fai?",
           "exerciseOptions": {
             "strength": "Allenamento di forza / pesi",
             "cardio": "Cardio (corsa, ciclismo, nuoto)",
@@ -414,7 +414,7 @@
       "goals": {
         "title": "4. Obiettivi",
         "fields": {
-          "primaryGoal": "Qual&apos;è il tuo obiettivo principale?",
+          "primaryGoal": "Qual'è il tuo obiettivo principale?",
           "primaryGoalOptions": {
             "": "Seleziona",
             "lose-fat": "Perdere grasso/peso",
@@ -426,7 +426,7 @@
           },
           "weightToLose": "Quanto peso vuoi perdere? (opzionale)",
           "weightToLosePlaceholder": "es., 5-10 kg o 10-20 lbs",
-          "timeline": "Qual&apos;è la tua tempistica realistica per raggiungere l&apos;obiettivo?",
+          "timeline": "Qual'è la tua tempistica realistica per raggiungere l'obiettivo?",
           "timelineOptions": {
             "": "Seleziona",
             "1-3-months": "1-3 mesi",
@@ -435,13 +435,13 @@
             "1-year-plus": "Più di 1 anno",
             "no-rush": "Nessuna tempistica specifica"
           },
-          "triedBefore": "Hai mai provato a perdere peso/metterti in forma prima? Cos&apos;è successo?"
+          "triedBefore": "Hai mai provato a perdere peso/metterti in forma prima? Cos'è successo?"
         }
       },
       "eatingHabits": {
-        "title": "5. Abitudini Alimentari &amp; Preferenze",
+        "title": "5. Abitudini Alimentari & Preferenze",
         "fields": {
-          "dietaryPreference": "Segui qualche dieta specifica o hai restrizioni alimentari? (seleziona tutto quello che si applica)",
+          "dietaryPreference": "Segui qualche dieta specifica o hai restrizioni alimentari?",
           "dietaryOptions": {
             "omnivore": "Onnivoro (mangio tutto)",
             "vegetarian": "Vegetariano (no carne)",
@@ -497,9 +497,9 @@
         }
       },
       "challenges": {
-        "title": "6. Sfide &amp; Abitudini",
+        "title": "6. Sfide & Abitudini",
         "fields": {
-          "biggestStruggle": "Qual&apos;è la tua maggiore difficoltà nel mangiare sano? (seleziona tutto quello che si applica)",
+          "biggestStruggle": "Qual'è la tua maggiore difficoltà nel mangiare sano?",
           "challengeOptions": {
             "time": "Non abbastanza tempo per cucinare",
             "planning": "Scarsa pianificazione/preparazione pasti",
@@ -526,7 +526,7 @@
         }
       },
       "lifestyle": {
-        "title": "7. Stile di Vita &amp; Contesto",
+        "title": "7. Stile di Vita & Contesto",
         "fields": {
           "sleepQuality": "Come valuti la qualità del tuo sonno?",
           "sleepOptions": {
@@ -537,7 +537,7 @@
             "poor": "Scarsa (spesso stanco/a/non riposato/a)",
             "very-poor": "Molto scarsa (problemi cronici di sonno)"
           },
-          "stressLevel": "Qual&apos;è il tuo livello di stress tipico?",
+          "stressLevel": "Qual'è il tuo livello di stress tipico?",
           "stressOptions": {
             "": "Seleziona",
             "very-low": "Molto basso",
@@ -567,10 +567,14 @@
         }
       },
       "motivation": {
-        "title": "8. Motivazione &amp; Supporto",
+        "title": "8. Motivazione & Supporto",
         "fields": {
           "whyImportant": "Perché è importante per te raggiungere il tuo obiettivo di salute/forma fisica ora?",
           "whyImportantPlaceholder": "Condividi cosa ti spinge a fare questo cambiamento",
+          "successLooks": "Come sarebbe il successo in 2-3 mesi?",
+          "successLooksPlaceholder": "Descrivi come vorresti sentirti e cosa vorresti raggiungere",
+          "supportNeeded": "Supporto necessario",
+          "hearAbout": "Come hai sentito parlare di noi? (opzionale)",
           "previousAttempts": "Cosa ti ha fermato dal raggiungere i tuoi obiettivi in passato?",
           "previousAttemptsPlaceholder": "es., mancanza di tempo, situazioni sociali, stress eating",
           "supportSystem": "Hai supporto da famiglia/amici per i tuoi obiettivi di salute?",
@@ -592,13 +596,54 @@
             "one-on-one": "Coaching individuale",
             "self-directed": "Auto-diretto (controlli minimi)"
           }
+        },
+        "options": {
+          "supportNeeded": {
+            "accountability": "Responsabilità",
+            "motivation": "Motivazione",
+            "education": "Educazione sulla nutrizione",
+            "mealPlanning": "Guida per la pianificazione dei pasti",
+            "recipes": "Idee per ricette",
+            "community": "Supporto della comunità",
+            "oneOnOne": "Guida 1:1"
+          },
+          "hearAbout": {
+            "instagram": "Instagram",
+            "referral": "Riferimento da amici/famiglia",
+            "google": "Ricerca Google",
+            "facebook": "Facebook",
+            "tiktok": "TikTok",
+            "otherSocial": "Altri social media",
+            "other": "Altro"
+          }
+        },
+        "placeholders": {
+          "whyImportant": "Condividi cosa ti spinge a fare questo cambiamento",
+          "successLooks": "Descrivi come vorresti sentirti e cosa vorresti raggiungere"
+        }
+      },
+      "commitment": {
+        "title": "10. Impegno",
+        "fields": {
+          "readyToCommit": "Pronto/a a impegnarti per almeno 2 mesi?",
+          "concerns": "Se hai delle preoccupazioni, quali sono? (opzionale)"
+        },
+        "options": {
+          "readyToCommit": {
+            "yesAbsolutely": "Sì, assolutamente",
+            "yesConcerns": "Sì, ma ho delle preoccupazioni",
+            "notSure": "Non sono ancora sicuro/a"
+          }
+        },
+        "placeholders": {
+          "concerns": "Condividi eventuali dubbi o domande"
         }
       }
     },
-    "submitButton": "Calcola il Mio Piano",
+    "submitButton": "Invia",
     "submitting": "Calcolando...",
     "required": "*",
-    "resultsTitle": "Il Tuo Piano Personalizzato di Macro &amp; Calorie",
+    "resultsTitle": "Il Tuo Piano Personalizzato di Macro & Calorie",
     "resultsSubtitle": "Basato sui tuoi dettagli, ecco il tuo punto di partenza:",
     "macros": {
       "calories": "Calorie Giornaliere",
@@ -610,6 +655,12 @@
     "nextSteps": {
       "title": "Cosa Succede Dopo?",
       "description": "Ho ricevuto il tuo modulo di iscrizione e generato un calcolo automatico approssimativo sopra. Questo è solo un punto di partenza - esaminerò tutti i tuoi dettagli personalmente e ti risponderò con le mie raccomandazioni personalizzate entro 24 ore via email. Controlla la tua casella di posta per i prossimi passi!"
+    },
+    "common": {
+      "select": "Seleziona",
+      "yes": "Sì", 
+      "no": "No",
+      "selectAllThatApply": "seleziona tutto quello che si applica"
     }
   },
   "footer": {

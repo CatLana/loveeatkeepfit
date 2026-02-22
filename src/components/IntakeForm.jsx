@@ -426,7 +426,7 @@ export default function IntakeForm({ content }) {
               </label>
               <div>
                 <p className="mb-2 text-sm font-medium text-charcoal break-words">
-                  {content.intake?.sections?.activityLevel?.fields?.exerciseRoutine || "Current Exercise Routine"} {content.intake?.required || "*"} ({content.intake?.sections?.activityLevel?.fields?.exerciseOptions && "select all that apply" || "select all that apply"})
+                  {content.intake?.sections?.activityLevel?.fields?.exerciseRoutine || "Current Exercise Routine"} {content.intake?.required || "*"} ({content.intake?.common?.selectAllThatApply || "select all that apply"})
                 </p>
                 <div className="space-y-2">
                   {[
@@ -553,7 +553,7 @@ export default function IntakeForm({ content }) {
             <div className="space-y-4">
               <div>
                 <p className="mb-2 text-sm font-medium text-charcoal">
-                  {content.intake?.sections?.eatingHabits?.fields?.dietaryPreference || "Do you follow any specific diet or have dietary restrictions?"} {content.intake?.required || "*"} ({content.intake?.sections?.eatingHabits?.fields?.dietaryOptions && "select all that apply" || "select all that apply"})
+                  {content.intake?.sections?.eatingHabits?.fields?.dietaryPreference || "Do you follow any specific diet or have dietary restrictions?"} {content.intake?.required || "*"} ({content.intake?.common?.selectAllThatApply || "select all that apply"})
                 </p>
                 <div className="space-y-2">
                   {[
@@ -691,7 +691,7 @@ export default function IntakeForm({ content }) {
             <div className="space-y-4">
               <div>
                 <p className="mb-2 text-sm font-medium text-charcoal">
-                  {content.intake?.sections?.challenges?.fields?.biggestStruggle || "What's your biggest struggle with eating healthy?"} {content.intake?.required || "*"} ({content.intake?.sections?.challenges?.fields?.challengeOptions && "select all that apply" || "select all that apply"})
+                  {content.intake?.sections?.challenges?.fields?.biggestStruggle || "What's your biggest struggle with eating healthy?"} {content.intake?.required || "*"} ({content.intake?.common?.selectAllThatApply || "select all that apply"})
                 </p>
                 <div className="space-y-2">
                   {[
@@ -931,7 +931,7 @@ export default function IntakeForm({ content }) {
               </label>
               <div>
                 <p className="mb-2 text-sm font-medium text-charcoal">
-                  {content.intake?.sections?.motivation?.fields?.supportNeeded || "Support needed * (select all that apply)"}
+                  {content.intake?.sections?.motivation?.fields?.supportNeeded || "Support needed"} {content.intake?.required || "*"} ({content.intake?.common?.selectAllThatApply || "select all that apply"})
                 </p>
                 <div className="space-y-2">
                   {[
@@ -1026,7 +1026,7 @@ export default function IntakeForm({ content }) {
             disabled={status === "loading"}
             className="w-full rounded-full bg-darkgreen px-8 py-4 text-base font-semibold text-white shadow-soft transition hover:bg-coral disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {status === "loading" ? (content.intake?.messages?.submitting || "Submitting...") : (content.intake?.messages?.submitButton || "Submit Intake Form")}
+            {status === "loading" ? (content.intake?.submitting || "Submitting...") : (content.intake?.submitButton || "Submit")}
           </button>
         </form>
       </div>

@@ -1,19 +1,29 @@
 {
   "meta": {
-    "title": "Love Eat Keep Fit — Research Group",
-    "description": "Join a research group to test a sustainable, neuroscience-informed weight loss method. No dangerous diets. Eat well, enjoy food, lose fat."
+    "title": "Love Eat Keep Fit — Food Coaching",
+    "description": "Learn sustainable weight management through simple food routines. No chaos, no stress, just a system that fits your real life."
   },
   "hero": {
-    "title": "Hi, I’m Lana.",
-    "subtitle": "I'm a food coach who helps you transform your grocery shopping and cooking routine into a sustainable, healthy lifestyle — without spending hours in the kitchen or eating boring food. You can cook for your entire family and still hit your fitness goals, even on a calorie deficit. After years of experimenting with cooking, weight management, and working with nutritionists, I've identified the pain points we all struggle with on our weight control journey — and found science-based answers on how to prevent your brain and body from sabotaging you. I'll show you how to get the nutrients you need to avoid cravings and overeating habits that derail weight loss. Plus, I offer motivational support groups and individual coaching — because accountability is often the hardest part when you're on your own in your weight management journey.",
-    "ctaPrimary": "Participate",
+    "eyebrow": "Food Coaching • Sustainable Weight Management",
+    "title": "Hi, I'm Lana.",
+    "subtitle": "I help people fix the chaos that happens when you try to organise food for your weight management journey.",
+    "painPoints": [
+      "You should not feel like you need a second job just to eat well and meet your calorie targets.",
+      "You should not spend hours cooking or running to the shop every day for missing ingredients.",
+      "You should not feel stressed when you try to make one meal work for different calorie needs in your family."
+    ],
+    "solution": "I teach you a new way to cook and shop so your meals become <span class='highlight highlight-leaf'>quick, simple, tasty</span>, and easy to adjust for everyone, including children.",
+    "promise": "You learn how to eat in a healthy way <span class='highlight highlight-coral'>without frustration</span> and without losing your time or energy.",
+    "experience": "After years of experimenting with cooking, weight management, and working with nutritionists, I learned where most people get stuck. I also learned how the brain and body react when you do not get the nutrients you need. This is why cravings, overeating, and we start the weight management journey over again.",
+    "goal": "My goal is to help you avoid these traps and build a routine that feels good and fits your real life. You will also have support from me and from the group, because doing this alone is much harder.",
+    "ctaPrimary": "Sign Up for Free",
     "ctaSecondary": "Book your spot"
   },
   "story": {
     "heading": "If any of these sounds like you…",
-    "short": "It’s not willpower. It’s the daily friction around food.",
+    "short": "It's not willpower. It's the <span class='highlight highlight-coral'>daily friction around food</span>.",
     "problemHeading": "The real problem",
-    "problemText": "Most plans are built for perfect days. Real life is busy, and food decisions happen under stress.",
+    "problemText": "Most plans are built for <span class='highlight highlight-sunset'>perfect days</span>. Real life is busy, and food decisions happen <span class='highlight highlight-coral'>under stress</span>.",
     "painHeading": "Do these feel familiar?",
     "painPoints": [
       {
@@ -54,48 +64,48 @@
     "consequenceHeading": "What this creates",
     "consequenceText": "You start, stop, and reset — not because you failed, but because the system never fit your life.",
     "solutionHeading": "A system that fits real life",
-    "solution": "That’s why I built coaching that makes healthy eating simple, grocery shopping quick, and routines sustainable long term.",
+    "solution": "That's why I built coaching that makes <span class='highlight highlight-leaf'>healthy eating simple</span>, grocery shopping quick, and <span class='highlight highlight-peach'>routines sustainable</span> long term.",
     "bridgeHeading": "What changes when you have a system",
-    "bridge": "More consistency, fewer cravings, and a routine you can actually keep.",
+    "bridge": "<span class='highlight highlight-leaf'>More consistency</span>, <span class='highlight highlight-coral'>fewer cravings</span>, and a routine you can actually keep.",
     "ctaLabel": "See how coaching works",
     "ctaHref": "#coaching"
   },
   "approach": {
     "heading": "My approach",
-    "intro": "If those struggles sound familiar, my approach focuses on simplicity, taste, and consistency so you can stick to your goals without stress.",
+    "intro": "My approach is simple. I focus on <span class='highlight highlight-coral'>taste, speed, and consistency</span>. You do not need complicated recipes or long meal plans. You need a routine that <span class='highlight highlight-leaf'>saves time and reduces stress</span>. I help you understand your calorie and macro needs in a clear and simple way. No obsession. No confusion. You also get support and accountability so you stay on track even when <span class='highlight highlight-sunset'>life gets messy</span>.",
     "points": [
       {
-        "title": "Simplify the system",
-        "description": "Shopping lists, quick recipes, and routines that save time instead of taking over your week."
+        "title": "Simple & Tasty",
+        "description": "Quick recipes that taste good and work for the whole family, including kids."
       },
       {
-        "title": "Align with your goals",
-        "description": "Macros and calories tailored to your body and lifestyle, without obsession or confusion."
+        "title": "Time-Saving",
+        "description": "Organized shopping and cooking routines that fit into busy life."
       },
       {
-        "title": "Make it sustainable",
-        "description": "Support, accountability, and habits that work long term — even when life gets busy."
+        "title": "Sustainable",
+        "description": "Support and accountability to build habits that last long-term."
       }
     ]
   },
     "coachingFlow": {
       "items": [
-        "You fill in a private interest form with your food preferences, lifestyle, goals, struggles, and measurements. It is confidential and read only by me.",
-        "I calculate your macros and calorie targets and send them back to you.",
-        "You join the group where I publish weekly guidance and tips to transform your food routine.",
-        "You get first access to coaching videos and exercises, and confirm homework completion with quick feedback.",
-        "We work together for two months, compare day 1 to day 60, and close with a testimonial if you're happy with the experience."
+        "First, you fill in a private form with your food preferences, lifestyle, goals, struggles, and measurements. Only I read it.",
+        "Then I calculate your macros and calorie targets and send them to you.",
+        "You join the group where I share weekly guidance and tips to improve your food routine.",
+        "You get access to videos and small exercises, and you send quick updates so I can support you.",
+        "We work together for two months. At the end, we compare day 1 to day 60 and close with a testimonial if you are happy with the experience."
       ]
     },
   "coreOffer": {
     "heading": "What my coaching gives you",
     "items": [
-      "Personal accountability that keeps you consistent",
-      "Supportive community plus 1:1 guidance when you need it",
-      "Simple cooking routines with quick, tasty recipes",
-      "A grocery system that saves time and reduces stress",
-      "Sustainable weight management without restriction or guilt",
-      "Macro and calorie guidance tailored to your goals"
+      "<span class='highlight highlight-leaf'>Personal accountability</span> that helps you stay consistent",
+      "Supportive community and <span class='highlight highlight-coral'>1:1 guidance</span> when you need it",
+      "Simple cooking routines with <span class='highlight highlight-sunset'>quick, tasty recipes</span>",
+      "Grocery system that <span class='highlight highlight-peach'>saves time and reduces stress</span>",
+      "Healthy and <span class='highlight highlight-leaf'>sustainable weight management</span>",
+      "Macro and calorie guidance that fits your goals and lifestyle"
     ]
   },
   "coachingCommon": {
@@ -295,25 +305,22 @@
     }
   },
   "whatWeDo": {
-    "heading": "Inside the coaching",
+    "heading": "You will learn",
     "items": [
-      "Identify your personal goal clearly.",
-      "Calculate your daily calorie needs based on your lifestyle and activity.",
-      "Learn what macros are and why they matter with simple tools.",
-      "Lose fat without losing muscle.",
-      "Manage cravings and understand your body’s signals.",
-      "Eat tasty, quick, low‑stress meals.",
-      "Ready‑made shopping lists to shop in 5 minutes.",
-      "Weekly check‑ins and ongoing support.",
-      "Sustainable workouts that don’t drain your energy.",
-      "Exercise is NOT required: you can walk, do light activity, or no exercise — but without movement you’ll eat a bit less and increasing metabolism is harder without muscle or cardio.",
-      "Main goal: increase your metabolism, not slow it down."
+      "How to get your <span class='highlight highlight-coral'>daily calorie needs</span> based on your lifestyle",
+      "What <span class='highlight highlight-sunset'>macros are and why they matter</span>",
+      "You lose fat <span class='highlight highlight-leaf'>without losing muscle</span>",
+      "You learn how to <span class='highlight highlight-peach'>manage cravings</span> and understand your body's signals based on science",
+      "You eat <span class='highlight highlight-coral'>tasty, quick, low‑stress meals</span>",
+      "You get ready‑made shopping lists that take <span class='highlight highlight-leaf'>less than 30 minutes shopping</span> once a week",
+      "You get weekly check‑ins and ongoing support"
     ]
   },
   "signup": {
-    "heading": "Join the research group",
-    "ctaHeading": "Ready to take the next step?",
-    "ctaText": "Fill out the form below to get started with my coaching and receive your next steps by email.",
+    "heading": "Ready to take the next step",
+    "startDate": "Next start date: Sunday the 22nd of February",
+    "ctaHeading": "Join the group",
+    "ctaText": "Fill out the form below to get started. After you fill in your details, the link to the form will appear. Please complete it and wait for me to get back to you with your personal calorie targets. I will enrol you into the communication channel where you will receive the learning materials, homework, and access to the community with which we will start this journey together, all in the same boat.",
     "name": "Name",
     "email": "Email",
     "phone": "Phone (optional)",

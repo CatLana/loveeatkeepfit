@@ -108,9 +108,7 @@ export default function CoreOffer({ content }) {
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-warmwhite">
                   {icons[index]}
                 </div>
-                <p className="text-base leading-relaxed text-charcoal/80 md:text-lg">
-                  {item}
-                </p>
+                <p className="text-base leading-relaxed text-charcoal/80 md:text-lg" dangerouslySetInnerHTML={{ __html: item }}></p>
               </div>
             </div>
           ))}

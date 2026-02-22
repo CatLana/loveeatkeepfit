@@ -58,6 +58,11 @@ export default function FormSignup({ content, social }) {
             <h2 className="text-3xl font-semibold text-charcoal">
               {content.heading}
             </h2>
+            {content.startDate && (
+              <p className="mt-4 text-lg font-medium text-darkgreen">
+                {content.startDate}
+              </p>
+            )}
 
             {status === "success" ? (
               <div className="mt-6 space-y-4">

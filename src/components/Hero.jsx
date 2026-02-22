@@ -6,36 +6,71 @@ export default function Hero({ content, primaryCtaHref }) {
       <span id="about" className="sr-only">
         About
       </span>
-      <div className="mx-auto grid max-w-6xl items-start gap-10 px-4 md:grid-cols-2 md:items-center">
-        <div>
-          <p className="w-full text-left text-sm font-semibold uppercase tracking-wide text-leaf">
-            Food coaching • Sustainable Weight Management
+      <div className="mx-auto max-w-4xl px-4">
+        <div className="flex flex-col items-center text-center">
+          <p className="text-sm font-semibold uppercase tracking-wide text-leaf">
+            {content.eyebrow}
           </p>
-          <h1 className="mt-4 text-4xl font-semibold text-charcoal md:text-5xl">
+          
+          {/* Profile Image */}
+          <div className="mt-6 relative">
+            <div className="w-24 h-24 mx-auto">
+              <Image
+                src="/images/profile.jpg"
+                alt="Lana profile"
+                width={96}
+                height={96}
+                className="w-full h-full rounded-full object-cover shadow-lg ring-4 ring-peach/30"
+                priority
+              />
+            </div>
+          </div>
+          
+          <h1 className="mt-6 text-4xl font-semibold text-charcoal md:text-5xl">
             {content.title}
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-charcoal/80">
+          <p className="mt-6 text-xl leading-relaxed text-charcoal max-w-3xl">
             {content.subtitle}
           </p>
-          <div className="mt-6 flex flex-wrap gap-4">
-            <a
-              href={primaryCtaHref}
-              className="rounded-full bg-darkgreen px-8 py-4 text-base font-semibold text-white shadow-soft transition hover:bg-coral"
-            >
-              {content.ctaPrimary}
-            </a>
-          </div>
         </div>
-        <div className="relative mx-auto w-full max-w-xs">
-          <div className="absolute -inset-6 rounded-3xl bg-peach/30" />
-          <Image
-            src="/images/profile.jpg"
-            alt="Lana profile"
-            width={360}
-            height={460}
-            className="relative rounded-3xl object-cover shadow-soft"
-            priority
-          />
+
+        <div className="mt-12 space-y-6">
+          {content.painPoints && content.painPoints.map((point, index) => (
+            <p key={index} className="text-lg leading-relaxed text-charcoal/80">
+              {point}
+            </p>
+          ))}
+        </div>
+
+        {content.solution && (
+          <p className="mt-8 text-lg leading-relaxed text-charcoal font-medium" dangerouslySetInnerHTML={{ __html: content.solution }}>
+          </p>
+        )}
+
+        {content.promise && (
+          <p className="mt-6 text-lg leading-relaxed text-charcoal/80" dangerouslySetInnerHTML={{ __html: content.promise }}>
+          </p>
+        )}
+
+        {content.experience && (
+          <p className="mt-6 text-base leading-relaxed text-charcoal/70">
+            {content.experience}
+          </p>
+        )}
+
+        {content.goal && (
+          <p className="mt-6 text-base leading-relaxed text-charcoal/70">
+            {content.goal}
+          </p>
+        )}
+
+        <div className="mt-10 text-center">
+          <a
+            href={primaryCtaHref}
+            className="inline-block rounded-full bg-darkgreen px-10 py-4 text-lg font-semibold text-white shadow-soft transition hover:bg-coral"
+          >
+            {content.ctaPrimary}
+          </a>
         </div>
       </div>
     </section>

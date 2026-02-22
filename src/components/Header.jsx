@@ -21,7 +21,8 @@ export default function Header({ navItems, locale, onLocaleChange }) {
               Love Eat Keep Fit
             </span>
           </Link>
-          <LanguageSwitcher locale={locale} onChange={onLocaleChange} />
+          {/* LanguageSwitcher temporarily hidden - keeping structure for future multilingual support */}
+          {/* <LanguageSwitcher locale={locale} onChange={onLocaleChange} /> */}
         </div>
         <Nav items={navItems} />
       </div>

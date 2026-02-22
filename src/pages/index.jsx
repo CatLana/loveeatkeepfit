@@ -126,9 +126,7 @@ export default function HomePage() {
             <h2 className="text-3xl font-semibold text-charcoal md:text-4xl">
               {content.approach.heading}
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-charcoal/80">
-              {content.approach.intro}
-            </p>
+            <p className="mt-4 text-base leading-relaxed text-charcoal/80" dangerouslySetInnerHTML={{ __html: content.approach.intro }}></p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {content.approach.points.map((item) => (
                 <div

@@ -185,9 +185,7 @@ export default function WhatWeDo({ content }) {
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-warmwhite">
                   {icons[index]}
                 </div>
-                <p className="text-base leading-relaxed text-charcoal/80">
-                  {item}
-                </p>
+                <p className="text-base leading-relaxed text-charcoal/80" dangerouslySetInnerHTML={{ __html: item }}></p>
               </div>
             </li>
           ))}

@@ -6,16 +6,16 @@
   "hero": {
     "eyebrow": "Food Coaching • Sustainable Weight Management",
     "title": "Hi, I'm Lana.",
-    "subtitle": "I help people fix the chaos that happens when you try to organise food for your weight management journey.",
+    "subtitle": "I'm the creator of this approach. We help people fix the chaos that happens when you try to organise food for your weight management journey.",
     "painPoints": [
       "You should not feel like you need a second job just to eat well and meet your calorie targets.",
       "You should not spend hours cooking or running to the shop every day for missing ingredients.",
       "You should not feel stressed when you try to make one meal work for different calorie needs in your family."
     ],
-    "solution": "I teach you a new way to cook and shop so your meals become <span class='highlight highlight-leaf'>quick, simple, tasty</span>, and easy to adjust for everyone, including children.",
+    "solution": "We teach you a new way to cook and shop so your meals become <span class='highlight highlight-leaf'>quick, simple, tasty</span>, and easy to adjust for everyone, including children.",
     "promise": "You learn how to eat in a healthy way <span class='highlight highlight-coral'>without frustration</span> and without losing your time or energy.",
     "experience": "After years of experimenting with cooking, weight management, and working with nutritionists, I learned where most people get stuck. I also learned how the brain and body react when you do not get the nutrients you need. This is why cravings, overeating, and we start the weight management journey over again.",
-    "goal": "My goal is to help you avoid these traps and build a routine that feels good and fits your real life. You will also have support from me and from the group, because doing this alone is much harder.",
+    "goal": "Our goal is to help you avoid these traps and build a routine that feels good and fits your real life. You will also have support from our team and from the group, because doing this alone is much harder.",
     "ctaPrimary": "Sign Up for Free",
     "ctaSecondary": "Book your spot"
   },
@@ -71,8 +71,8 @@
     "ctaHref": "#coaching"
   },
   "approach": {
-    "heading": "My approach",
-    "intro": "My approach is simple. I focus on <span class='highlight highlight-coral'>taste, speed, and consistency</span>. You do not need complicated recipes or long meal plans. You need a routine that <span class='highlight highlight-leaf'>saves time and reduces stress</span>. I help you understand your calorie and macro needs in a clear and simple way. No obsession. No confusion. You also get support and accountability so you stay on track even when <span class='highlight highlight-sunset'>life gets messy</span>.",
+    "heading": "Our approach",
+    "intro": "Our approach is simple. We focus on <span class='highlight highlight-coral'>taste, speed, and consistency</span>. You do not need complicated recipes or long meal plans. You need a routine that <span class='highlight highlight-leaf'>saves time and reduces stress</span>. We help you understand your calorie and macro needs in a clear and simple way. No obsession. No confusion. You also get support and accountability so you stay on track even when <span class='highlight highlight-sunset'>life gets messy</span>.",
     "points": [
       {
         "title": "Simple & Tasty",
@@ -98,7 +98,7 @@
       ]
     },
   "coreOffer": {
-    "heading": "What my coaching gives you",
+    "heading": "What our coaching gives you",
     "items": [
       "<span class='highlight highlight-leaf'>Personal accountability</span> that helps you stay consistent",
       "Supportive community and <span class='highlight highlight-coral'>1:1 guidance</span> when you need it",
@@ -155,7 +155,7 @@
         }
       ],
       "ctaHeading": "Ready to join the group?",
-      "ctaText": "Fill out the form and I will send you the next steps by email.",
+      "ctaText": "Fill out the form and we will send you the next steps by email.",
       "ctaLabel": "Join group coaching",
       "ctaHref": "/#join"
     },
@@ -203,7 +203,7 @@
         }
       ],
       "ctaHeading": "Want private coaching?",
-      "ctaText": "Fill out the form and tell me your goals. I will reply with next steps.",
+      "ctaText": "Fill out the form and tell us your goals. We will reply with next steps.",
       "ctaLabel": "Apply for 1:1 coaching",
       "ctaHref": "/#join"
     },
@@ -252,7 +252,7 @@
         }
       ],
       "ctaHeading": "Interested in premium coaching?",
-      "ctaText": "Fill out the form and tell me where you are based. I will confirm availability.",
+      "ctaText": "Fill out the form and tell us where you are based. We will confirm availability.",
       "ctaLabel": "Apply for premium coaching",
       "ctaHref": "/#join"
     },
@@ -320,7 +320,7 @@
     "heading": "Ready to take the next step",
     "startDate": "Next start date: the 1st of March",
     "ctaHeading": "Join the group",
-    "ctaText": "<div class='space-y-3'><p class='font-semibold text-charcoal mb-4'>Here's how it works:</p><ol class='space-y-2 text-sm leading-relaxed'><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>1</span><span>Fill in the form below</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>2</span><span>You will receive a link to a questionnaire about your nutrition habits and challenges</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>3</span><span>Submit the questionnaire</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>4</span><span>Wait for me to get back to you with your next steps</span></li></ol></div>",
+    "ctaText": "<div class='space-y-3'><p class='font-semibold text-charcoal mb-4'>Here's how it works:</p><ol class='space-y-2 text-sm leading-relaxed'><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>1</span><span>Fill in the form below</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>2</span><span>You will receive a link to a questionnaire about your nutrition habits and challenges</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>3</span><span>Submit the questionnaire</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>4</span><span>Wait for our team to get back to you with your next steps</span></li></ol></div>",
     "name": "Name",
     "email": "Email",
     "phone": "Phone (optional)",
@@ -659,10 +659,10 @@
       "carbs": "Carbohydrates", 
       "fat": "Fat"
     },
-    "resultsNote": "These are approximate calculations based on your input. I'll fine-tune these recommendations based on your progress.",
+    "resultsNote": "These are approximate calculations based on your input. Our team will fine-tune these recommendations based on your progress.",
     "nextSteps": {
       "title": "What's Next?",
-      "description": "I've received your intake form and generated an approximate automatic calculation above. This is just a starting point - I'll review all your details personally and get back to you with my personalized recommendations within 24 hours via email. Check your inbox for next steps!"
+      "description": "We've received your intake form and generated an approximate automatic calculation above. This is just a starting point - our team will review all your details personally and get back to you with personalized recommendations within 24 hours via email. Check your inbox for next steps!"
     },
     "common": {
       "select": "Select",

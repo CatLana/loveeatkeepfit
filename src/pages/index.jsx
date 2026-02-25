@@ -119,6 +119,43 @@ export default function HomePage() {
           content={content.hero}
           primaryCtaHref="#join"
         />
+
+        {/* Value Proposition Banner */}
+        <section className="py-12 md:py-16 bg-gradient-to-br from-peach/10 to-sunset/10">
+          <div className="mx-auto max-w-5xl px-4">
+            <div className="relative overflow-hidden rounded-3xl bg-white/60 backdrop-blur-sm border border-white/30 shadow-soft">
+              {/* Background decoration */}
+              <div className="absolute inset-0 bg-gradient-to-r from-leaf/5 via-coral/5 to-sunset/5"></div>
+              
+              {/* Content */}
+              <div className="relative px-8 py-12 md:px-12 md:py-16">
+                <div className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-gradient-to-br from-leaf to-darkgreen shadow-lg">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-charcoal leading-tight">
+                    I help people fix the{' '}
+                    <span className="relative inline-block">
+                      <span className="highlight highlight-coral">chaos</span>
+                    </span>{' '}
+                    that happens when you try to organise food for your weight management journey.
+                  </h2>
+                  
+                  {/* Decorative elements */}
+                  <div className="mt-8 flex items-center justify-center gap-2">
+                    <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-coral rounded-full"></div>
+                    <div className="w-2 h-2 bg-coral rounded-full"></div>
+                    <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-coral rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <StoryBlock content={content.story} />
 
         <section id="approach" className="py-12 md:py-16">

@@ -54,9 +54,8 @@ export default function FormSignup({ content, social }) {
             <h3 className="text-2xl font-semibold text-charcoal">
               {content.ctaHeading}
             </h3>
-            <p className="mt-3 text-base leading-relaxed text-charcoal/80">
-              {content.ctaText}
-            </p>
+            <div className="mt-3 text-base leading-relaxed text-charcoal/80" dangerouslySetInnerHTML={{ __html: content.ctaText }}>
+            </div>
           </div>
           <div className="rounded-3xl border border-beige bg-white p-8 shadow-soft">
             <h2 className="text-3xl font-semibold text-charcoal">

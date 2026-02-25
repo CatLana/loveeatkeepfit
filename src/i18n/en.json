@@ -320,7 +320,7 @@
     "heading": "Ready to take the next step",
     "startDate": "Next start date: Sunday the 22nd of February",
     "ctaHeading": "Join the group",
-    "ctaText": "Fill out the form below to get started. After you fill in your details, the link to the form will appear. Please complete it and wait for me to get back to you with your personal calorie targets. I will enrol you into the communication channel where you will receive the learning materials, homework, and access to the community with which we will start this journey together, all in the same boat.",
+    "ctaText": "<div class='space-y-3'><p class='font-semibold text-charcoal mb-4'>Here's how it works:</p><ol class='space-y-2 text-sm leading-relaxed'><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>1</span><span>Fill in the form below</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>2</span><span>You will receive a link to a questionnaire about your nutrition habits and challenges</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>3</span><span>Submit the questionnaire</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>4</span><span>Wait for me to get back to you with your next steps</span></li></ol></div>",
     "name": "Name",
     "email": "Email",
     "phone": "Phone (optional)",

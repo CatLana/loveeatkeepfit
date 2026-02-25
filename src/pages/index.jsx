@@ -115,46 +115,54 @@ export default function HomePage() {
       <Header navItems={navItems} locale={locale} onLocaleChange={setLocale} />
 
       <main className="pt-10">
+        {/* Opening Headline */}
+        <section className="pt-20 pb-12 md:pb-16">
+          <div className="mx-auto max-w-4xl px-4">
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-wide text-leaf">
+                {content.hero.eyebrow}
+              </p>
+              <h1 className="mt-6 text-4xl font-semibold text-charcoal md:text-5xl lg:text-6xl">
+                Trying to lose weight but it never works?
+              </h1>
+              <p className="mt-6 text-xl leading-relaxed text-charcoal max-w-3xl mx-auto">
+                Here at Love Eat Keep Fit we have a solution for you. Follow the program to learn how to make food work for you and not against your body goals.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Pain Points Section */}
+        <section className="py-12 md:py-16 bg-gradient-to-br from-coral/5 to-sunset/5">
+          <div className="mx-auto max-w-4xl px-4">
+            <div className="space-y-6">
+              {content.hero.painPoints && content.hero.painPoints.map((point, index) => (
+                <div key={index} className="relative">
+                  <div className="flex items-start gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-coral/20 shadow-soft">
+                    <div className="flex-shrink-0 w-8 h-8 bg-coral/10 rounded-full flex items-center justify-center mt-1">
+                      <svg className="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
+                      </svg>
+                    </div>
+                    <p className="text-lg leading-relaxed text-charcoal font-medium">
+                      {point}
+                    </p>
+                  </div>
+                  {/* Problem indicator */}
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-coral rounded-full flex items-center justify-center">
+                    <span className="text-xs text-white font-bold">!</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Hero Banner with Profile */}
         <Hero
           content={content.hero}
           primaryCtaHref="#join"
         />
-
-        {/* Value Proposition Banner */}
-        <section className="py-12 md:py-16 bg-gradient-to-br from-peach/10 to-sunset/10">
-          <div className="mx-auto max-w-5xl px-4">
-            <div className="relative overflow-hidden rounded-3xl bg-white/60 backdrop-blur-sm border border-white/30 shadow-soft">
-              {/* Background decoration */}
-              <div className="absolute inset-0 bg-gradient-to-r from-leaf/5 via-coral/5 to-sunset/5"></div>
-              
-              {/* Content */}
-              <div className="relative px-8 py-12 md:px-12 md:py-16">
-                <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-gradient-to-br from-leaf to-darkgreen shadow-lg">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-charcoal leading-tight">
-                    I help people fix the{' '}
-                    <span className="relative inline-block">
-                      <span className="highlight highlight-coral">chaos</span>
-                    </span>{' '}
-                    that happens when you try to organise food for your weight management journey.
-                  </h2>
-                  
-                  {/* Decorative elements */}
-                  <div className="mt-8 flex items-center justify-center gap-2">
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-coral rounded-full"></div>
-                    <div className="w-2 h-2 bg-coral rounded-full"></div>
-                    <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-coral rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         <StoryBlock content={content.story} />
 

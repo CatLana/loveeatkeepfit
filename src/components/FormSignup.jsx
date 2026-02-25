@@ -8,14 +8,18 @@ export default function FormSignup({ content, social }) {
     email: "",
     phone: "",
     goal: "",
-    why: ""
+    why: "",
+    researchAgreement: false
   });
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = event.target;
+    setFormData((prev) => ({ 
+      ...prev, 
+      [name]: type === 'checkbox' ? checked : value 
+    }));
   };
 
   const handleSubmit = async (event) => {
@@ -154,6 +158,19 @@ export default function FormSignup({ content, social }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   />
+                </label>
+                <label className="flex items-start gap-3 text-sm leading-relaxed text-charcoal">
+                  <input
+                    type="checkbox"
+                    name="researchAgreement"
+                    required
+                    checked={formData.researchAgreement}
+                    onChange={handleChange}
+                    className="mt-1 h-4 w-4 rounded border border-beige bg-warmwhite text-darkgreen focus:ring-darkgreen"
+                  />
+                  <span>
+                    The research phase is aimed for collecting the real painpoints of real people struggling when it comes to food organisation while they are in a weight management journey. I do not ask any money at this stage, but only your consistent feedback on your problems, my proposed solutions and also any feedback content-wise in my application would be very helpful. By signing up for my coaching for free you agree to fill in all the feedback forms that I will be sending to you.
+                  </span>
                 </label>
                 {status === "error" && (
                   <p className="text-sm text-coral">{error}</p>

@@ -169,7 +169,7 @@ export default function FormSignup({ content, social }) {
                     className="mt-1 h-4 w-4 rounded border border-beige bg-warmwhite text-darkgreen focus:ring-darkgreen"
                   />
                   <span>
-                    The research phase is aimed for collecting the real painpoints of real people struggling when it comes to food organisation while they are in a weight management journey. I do not ask any money at this stage, but only your consistent feedback on your problems, my proposed solutions and also any feedback content-wise in my application would be very helpful. By signing up for my coaching for free you agree to fill in all the feedback forms that I will be sending to you.
+                    The research phase is aimed at collecting real pain points from people struggling with food organization during their weight management journey. I do not ask for any money at this stage - only your consistent feedback on your problems, my proposed solutions, and the content in my application. By signing up for my free coaching, you agree to complete all feedback forms that I will send to you.
                   </span>
                 </label>
                 {status === "error" && (

@@ -133,6 +133,9 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Story Section with Pain Points List */}
+        <StoryBlock content={content.story} />
+
         {/* Pain Points Section */}
         <section className="py-12 md:py-16 bg-gradient-to-br from-coral/5 to-sunset/5">
           <div className="mx-auto max-w-4xl px-4">
@@ -164,8 +167,6 @@ export default function HomePage() {
           content={content.hero}
           primaryCtaHref="#join"
         />
-
-        <StoryBlock content={content.story} />
 
         <section id="approach" className="py-12 md:py-16">
           <div className="mx-auto max-w-6xl px-4">

@@ -5,7 +5,7 @@
   },
   "hero": {
     "eyebrow": "Food Coaching • Sustainable Weight Management",
-    "title": "Hi, I'm Lana. I am the creator of this program.",
+    "title": "Hi, I'm Lana, creator of Love Eat Keep Fit.",
     "subtitle": "We help people fix the chaos that happens when you try to organise food for your weight management journey.",
     "painPoints": [
       "You should not feel like you need a second job just to eat well and meet your calorie targets.",
@@ -20,55 +20,25 @@
     "ctaSecondary": "Book your spot"
   },
   "story": {
-    "heading": "If any of these sounds like you…",
+    "heading": "If any of these feels like you…",
     "short": "It's not willpower. It's the <span class='highlight highlight-coral'>daily friction around food</span>.",
-    "problemHeading": "The real problem",
-    "problemText": "Most plans are built for <span class='highlight highlight-sunset'>perfect days</span>. Real life is busy, and food decisions happen <span class='highlight highlight-coral'>under stress</span>.",
+
     "painHeading": "Do these feel familiar?",
     "painPoints": [
-      {
-        "title": "Meal plan burnout",
-        "description": "You start strong, then fall off because cooking and grocery shopping take too much time and energy."
-      },
-      {
-        "title": "Life on pause",
-        "description": "It feels like you have to put your life on hold just to organize food for your goals."
-      },
-      {
-        "title": "Bland food fatigue",
-        "description": "Diets feel boring, so you slide back into fast food or sweets."
-      },
-      {
-        "title": "No grocery system",
-        "description": "You’re unsure how to plan groceries and end up at the shop every second day."
-      },
-      {
-        "title": "Calorie overload",
-        "description": "Tracking feels overwhelming — one more task on your to-do list."
-      },
-      {
-        "title": "Reset cycle",
-        "description": "You do well for a week, then life happens and everything resets."
-      },
-      {
-        "title": "Protein without meat",
-        "description": "You don’t eat meat and struggle to hit your protein needs."
-      },
-      {
-        "title": "No-workout preference",
-        "description": "You’re not into sport and want results without crazy workouts."
-      }
+      "Cooking takes longer than you want and you spend too much time in the kitchen.",
+      "Healthy eating feels like you need to spend a lot of time in the kitchen or eat bland food.",
+      "You follow a meal plan to lose weight, but the food is boring and you quit.",
+      "You eat well and then fall into cravings trap and all your saved calories in one go.",
+      "You lose energy, feel frustrated, and start again every week.",
+      "Shopping feels endless."
     ],
     "empathyHeading": "You’re not alone",
     "empathyText": "If so, you're not alone. Maybe you need more motivation or accountability, but that is not the real problem.",
     "consequenceHeading": "What this creates",
     "consequenceText": "You start, stop, and reset — not because you failed, but because the system never fit your life.",
-    "solutionHeading": "A system that fits real life",
-    "solution": "That's why I built coaching that makes <span class='highlight highlight-leaf'>healthy eating simple</span>, grocery shopping quick, and <span class='highlight highlight-peach'>routines sustainable</span> long term.",
+
     "bridgeHeading": "What changes when you have a system",
-    "bridge": "<span class='highlight highlight-leaf'>More consistency</span>, <span class='highlight highlight-coral'>fewer cravings</span>, and a routine you can actually keep.",
-    "ctaLabel": "See how coaching works",
-    "ctaHref": "#coaching"
+    "bridge": "<span class='highlight highlight-leaf'>More consistency</span>, <span class='highlight highlight-coral'>fewer cravings</span>, and a routine you can actually keep."
   },
   "approach": {
     "heading": "Our approach",

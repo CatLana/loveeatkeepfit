@@ -138,10 +138,10 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-warmwhite">
       <Head>
-        <title>{contactContent?.metaTitle || "Contact — Love Eat Keep Fit"}</title>
-        <meta name="description" content={contactContent?.metaDescription || "Get in touch with Love Eat Keep Fit for questions about coaching and nutrition guidance."} />
-        <meta property="og:title" content={contactContent?.metaTitle || "Contact — Love Eat Keep Fit"} />
-        <meta property="og:description" content={contactContent?.metaDescription || "Get in touch with Love Eat Keep Fit for questions about coaching and nutrition guidance."} />
+        <title>{contactContent?.metaTitle || "Contact — Love. Eat. Keep Fit."}</title>
+        <meta name="description" content={contactContent?.metaDescription || "Get in touch with Love. Eat. Keep Fit. for questions about coaching and nutrition guidance."} />
+        <meta property="og:title" content={contactContent?.metaTitle || "Contact — Love. Eat. Keep Fit."} />
+        <meta property="og:description" content={contactContent?.metaDescription || "Get in touch with Love. Eat. Keep Fit. for questions about coaching and nutrition guidance."} />
         <meta property="og:type" content="website" />
       </Head>
 

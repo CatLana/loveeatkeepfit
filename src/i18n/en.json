@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Love Eat Keep Fit — Food Coaching",
+    "title": "Love. Eat. Keep Fit. — Food Coaching",
     "description": "Learn sustainable weight management through simple food routines. No chaos, no stress, just a system that fits your real life."
   },
   "hero": {
     "eyebrow": "Food Coaching • Sustainable Weight Management",
-    "title": "Hi, I'm Lana, creator of Love Eat Keep Fit.",
+    "title": "Hi, I'm Lana, creator of Love. Eat. Keep Fit.",
     "subtitle": "We help people fix the chaos that happens when you try to organise food for your weight management journey.",
     "painPoints": [
       "You should not feel like you need a second job just to eat well and meet your calorie targets.",
@@ -79,7 +79,7 @@
     ]
   },
   "coachingCommon": {
-    "eyebrow": "Love Eat Keep Fit Coaching",
+    "eyebrow": "Love. Eat. Keep Fit. Coaching",
     "otherTitle": "Other coaching options",
     "otherText": "Explore the other ways we can work together."
   },
@@ -88,8 +88,8 @@
       "slug": "/coaching/group",
       "title": "Group Coaching",
       "short": "Community-driven coaching with weekly structure.",
-      "metaTitle": "Group Coaching — Love Eat Keep Fit",
-      "metaDescription": "Join the Love Eat Keep Fit group coaching program. A simple, sustainable way to eat well, stay accountable, and reach your goals.",
+      "metaTitle": "Group Coaching — Love. Eat. Keep Fit.",
+      "metaDescription": "Join the Love. Eat. Keep Fit. group coaching program. A simple, sustainable way to eat well, stay accountable, and reach your goals.",
       "subtitle": "A guided coaching experience designed to help you build habits that fit real life — with weekly structure, clear steps, and a supportive community.",
       "freeNote": {
         "label": "Research phase",
@@ -133,7 +133,7 @@
       "slug": "/coaching/individual",
       "title": "1:1 Individual Coaching",
       "short": "Personalized coaching and direct guidance.",
-      "metaTitle": "1:1 Coaching — Love Eat Keep Fit",
+      "metaTitle": "1:1 Coaching — Love. Eat. Keep Fit.",
       "metaDescription": "Work one-on-one with Lana for a personalized food strategy, accountability, and sustainable weight management.",
       "subtitle": "Private coaching for people who want a tailored plan, direct feedback, and fast clarity.",
       "price": {
@@ -181,7 +181,7 @@
       "slug": "/coaching/premium",
       "title": "In-Person Premium Coaching",
       "short": "High-touch, in-person support for faster progress.",
-      "metaTitle": "In-Person Premium — Love Eat Keep Fit",
+      "metaTitle": "In-Person Premium — Love. Eat. Keep Fit.",
       "metaDescription": "Premium in-person coaching with cooking routines, grocery strategy, and personalized support.",
       "subtitle": "For clients who want hands-on guidance, in-person sessions, and the highest level of accountability.",
       "price": {
@@ -230,7 +230,7 @@
       "slug": "/coaching/digital",
       "title": "Digital Product",
       "short": "Self-paced course, macros calculator, and recipes.",
-      "metaTitle": "Digital Product — Love Eat Keep Fit",
+      "metaTitle": "Digital Product — Love. Eat. Keep Fit.",
       "metaDescription": "Get personalized macros, a self-paced course, and a recipe book with grocery lists for your goals.",
       "subtitle": "A self-paced digital program with personal macro and calorie calculations, videos, exercises, and a recipe book with ready-made grocery lists.",
       "price": {

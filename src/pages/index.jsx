@@ -137,7 +137,7 @@ export default function HomePage() {
                 Trying to lose weight but it never works?
               </h1>
               <p className="mt-6 text-xl leading-relaxed text-charcoal max-w-3xl mx-auto" dangerouslySetInnerHTML={{ 
-                __html: "Here at <span class='highlight highlight-leaf'>Love Eat Keep Fit</span> we have a solution for you. <span class='highlight highlight-coral'>Follow the program</span> to learn how to make food work for you and not against your body goals."
+                __html: "Here at <mark>Love. Eat. Keep Fit.</mark> we have a solution for you. <mark>Follow the program</mark> to learn how to make food work for you and not against your body goals."
               }}>
               </p>
             </div>

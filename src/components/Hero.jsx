@@ -21,7 +21,7 @@ export default function Hero({ content, primaryCtaHref }) {
                   <span className="block">Hi, I'm</span>
                   <span className="block text-coral">Lana,</span>
                   <span className="block text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-charcoal/80 mt-1">
-                    creator of Love Eat Keep Fit.
+                    creator of Love. Eat. Keep Fit.
                   </span>
                 </h1>
                 

@@ -35,13 +35,13 @@ export default function Hero({ content, primaryCtaHref }) {
 
               {/* Profile Image - Second on mobile, first on desktop */}
               <div className="flex-shrink-0 order-2 md:order-1">
-                <div className="w-48 h-72 md:w-52 md:h-76 lg:w-56 lg:h-80 mx-auto md:mx-0">
+                <div className="w-48 h-60 md:w-56 md:h-72 lg:w-64 lg:h-80 mx-auto md:mx-0">
                   <Image
-                    src="/images/me_outdoors.JPG"
+                    src="/images/profile.jpg"
                     alt="Lana profile"
-                    width={255}
-                    height={453}
-                    className="w-full h-full rounded-xl object-cover shadow-lg"
+                    width={256}
+                    height={320}
+                    className="w-full h-full rounded-xl object-cover object-top shadow-lg"
                     priority
                   />
                 </div>

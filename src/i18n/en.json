@@ -12,8 +12,8 @@
       "You should not spend hours cooking or running to the shop every day for missing ingredients.",
       "You should not feel stressed when you try to make one meal work for different calorie needs in your family."
     ],
-    "solution": "I'd like to share with you an efficient approach on how to cook and shop so your meals become <span class=\"highlight highlight-leaf\">quick, simple, tasty</span>, and easy to adjust for everyone, including children.",
-    "promise": "You learn how to eat in a healthy way <span class=\"highlight highlight-coral\">without frustration</span> and without losing your time or energy.",
+    "solution": "I'd like to share with you an efficient approach on how to cook and shop so your meals become <mark>quick, simple, tasty</mark>, and easy to adjust for everyone, including children.",
+    "promise": "You learn how to eat in a healthy way <mark>without frustration</mark> and without losing your time or energy.",
     "experience": "After years of experimenting with cooking, weight management, and working with nutritionists, I learned where most people get stuck. Also, after a lot of research, I learned how the brain and body react when you do not get the nutrients you need. This is why cravings, overeating, and we start the weight management journey over again.",
     "goal": "Our goal is to help you avoid these traps and build a routine that feels good and fits your real life. You will also have support from our team and from the group, because doing this alone is much harder.",
     "ctaPrimary": "Sign Up for Free",
@@ -21,7 +21,7 @@
   },
   "story": {
     "heading": "If any of these feels like you…",
-    "short": "It's not willpower. It's the <span class=\"highlight highlight-coral\">daily friction around food</span>.",
+    "short": "It's not willpower. It's the <mark>daily friction around food</mark>.",
 
     "painHeading": "Do these feel familiar?",
     "painPoints": [
@@ -38,23 +38,23 @@
     "consequenceText": "You start, stop, and reset — not because you failed, but because the system never fit your life.",
 
     "bridgeHeading": "What changes when you have a system",
-    "bridge": "<span class=\"highlight highlight-leaf\">More consistency</span>, <span class=\"highlight highlight-coral\">fewer cravings</span>, and a routine you can actually keep."
+    "bridge": "<mark>More consistency</mark>, <mark>fewer cravings</mark>, and a routine you can actually keep."
   },
   "approach": {
     "heading": "Our approach",
-    "intro": "Our approach is simple. We focus on <span class=\"highlight highlight-coral\">taste, speed, and consistency</span>. <span class=\"highlight highlight-peach\">You do not need complicated recipes</span> or long meal plans. You need a routine that <span class=\"highlight highlight-leaf\">saves time and reduces stress</span>. We help you understand your calorie and macro needs in a clear and simple way. No obsession. No confusion. You also get support and accountability so you stay on track even when <span class=\"highlight highlight-sunset\">life gets messy</span>.",
+    "intro": "Our approach is simple. We focus on <mark>taste, speed, and consistency</mark>. You <mark>do not need complicated recipes</mark> or long meal plans. You need a routine that <mark>saves time and reduces stress</mark>. We help you understand your calorie and macro needs in a clear and simple way. No obsession. No confusion. You also get <mark>support and accountability</mark> so you stay on track even when life gets messy.",
     "points": [
       {
         "title": "Simple & Tasty",
-        "description": "Quick recipes that taste good and work for the whole family, including kids."
+        "description": "Quick recipes that <mark>taste good</mark> and work for the whole family, including kids."
       },
       {
         "title": "Time-Saving",
-        "description": "Organized shopping and cooking routines that fit into busy life."
+        "description": "Organized shopping and cooking routines that <mark>fit into busy life</mark>."
       },
       {
         "title": "Sustainable",
-        "description": "Support and accountability to build habits that last long-term."
+        "description": "Support and accountability to build habits that last <mark>long-term</mark>."
       }
     ]
   },

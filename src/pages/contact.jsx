@@ -260,7 +260,7 @@ export default function ContactPage() {
         </section>
       </main>
 
-      <Footer />
+      <Footer footer={content.footer} social={content.social} />
       <ScrollTopButton />
     </div>
   );

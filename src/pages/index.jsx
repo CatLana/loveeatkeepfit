@@ -54,6 +54,18 @@ const navLabels = {
 export default function HomePage() {
   const [locale, setLocale] = useState("en");
 
+  // Prevent automatic scrolling on page load/refresh
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Remove hash from URL without triggering scroll
+      if (window.location.hash) {
+        window.history.replaceState("", document.title, window.location.pathname + window.location.search);
+      }
+      // Ensure page starts at top
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   useEffect(() => {
     const stored = typeof window !== "undefined" ? localStorage.getItem("lekf-lang") : null;
     const params = new URLSearchParams(window.location.search);
@@ -84,17 +96,16 @@ export default function HomePage() {
       { label: labels.home, href: "#home" },
       {
         label: labels.method,
-        href: "/coaching/group",
+        href: "/coaching/individual",
         highlight: true,
         children: [
-          { label: labels.coachingGroup, href: "/coaching/group" },
-          { label: labels.coachingIndividual, href: "/coaching/individual" },
-          { label: labels.coachingPremium, href: "/coaching/premium" },
-          { label: labels.coachingDigital, href: "/coaching/digital" }
+          { label: labels.coachingIndividual, href: "/coaching/individual", disabled: true },
+          { label: labels.coachingPremium, href: "/coaching/premium", disabled: true },
+          { label: labels.coachingDigital, href: "/coaching/digital", disabled: true }
         ]
       },
       { label: labels.join, href: "#join" },
-      { label: labels.contact, href: "#contact" }
+      { label: labels.contact, href: "/contact" }
     ],
     [labels]
   );
@@ -167,7 +178,6 @@ export default function HomePage() {
           content={content.hero}
           primaryCtaHref="#join"
         />
-
         <section id="approach" className="py-12 md:py-16">
           <div className="mx-auto max-w-6xl px-4">
             <h2 className="text-3xl font-semibold text-charcoal md:text-4xl">
@@ -201,6 +211,20 @@ export default function HomePage() {
         </section>
 
         <WhatWeDo content={content.whatWeDo} />
+        
+        {/* Free Group Coaching Banner */}
+        <section className="py-6">
+          <div className="mx-auto max-w-5xl px-4">
+            <div className="mt-6 rounded-2xl border border-peach/50 bg-peach/20 p-5 text-charcoal">
+              <p className="text-sm font-semibold uppercase tracking-wide text-coral">
+                Research phase
+              </p>
+              <p className="mt-2 text-base leading-relaxed text-charcoal/80">
+                The programm is currently free while we are running the reasearch of the most common pain points to provide my clients with the most usefull and relevant information in my app. Nonetheless this is just the research stage, my goal is to offer this programm in a way that you will achieve your goals. If you feel this is the prblem you are struggling with, I will be happy to see you on board.
+              </p>
+            </div>
+          </div>
+        </section>
         <FormSignup content={content.signup} social={content.social} />
       </main>
 

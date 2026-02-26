@@ -8,8 +8,12 @@ export default function Nav({ items }) {
 
         if (item.children && item.children.length > 0) {
           return (
-            <div key={item.href} className="relative group pt-2 -mt-2">
-              <a href={item.href} className={linkClass}>
+            <div key={item.href || item.label} className="relative group pt-2 -mt-2">
+              <button 
+                className={linkClass}
+                onClick={(e) => e.preventDefault()}
+                type="button"
+              >
                 <span className="inline-flex items-center gap-2">
                   {item.highlight && (
                     <span className="accent-dot h-2 w-2 rounded-full" aria-hidden="true" />
@@ -24,17 +28,30 @@ export default function Nav({ items }) {
                     <path d="M5.5 7.5l4.5 4.5 4.5-4.5" />
                   </svg>
                 </span>
-              </a>
+              </button>
               <div className="absolute left-0 top-full z-20 hidden w-56 rounded-2xl border border-beige bg-white p-2 shadow-soft group-hover:block group-focus-within:block">
-                {item.children.map((child) => (
-                  <a
-                    key={child.href}
-                    href={child.href}
-                    className="block rounded-xl px-3 py-2 text-sm text-charcoal transition hover:bg-warmwhite hover:text-coral"
-                  >
-                    {child.label}
-                  </a>
-                ))}
+                {item.children.map((child) => {
+                  if (child.disabled) {
+                    return (
+                      <span
+                        key={child.href || child.label}
+                        className="flex items-center justify-between rounded-xl px-3 py-2 text-sm text-charcoal/50 cursor-not-allowed"
+                      >
+                        {child.label}
+                        <span className="text-xs text-charcoal/40 italic">coming soon</span>
+                      </span>
+                    );
+                  }
+                  return (
+                    <a
+                      key={child.href}
+                      href={child.href}
+                      className="block rounded-xl px-3 py-2 text-sm text-charcoal transition hover:bg-warmwhite hover:text-coral"
+                    >
+                      {child.label}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           );

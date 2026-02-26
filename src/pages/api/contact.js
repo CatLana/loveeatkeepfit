@@ -1,4 +1,10 @@
-export default function handler(req, res) {
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+const recipient = process.env.CONTACT_RECIPIENT || "loveeatkeepfitblog@gmail.com";
+const sender = process.env.CONTACT_SENDER || "LoveEatKeepFit <no-reply@loveeatkeepfit.ie>";
+
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
@@ -16,32 +22,33 @@ export default function handler(req, res) {
     return res.status(400).json({ message: "Invalid email address" });
   }
 
-  try {
-    // Here you would typically integrate with your email service
-    // For now, we'll just log the form submission
-    console.log("Contact form submission:", {
-      name,
-      email,
-      subject,
-      message,
-      timestamp: new Date().toISOString()
-    });
+  const html = `
+    <h2>New Contact Form Submission</h2>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Subject:</strong> ${subject}</p>
+    <p><strong>Message:</strong><br/>${message.replace(/\n/g, '<br/>')}</p>
+  `;
 
-    // In a real application, you would:
-    // 1. Send an email to yourself with the contact details
-    // 2. Send a confirmation email to the user
-    // 3. Store the submission in a database
-    // 4. Integrate with services like SendGrid, Mailgun, etc.
-
-    return res.status(200).json({ 
-      message: "Contact form submitted successfully",
-      success: true 
-    });
-  } catch (error) {
-    console.error("Error processing contact form:", error);
-    return res.status(500).json({ 
-      message: "Internal server error",
-      success: false 
-    });
+  if (process.env.RESEND_API_KEY) {
+    try {
+      await resend.emails.send({
+        from: sender,
+        to: recipient,
+        replyTo: email,
+        subject: `Contact Form: ${subject}`,
+        html
+      });
+    } catch (error) {
+      console.error("Resend error:", error);
+      return res.status(500).json({ message: "Email failed to send" });
+    }
+  } else {
+    console.log("📧 Email would be sent (no RESEND_API_KEY):");
+    console.log("To:", recipient);
+    console.log("From:", sender);
+    console.log("Data:", { name, email, subject, message });
   }
+
+  return res.status(200).json({ message: "Contact form submitted successfully", success: true });
 }

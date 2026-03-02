@@ -1022,6 +1022,16 @@ export default function IntakeForm({ content }) {
             <p className="text-sm text-coral">{content.intake?.messages?.error || error}</p>
           )}
 
+          <label className="flex items-start gap-2 text-sm text-charcoal mb-4">
+            <input
+              type="checkbox"
+              required
+              className="accent-leaf mt-0.5 flex-shrink-0"
+            />
+            <span>
+              By clicking the submit button, I consent to the processing of my personal data as described in the <a href="/privacy" target="_blank" rel="noopener noreferrer" className="underline text-coral hover:text-darkgreen">privacy policy</a>.
+            </span>
+          </label>
           <button
             type="submit"
             disabled={status === "loading"}

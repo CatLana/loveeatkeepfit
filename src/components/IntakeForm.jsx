@@ -362,7 +362,7 @@ export default function IntakeForm({ content }) {
               </div>
               <fieldset className="space-y-3">
                 <legend className="text-sm font-medium text-charcoal">
-                  {content.intake?.sections?.physicalMeasurements?.fields?.leanMuscleMass || "Lean muscle mass (body scan data)"}
+                  {content.intake?.sections?.physicalMeasurements?.fields?.leanMuscleMass || "If you've ever done a body scan, what was your lean muscle mass:"}
                 </legend>
                 <div className="space-y-2">
                   {[
@@ -382,6 +382,7 @@ export default function IntakeForm({ content }) {
                         checked={formData.leanMuscleMass === option.value}
                         onChange={handleChange}
                         className="h-4 w-4 border-beige text-coral focus:ring-coral"
+                        required
                       />
                       {option.label}
                     </label>

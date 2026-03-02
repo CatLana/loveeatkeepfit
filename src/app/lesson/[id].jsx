@@ -1,7 +1,17 @@
 import React from 'react';
+import { useRouter } from 'next/router';
+import Lesson1 from './1';
 
-export default function LessonPage({ id }) {
-  // Mock lesson content
+export default function LessonPage() {
+  const router = useRouter();
+  const { id } = router.query;
+
+  // Route to specific lesson components
+  if (id === '1') {
+    return <Lesson1 />;
+  }
+
+  // Mock lesson content for other lessons
   const lesson = {
     title: `Lesson ${id}`,
     faq: '/app/faq',

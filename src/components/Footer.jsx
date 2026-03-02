@@ -14,7 +14,15 @@ export default function Footer({ footer, social }) {
             height={48}
             className="rounded-full object-cover"
           />
-          <p className="text-sm text-charcoal/70 max-w-md">{footer.disclaimer}</p>
+          <div className="flex flex-col gap-1">
+            <p className="text-sm text-charcoal/70 max-w-md">{footer.disclaimer}</p>
+            <a
+              href="/privacy"
+              className="text-xs text-charcoal/50 hover:text-charcoal/70 underline transition-colors"
+            >
+              Privacy Policy
+            </a>
+          </div>
         </div>
         <div className="flex items-center gap-4">
           <a

@@ -362,7 +362,7 @@ export default function IntakeForm({ content }) {
               </div>
               <fieldset className="space-y-3">
                 <legend className="text-sm font-medium text-charcoal">
-                  {content.intake?.sections?.physicalMeasurements?.fields?.leanMuscleMass || "Lean muscle mass (body scan data)"}
+                  {content.intake?.sections?.physicalMeasurements?.fields?.leanMuscleMass || "If you've ever done a body scan, what was your lean muscle mass:"}
                 </legend>
                 <div className="space-y-2">
                   {[
@@ -382,6 +382,7 @@ export default function IntakeForm({ content }) {
                         checked={formData.leanMuscleMass === option.value}
                         onChange={handleChange}
                         className="h-4 w-4 border-beige text-coral focus:ring-coral"
+                        required
                       />
                       {option.label}
                     </label>
@@ -1021,6 +1022,16 @@ export default function IntakeForm({ content }) {
             <p className="text-sm text-coral">{content.intake?.messages?.error || error}</p>
           )}
 
+          <label className="flex items-start gap-2 text-sm text-charcoal mb-4">
+            <input
+              type="checkbox"
+              required
+              className="accent-leaf mt-0.5 flex-shrink-0"
+            />
+            <span>
+              By clicking the submit button, I consent to the processing of my personal data as described in the <a href="/privacy" target="_blank" rel="noopener noreferrer" className="underline text-coral hover:text-darkgreen">privacy policy</a>.
+            </span>
+          </label>
           <button
             type="submit"
             disabled={status === "loading"}

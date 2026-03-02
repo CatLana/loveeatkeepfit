@@ -45,3 +45,6 @@ coverage
 *.log
 *.swp
 *.swo
+
+# Claude cache files
+tmpclaude-*

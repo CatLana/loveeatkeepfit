@@ -25,3 +25,11 @@ section {
 .accent-dot {
   @apply bg-leaf;
 }
+
+/* Watercolor Highlighter Styles */
+mark {
+  background: #e6f9e6;
+  color: #3a2f2a;
+  border-radius: 0.25em;
+  padding: 0.15em 0.4em;
+}

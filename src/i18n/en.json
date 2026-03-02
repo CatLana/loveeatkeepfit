@@ -1,105 +1,85 @@
 {
   "meta": {
-    "title": "Love Eat Keep Fit — Research Group",
-    "description": "Join a research group to test a sustainable, neuroscience-informed weight loss method. No dangerous diets. Eat well, enjoy food, lose fat."
+    "title": "Love. Eat. Keep Fit. — Food Coaching",
+    "description": "Learn sustainable weight management through simple food routines. No chaos, no stress, just a system that fits your real life."
   },
   "hero": {
-    "title": "Hi, I’m Lana.",
-    "subtitle": "I'm a food coach who helps you transform your grocery shopping and cooking routine into a sustainable, healthy lifestyle — without spending hours in the kitchen or eating boring food. You can cook for your entire family and still hit your fitness goals, even on a calorie deficit. After years of experimenting with cooking, weight management, and working with nutritionists, I've identified the pain points we all struggle with on our weight control journey — and found science-based answers on how to prevent your brain and body from sabotaging you. I'll show you how to get the nutrients you need to avoid cravings and overeating habits that derail weight loss. Plus, I offer motivational support groups and individual coaching — because accountability is often the hardest part when you're on your own in your weight management journey.",
-    "ctaPrimary": "Participate",
+    "eyebrow": "Food Coaching • Sustainable Weight Management",
+    "title": "Hi, I'm Lana, creator of Love. Eat. Keep Fit.",
+    "subtitle": "We help people fix the chaos that happens when you try to organise food for your weight management journey.",
+    "painPoints": [
+      "You should not feel like you need a second job just to eat well and meet your calorie targets.",
+      "You should not spend hours cooking or running to the shop every day for missing ingredients.",
+      "You should not feel stressed when you try to make one meal work for different calorie needs in your family."
+    ],
+    "solution": "I'd like to share with you an efficient approach on how to cook and shop so your meals become <mark>quick, simple, tasty</mark>, and easy to adjust for everyone, including children.",
+    "promise": "You learn how to eat in a healthy way <mark>without frustration</mark> and without losing your time or energy.",
+    "experience": "After years of experimenting with cooking, weight management, and working with nutritionists, I learned where most people get stuck. Also, after a lot of research, I learned how the brain and body react when you do not get the nutrients you need. This is why cravings, overeating, and we start the weight management journey over again.",
+    "goal": "Our goal is to help you avoid these traps and build a routine that feels good and fits your real life. You will also have support from our team and from the group, because doing this alone is much harder.",
+    "ctaPrimary": "Sign Up for Free",
     "ctaSecondary": "Book your spot"
   },
   "story": {
-    "heading": "If any of these sounds like you…",
-    "short": "It’s not willpower. It’s the daily friction around food.",
-    "problemHeading": "The real problem",
-    "problemText": "Most plans are built for perfect days. Real life is busy, and food decisions happen under stress.",
+    "heading": "If any of these feels like you…",
+    "short": "It's not willpower. It's the <mark>daily friction around food</mark>.",
+
     "painHeading": "Do these feel familiar?",
     "painPoints": [
-      {
-        "title": "Meal plan burnout",
-        "description": "You start strong, then fall off because cooking and grocery shopping take too much time and energy."
-      },
-      {
-        "title": "Life on pause",
-        "description": "It feels like you have to put your life on hold just to organize food for your goals."
-      },
-      {
-        "title": "Bland food fatigue",
-        "description": "Diets feel boring, so you slide back into fast food or sweets."
-      },
-      {
-        "title": "No grocery system",
-        "description": "You’re unsure how to plan groceries and end up at the shop every second day."
-      },
-      {
-        "title": "Calorie overload",
-        "description": "Tracking feels overwhelming — one more task on your to-do list."
-      },
-      {
-        "title": "Reset cycle",
-        "description": "You do well for a week, then life happens and everything resets."
-      },
-      {
-        "title": "Protein without meat",
-        "description": "You don’t eat meat and struggle to hit your protein needs."
-      },
-      {
-        "title": "No-workout preference",
-        "description": "You’re not into sport and want results without crazy workouts."
-      }
+      "Cooking takes longer than you want and you spend too much time in the kitchen.",
+      "Healthy eating feels like you need to spend a lot of time in the kitchen or eat bland food.",
+      "You follow a meal plan to lose weight, but the food is boring and you quit.",
+      "You eat well and then fall into cravings trap and all your saved calories in one go.",
+      "You lose energy, feel frustrated, and start again every week.",
+      "Shopping feels endless."
     ],
     "empathyHeading": "You’re not alone",
     "empathyText": "If so, you're not alone. Maybe you need more motivation or accountability, but that is not the real problem.",
     "consequenceHeading": "What this creates",
     "consequenceText": "You start, stop, and reset — not because you failed, but because the system never fit your life.",
-    "solutionHeading": "A system that fits real life",
-    "solution": "That’s why I built coaching that makes healthy eating simple, grocery shopping quick, and routines sustainable long term.",
+
     "bridgeHeading": "What changes when you have a system",
-    "bridge": "More consistency, fewer cravings, and a routine you can actually keep.",
-    "ctaLabel": "See how coaching works",
-    "ctaHref": "#coaching"
+    "bridge": "<mark>More consistency</mark>, <mark>fewer cravings</mark>, and a routine you can actually keep."
   },
   "approach": {
-    "heading": "My approach",
-    "intro": "If those struggles sound familiar, my approach focuses on simplicity, taste, and consistency so you can stick to your goals without stress.",
+    "heading": "Our approach",
+    "intro": "Our approach is simple. We focus on <mark>taste, speed, and consistency</mark>. You <mark>do not need complicated recipes</mark> or long meal plans. You need a routine that <mark>saves time and reduces stress</mark>. We help you understand your calorie and macro needs in a clear and simple way. No obsession. No confusion. You also get <mark>support and accountability</mark> so you stay on track even when life gets messy.",
     "points": [
       {
-        "title": "Simplify the system",
-        "description": "Shopping lists, quick recipes, and routines that save time instead of taking over your week."
+        "title": "Simple & Tasty",
+        "description": "Quick recipes that <mark>taste good</mark> and work for the whole family, including kids."
       },
       {
-        "title": "Align with your goals",
-        "description": "Macros and calories tailored to your body and lifestyle, without obsession or confusion."
+        "title": "Time-Saving",
+        "description": "Organized shopping and cooking routines that <mark>fit into busy life</mark>."
       },
       {
-        "title": "Make it sustainable",
-        "description": "Support, accountability, and habits that work long term — even when life gets busy."
+        "title": "Sustainable",
+        "description": "Support and accountability to build habits that last <mark>long-term</mark>."
       }
     ]
   },
     "coachingFlow": {
       "items": [
-        "You fill in a private interest form with your food preferences, lifestyle, goals, struggles, and measurements. It is confidential and read only by me.",
-        "I calculate your macros and calorie targets and send them back to you.",
-        "You join the group where I publish weekly guidance and tips to transform your food routine.",
-        "You get first access to coaching videos and exercises, and confirm homework completion with quick feedback.",
-        "We work together for two months, compare day 1 to day 60, and close with a testimonial if you're happy with the experience."
+        "First, you fill in a private form with your food preferences, lifestyle, goals, struggles, and measurements. Only I read it.",
+        "Then I calculate your macros and calorie targets and send them to you.",
+        "You join the group where I share weekly guidance and tips to improve your food routine.",
+        "You get access to videos and small exercises, and you send quick updates so I can support you.",
+        "We work together for two months. At the end, we compare day 1 to day 60 and close with a testimonial if you are happy with the experience."
       ]
     },
   "coreOffer": {
-    "heading": "What my coaching gives you",
+    "heading": "What our coaching gives you",
     "items": [
-      "Personal accountability that keeps you consistent",
-      "Supportive community plus 1:1 guidance when you need it",
-      "Simple cooking routines with quick, tasty recipes",
-      "A grocery system that saves time and reduces stress",
-      "Sustainable weight management without restriction or guilt",
-      "Macro and calorie guidance tailored to your goals"
+      "<span class=\"highlight highlight-leaf\">Personal accountability</span> that helps you stay consistent",
+      "Supportive community and 1:1 guidance when you need it",
+      "Simple cooking routines with <span class=\"highlight highlight-sunset\">quick, tasty recipes</span>",
+      "Grocery system that <span class=\"highlight highlight-peach\">saves time and reduces stress</span>",
+      "Healthy and <span class=\"highlight highlight-leaf\">sustainable</span> weight management",
+      "Macro and calorie guidance that fits your goals and lifestyle"
     ]
   },
   "coachingCommon": {
-    "eyebrow": "Love Eat Keep Fit Coaching",
+    "eyebrow": "Love. Eat. Keep Fit. Coaching",
     "otherTitle": "Other coaching options",
     "otherText": "Explore the other ways we can work together."
   },
@@ -108,8 +88,8 @@
       "slug": "/coaching/group",
       "title": "Group Coaching",
       "short": "Community-driven coaching with weekly structure.",
-      "metaTitle": "Group Coaching — Love Eat Keep Fit",
-      "metaDescription": "Join the Love Eat Keep Fit group coaching program. A simple, sustainable way to eat well, stay accountable, and reach your goals.",
+      "metaTitle": "Group Coaching — Love. Eat. Keep Fit.",
+      "metaDescription": "Join the Love. Eat. Keep Fit. group coaching program. A simple, sustainable way to eat well, stay accountable, and reach your goals.",
       "subtitle": "A guided coaching experience designed to help you build habits that fit real life — with weekly structure, clear steps, and a supportive community.",
       "freeNote": {
         "label": "Research phase",
@@ -145,7 +125,7 @@
         }
       ],
       "ctaHeading": "Ready to join the group?",
-      "ctaText": "Fill out the form and I will send you the next steps by email.",
+      "ctaText": "Fill out the form and we will send you the next steps by email.",
       "ctaLabel": "Join group coaching",
       "ctaHref": "/#join"
     },
@@ -153,7 +133,7 @@
       "slug": "/coaching/individual",
       "title": "1:1 Individual Coaching",
       "short": "Personalized coaching and direct guidance.",
-      "metaTitle": "1:1 Coaching — Love Eat Keep Fit",
+      "metaTitle": "1:1 Coaching — Love. Eat. Keep Fit.",
       "metaDescription": "Work one-on-one with Lana for a personalized food strategy, accountability, and sustainable weight management.",
       "subtitle": "Private coaching for people who want a tailored plan, direct feedback, and fast clarity.",
       "price": {
@@ -193,7 +173,7 @@
         }
       ],
       "ctaHeading": "Want private coaching?",
-      "ctaText": "Fill out the form and tell me your goals. I will reply with next steps.",
+      "ctaText": "Fill out the form and tell us your goals. We will reply with next steps.",
       "ctaLabel": "Apply for 1:1 coaching",
       "ctaHref": "/#join"
     },
@@ -201,7 +181,7 @@
       "slug": "/coaching/premium",
       "title": "In-Person Premium Coaching",
       "short": "High-touch, in-person support for faster progress.",
-      "metaTitle": "In-Person Premium — Love Eat Keep Fit",
+      "metaTitle": "In-Person Premium — Love. Eat. Keep Fit.",
       "metaDescription": "Premium in-person coaching with cooking routines, grocery strategy, and personalized support.",
       "subtitle": "For clients who want hands-on guidance, in-person sessions, and the highest level of accountability.",
       "price": {
@@ -242,7 +222,7 @@
         }
       ],
       "ctaHeading": "Interested in premium coaching?",
-      "ctaText": "Fill out the form and tell me where you are based. I will confirm availability.",
+      "ctaText": "Fill out the form and tell us where you are based. We will confirm availability.",
       "ctaLabel": "Apply for premium coaching",
       "ctaHref": "/#join"
     },
@@ -250,7 +230,7 @@
       "slug": "/coaching/digital",
       "title": "Digital Product",
       "short": "Self-paced course, macros calculator, and recipes.",
-      "metaTitle": "Digital Product — Love Eat Keep Fit",
+      "metaTitle": "Digital Product — Love. Eat. Keep Fit.",
       "metaDescription": "Get personalized macros, a self-paced course, and a recipe book with grocery lists for your goals.",
       "subtitle": "A self-paced digital program with personal macro and calorie calculations, videos, exercises, and a recipe book with ready-made grocery lists.",
       "price": {
@@ -295,25 +275,22 @@
     }
   },
   "whatWeDo": {
-    "heading": "Inside the coaching",
+    "heading": "You will learn",
     "items": [
-      "Identify your personal goal clearly.",
-      "Calculate your daily calorie needs based on your lifestyle and activity.",
-      "Learn what macros are and why they matter with simple tools.",
-      "Lose fat without losing muscle.",
-      "Manage cravings and understand your body’s signals.",
-      "Eat tasty, quick, low‑stress meals.",
-      "Ready‑made shopping lists to shop in 5 minutes.",
-      "Weekly check‑ins and ongoing support.",
-      "Sustainable workouts that don’t drain your energy.",
-      "Exercise is NOT required: you can walk, do light activity, or no exercise — but without movement you’ll eat a bit less and increasing metabolism is harder without muscle or cardio.",
-      "Main goal: increase your metabolism, not slow it down."
+      "How to get your <span class=\"highlight highlight-coral\">daily calorie needs</span> based on your lifestyle",
+      "What <span class=\"highlight highlight-sunset\">macros</span> are and why they really matter",
+      "You lose fat <span class=\"highlight highlight-leaf\">without losing muscle</span>",
+      "You learn how to <span class=\"highlight highlight-peach\">manage cravings</span> and understand your body's signals based on science",
+      "You know how to prepare <span class=\"highlight highlight-coral\">quick</span> and easy, <span class=\"highlight highlight-sunset\">DELICIOUS</span> meals that will <span class=\"highlight highlight-peach\">meet your calorie</span> target",
+      "At the end of the program you will have your <span class=\"highlight highlight-leaf\">shopping lists ready</span> that will make your grocery shopping quick and efficient",
+      "You get weekly check‑ins and ongoing support"
     ]
   },
   "signup": {
-    "heading": "Join the research group",
-    "ctaHeading": "Ready to take the next step?",
-    "ctaText": "Fill out the form below to get started with my coaching and receive your next steps by email.",
+    "heading": "Register to participate",
+    "startDate": "Next start date: the 1st of March",
+    "ctaHeading": "Join the programm",
+    "ctaText": "<div class='space-y-3'><p class='font-semibold text-charcoal mb-4'>Here's how it works:</p><ol class='space-y-2 text-sm leading-relaxed'><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>1</span><span>Fill in the form below</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>2</span><span>You will receive a link to a questionnaire about your nutrition habits and challenges</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>3</span><span>Submit the questionnaire</span></li><li class='flex items-start gap-3'><span class='flex-shrink-0 w-6 h-6 bg-darkgreen text-white rounded-full flex items-center justify-center text-xs font-semibold'>4</span><span>Wait for our team to get back to you with your next steps</span></li></ol></div>",
     "name": "Name",
     "email": "Email",
     "phone": "Phone (optional)",
@@ -330,6 +307,339 @@
     "success": "Thanks! I received your submission. Please complete the detailed intake form so I can calculate your personalized macros and create your tailored plan.",
     "afterSubmitPrimaryCta": "Complete Intake Form",
     "afterSubmitSecondaryCta": "Message on Instagram"
+  },
+  "intake": {
+    "title": "Client Intake Form",
+    "description": "Fill out this comprehensive form so I can calculate your personalized daily calories and macros, and create a tailored coaching plan for you.",
+    "sections": {
+      "basicInfo": {
+        "title": "1. Basic Information",
+        "fields": {
+          "name": "Your Name",
+          "email": "Email",
+          "phone": "Phone (optional)",
+          "age": "Age",
+          "gender": "Gender",
+          "genderOptions": {
+            "": "Select",
+            "female": "Female",
+            "male": "Male", 
+            "non-binary": "Non-binary",
+            "prefer-not-to-say": "Prefer not to say"
+          }
+        }
+      },
+      "physicalMeasurements": {
+        "title": "2. Physical Measurements",
+        "fields": {
+          "weight": "Current Weight",
+          "weightPlaceholder": "e.g., 75",
+          "height": "Height", 
+          "heightPlaceholder": "e.g., 170",
+          "goalWeight": "Goal Weight (optional)",
+          "goalWeightPlaceholder": "e.g., 65 kg or 143 lbs",
+          "bodyType": "Body Type",
+          "bodyTypeOptions": {
+            "": "Select",
+            "ectomorph": "Ectomorph (naturally thin)",
+            "mesomorph": "Mesomorph (athletic build)", 
+            "endomorph": "Endomorph (gains weight easily)",
+            "not-sure": "Not sure"
+          },
+          "leanMuscleMass": "Lean muscle mass (body scan data)",
+          "leanMuscleMassOptions": {
+            "under": "Under average",
+            "normal": "Normal range",
+            "over": "Above average",
+            "no-scan": "I have not done body scan"
+          }
+        }
+      },
+      "activityLevel": {
+        "title": "3. Activity Level",
+        "fields": {
+          "activityLevel": "What best describes your typical day?",
+          "activityOptions": {
+            "": "Select",
+            "sedentary": "Sedentary (desk job, little exercise)",
+            "lightly-active": "Lightly active (light exercise 1-3 days/week)",
+            "moderately-active": "Moderately active (moderate exercise 3-5 days/week)",
+            "very-active": "Very active (intense exercise 6-7 days/week)",
+            "extremely-active": "Extremely active (physical job + daily training)"
+          },
+          "exerciseRoutine": "What type of exercise do you do?",
+          "exerciseOptions": {
+            "strength": "Strength training / weight lifting",
+            "cardio": "Cardio (running, cycling, swimming)",
+            "yoga": "Yoga or Pilates",
+            "walking": "Walking or light movement",
+            "sports": "Sports/recreational activities"
+          },
+          "exerciseDays": "How many days per week do you exercise?",
+          "exerciseDaysOptions": {
+            "": "Select",
+            "0": "0 days",
+            "1": "1 day",
+            "2": "2 days",
+            "3": "3 days",
+            "4": "4 days",
+            "5": "5 days",
+            "6": "6 days",
+            "7": "7 days"
+          }
+        }
+      },
+      "goals": {
+        "title": "4. Goals",
+        "fields": {
+          "primaryGoal": "What's your primary goal?",
+          "primaryGoalOptions": {
+            "": "Select",
+            "lose-fat": "Lose fat/weight",
+            "build-muscle": "Build muscle",
+            "maintain-weight": "Maintain current weight",
+            "improve-health": "Improve overall health",
+            "increase-energy": "Increase energy levels",
+            "learn-cooking": "Learn healthy cooking habits"
+          },
+          "weightToLose": "How much weight do you want to lose? (optional)",
+          "weightToLosePlaceholder": "e.g., 5-10 kg or 10-20 lbs",
+          "timeline": "What's your realistic timeline for reaching your goal?",
+          "timelineOptions": {
+            "": "Select",
+            "1-3-months": "1-3 months",
+            "3-6-months": "3-6 months", 
+            "6-12-months": "6-12 months",
+            "1-year-plus": "More than 1 year",
+            "no-rush": "No specific timeline"
+          },
+          "triedBefore": "Have you tried losing weight/getting fit before? What happened?"
+        }
+      },
+      "eatingHabits": {
+        "title": "5. Eating Habits & Preferences",
+        "fields": {
+          "dietaryPreference": "Do you follow any specific diet or have dietary restrictions?",
+          "dietaryOptions": {
+            "omnivore": "Omnivore (eat everything)",
+            "vegetarian": "Vegetarian (no meat)",
+            "vegan": "Vegan (no animal products)",
+            "pescatarian": "Pescatarian (fish but no meat)",
+            "keto": "Keto/Low-carb",
+            "paleo": "Paleo",
+            "mediterranean": "Mediterranean",
+            "intermittent-fasting": "Intermittent fasting",
+            "other": "Other dietary restrictions"
+          },
+          "allergies": "Food allergies or intolerances (optional)",
+          "allergiesPlaceholder": "e.g., gluten, dairy, nuts",
+          "dislikedFoods": "Foods you dislike or won't eat (optional)",
+          "mealsPerDay": "How many meals do you typically eat per day?",
+          "mealsOptions": {
+            "": "Select",
+            "1": "1 meal",
+            "2": "2 meals", 
+            "3": "3 meals",
+            "4": "4 meals",
+            "5": "5+ meals",
+            "varies": "It varies"
+          },
+          "mealPrep": "Do you meal prep or prefer cooking fresh daily?",
+          "mealPrepOptions": {
+            "": "Select",
+            "meal-prep": "I meal prep for the week",
+            "daily-cooking": "I cook fresh meals daily",
+            "mix": "Mix of both",
+            "minimal-cooking": "I do minimal cooking",
+            "takeout-mostly": "I rely mostly on takeout/prepared foods"
+          },
+          "cookingTime": "How much time can you realistically spend cooking per day?",
+          "cookingTimeOptions": {
+            "": "Select",
+            "15-min": "15 minutes or less",
+            "15-30-min": "15-30 minutes",
+            "30-60-min": "30-60 minutes",
+            "60-plus-min": "More than 1 hour",
+            "varies": "It varies by day"
+          },
+          "eatingOut": "How often do you eat out or order takeout?",
+          "eatingOutOptions": {
+            "": "Select",
+            "daily": "Daily",
+            "few-times-week": "A few times a week",
+            "once-week": "Once a week",
+            "few-times-month": "A few times a month",
+            "rarely": "Rarely",
+            "never": "Never"
+          }
+        }
+      },
+      "challenges": {
+        "title": "6. Challenges & Habits",
+        "fields": {
+          "biggestStruggle": "What's your biggest struggle with eating healthy?",
+          "challengeOptions": {
+            "time": "Not enough time to cook",
+            "planning": "Poor planning/meal prep",
+            "cravings": "Cravings for unhealthy foods",
+            "emotional-eating": "Emotional eating",
+            "portion-control": "Portion control",
+            "knowledge": "Lack of nutrition knowledge",
+            "motivation": "Lack of motivation/consistency",
+            "budget": "Budget constraints",
+            "family": "Family/household preferences",
+            "eating-out": "Social eating/dining out"
+          },
+          "trackedBefore": "Have you tracked your food/calories before?",
+          "trackedBeforeOptions": {
+            "": "Select",
+            "never": "Never tracked before",
+            "tried-gave-up": "Tried but gave up",
+            "on-off": "On and off tracking",
+            "regularly": "Yes, I track regularly",
+            "used-to": "Used to track consistently"
+          },
+          "trackingApp": "If you've tracked before, which app did you use? (optional)",
+          "trackingAppPlaceholder": "e.g., MyFitnessPal, Cronometer, Lose It"
+        }
+      },
+      "lifestyle": {
+        "title": "7. Lifestyle & Context",
+        "fields": {
+          "sleepQuality": "How would you rate your sleep quality?",
+          "sleepOptions": {
+            "": "Select",
+            "excellent": "Excellent (7-9 hrs, wake refreshed)",
+            "good": "Good (decent sleep most nights)",
+            "fair": "Fair (some good nights, some bad)",
+            "poor": "Poor (often tired/unrested)",
+            "very-poor": "Very poor (chronic sleep issues)"
+          },
+          "stressLevel": "What's your typical stress level?",
+          "stressOptions": {
+            "": "Select",
+            "very-low": "Very low",
+            "low": "Low",
+            "moderate": "Moderate",
+            "high": "High",
+            "very-high": "Very high"
+          },
+          "scheduleType": "Which best describes your daily schedule?",
+          "scheduleOptions": {
+            "": "Select",
+            "consistent": "Consistent routine (same schedule daily)",
+            "somewhat-consistent": "Somewhat consistent (mostly predictable)",
+            "variable": "Variable (changes week to week)",
+            "unpredictable": "Unpredictable (shift work, travel, etc.)",
+            "chaotic": "Chaotic (no real routine)"
+          },
+          "cookForOthers": "Are you cooking for other people? (family, roommates, etc.)",
+          "cookForOthersOptions": {
+            "": "Select",
+            "just-me": "Just for myself",
+            "partner": "Partner/spouse",
+            "family-kids": "Family with children",
+            "roommates": "Roommates",
+            "varies": "It varies"
+          }
+        }
+      },
+      "motivation": {
+        "title": "8. Motivation & Support",
+        "fields": {
+          "whyImportant": "Why is reaching your health/fitness goal important to you right now?",
+          "whyImportantPlaceholder": "Share what's driving you to make this change",
+          "successLooks": "What would success look like in 2-3 months?",
+          "successLooksPlaceholder": "Describe how you'd like to feel and what you'd like to achieve",
+          "supportNeeded": "Support needed",
+          "hearAbout": "How did you hear about us? (optional)",
+          "previousAttempts": "What's stopped you from reaching your goals in the past?",
+          "previousAttemptsPlaceholder": "e.g., lack of time, social situations, stress eating",
+          "supportSystem": "Do you have support from family/friends for your health goals?",
+          "supportOptions": {
+            "": "Select",
+            "very-supportive": "Very supportive",
+            "somewhat-supportive": "Somewhat supportive",
+            "neutral": "Neutral/indifferent",
+            "somewhat-resistant": "Somewhat resistant",
+            "very-resistant": "Very resistant/sabotaging"
+          },
+          "accountabilityPreference": "What type of accountability works best for you?",
+          "accountabilityOptions": {
+            "": "Select",
+            "daily-check-ins": "Daily check-ins",
+            "weekly-check-ins": "Weekly check-ins",
+            "progress-photos": "Progress photos/measurements",
+            "group-support": "Group support/community",
+            "one-on-one": "One-on-one coaching",
+            "self-directed": "Self-directed (minimal check-ins)"
+          }
+        },
+        "options": {
+          "supportNeeded": {
+            "accountability": "Accountability",
+            "motivation": "Motivation",
+            "education": "Education about nutrition",
+            "mealPlanning": "Meal planning guidance",
+            "recipes": "Recipe ideas",
+            "community": "Community support",
+            "oneOnOne": "1:1 guidance"
+          },
+          "hearAbout": {
+            "instagram": "Instagram",
+            "referral": "Friend/family referral",
+            "google": "Google search",
+            "facebook": "Facebook",
+            "tiktok": "TikTok",
+            "otherSocial": "Other social media",
+            "other": "Other"
+          }
+        },
+        "placeholders": {
+          "whyImportant": "Share what's driving you to make this change",
+          "successLooks": "Describe how you'd like to feel and what you'd like to achieve"
+        }
+      },
+      "commitment": {
+        "title": "10. Commitment",
+        "fields": {
+          "readyToCommit": "Ready to commit for at least 2 months?",
+          "concerns": "If you have concerns, what are they? (optional)"
+        },
+        "options": {
+          "readyToCommit": {
+            "yesAbsolutely": "Yes, absolutely",
+            "yesConcerns": "Yes, but I have concerns",
+            "notSure": "Not sure yet"
+          }
+        },
+        "placeholders": {
+          "concerns": "Share any worries or questions"
+        }
+      }
+    },
+    "submitButton": "Submit",
+    "submitting": "Calculating...",
+    "required": "*",
+    "resultsTitle": "Your Personalized Macro & Calorie Plan",
+    "resultsSubtitle": "Based on your details, here's your starting point:",
+    "macros": {
+      "calories": "Daily Calories",
+      "protein": "Protein",
+      "carbs": "Carbohydrates", 
+      "fat": "Fat"
+    },
+    "resultsNote": "These are approximate calculations based on your input. Our team will fine-tune these recommendations based on your progress.",
+    "nextSteps": {
+      "title": "What's Next?",
+      "description": "We've received your intake form and generated an approximate automatic calculation above. This is just a starting point - our team will review all your details personally and get back to you with personalized recommendations within 24 hours via email. Check your inbox for next steps!"
+    },
+    "common": {
+      "select": "Select",
+      "yes": "Yes", 
+      "no": "No",
+      "selectAllThatApply": "select all that apply"
+    }
   },
   "social": {
     "instagramHandle": "loveeatkeepfit",

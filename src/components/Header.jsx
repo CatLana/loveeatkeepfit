@@ -11,17 +11,18 @@ export default function Header({ navItems, locale, onLocaleChange }) {
           <Link href="/#home" className="flex items-center gap-3">
             <Image
               src="/images/logo.jpg"
-              alt="Love Eat Keep Fit"
+              alt="Love. Eat. Keep Fit."
               width={44}
               height={44}
               className="rounded-full object-cover"
               priority
             />
             <span className="font-heading text-lg font-semibold text-charcoal">
-              Love Eat Keep Fit
+              Love. Eat. Keep Fit.
             </span>
           </Link>
-          <LanguageSwitcher locale={locale} onChange={onLocaleChange} />
+          {/* LanguageSwitcher temporarily hidden - keeping structure for future multilingual support */}
+          {/* <LanguageSwitcher locale={locale} onChange={onLocaleChange} /> */}
         </div>
         <Nav items={navItems} />
       </div>

@@ -88,6 +88,7 @@ export default async function handler(req, res) {
       <p><strong>Height:</strong> ${height} ${heightUnit} (${heightCm.toFixed(1)} cm)</p>
       <p><strong>Goal Weight:</strong> ${formData.goalWeight || "-"}</p>
       <p><strong>Body Type:</strong> ${formData.bodyType || "-"}</p>
+      <p><strong>Lean Muscle Mass (body scan):</strong> ${formData.leanMuscleMass || "-"}</p>
 
       <h2 style="color: #2d5a3d; border-bottom: 2px solid #e5d5c8; padding-bottom: 8px;">
         3. Activity Level

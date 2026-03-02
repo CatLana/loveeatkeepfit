@@ -54,6 +54,18 @@ const navLabels = {
 export default function HomePage() {
   const [locale, setLocale] = useState("en");
 
+  // Prevent automatic scrolling on page load/refresh
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Remove hash from URL without triggering scroll
+      if (window.location.hash) {
+        window.history.replaceState("", document.title, window.location.pathname + window.location.search);
+      }
+      // Ensure page starts at top
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   useEffect(() => {
     const stored = typeof window !== "undefined" ? localStorage.getItem("lekf-lang") : null;
     const params = new URLSearchParams(window.location.search);
@@ -84,17 +96,16 @@ export default function HomePage() {
       { label: labels.home, href: "#home" },
       {
         label: labels.method,
-        href: "/coaching/group",
+        href: "/coaching/individual",
         highlight: true,
         children: [
-          { label: labels.coachingGroup, href: "/coaching/group" },
-          { label: labels.coachingIndividual, href: "/coaching/individual" },
-          { label: labels.coachingPremium, href: "/coaching/premium" },
-          { label: labels.coachingDigital, href: "/coaching/digital" }
+          { label: labels.coachingIndividual, href: "/coaching/individual", disabled: true },
+          { label: labels.coachingPremium, href: "/coaching/premium", disabled: true },
+          { label: labels.coachingDigital, href: "/coaching/digital", disabled: true }
         ]
       },
       { label: labels.join, href: "#join" },
-      { label: labels.contact, href: "#contact" }
+      { label: labels.contact, href: "/contact" }
     ],
     [labels]
   );
@@ -115,20 +126,64 @@ export default function HomePage() {
       <Header navItems={navItems} locale={locale} onLocaleChange={setLocale} />
 
       <main className="pt-10">
+        {/* Opening Headline */}
+        <section className="pt-20 pb-12 md:pb-16">
+          <div className="mx-auto max-w-4xl px-4">
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-wide text-leaf">
+                {content.hero.eyebrow}
+              </p>
+              <h1 className="mt-6 text-4xl font-semibold text-charcoal md:text-5xl lg:text-6xl">
+                Trying to lose weight but it never works?
+              </h1>
+              <p className="mt-6 text-xl leading-relaxed text-charcoal max-w-3xl mx-auto" dangerouslySetInnerHTML={{ 
+                __html: "Here at <mark>Love. Eat. Keep Fit.</mark> we have a solution for you. <mark>Follow the program</mark> to learn how to make food work for you and not against your body goals."
+              }}>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Story Section with Pain Points List */}
+        <StoryBlock content={content.story} />
+
+        {/* Pain Points Section */}
+        <section className="py-12 md:py-16 bg-gradient-to-br from-coral/5 to-sunset/5">
+          <div className="mx-auto max-w-4xl px-4">
+            <div className="space-y-6">
+              {content.hero.painPoints && content.hero.painPoints.map((point, index) => (
+                <div key={index} className="relative">
+                  <div className="flex items-start gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-coral/20 shadow-soft">
+                    <div className="flex-shrink-0 w-8 h-8 bg-coral/10 rounded-full flex items-center justify-center mt-1">
+                      <svg className="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
+                      </svg>
+                    </div>
+                    <p className="text-lg leading-relaxed text-charcoal font-medium">
+                      {point}
+                    </p>
+                  </div>
+                  {/* Problem indicator */}
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-coral rounded-full flex items-center justify-center">
+                    <span className="text-xs text-white font-bold">!</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Hero Banner with Profile */}
         <Hero
           content={content.hero}
           primaryCtaHref="#join"
         />
-        <StoryBlock content={content.story} />
-
         <section id="approach" className="py-12 md:py-16">
           <div className="mx-auto max-w-6xl px-4">
             <h2 className="text-3xl font-semibold text-charcoal md:text-4xl">
               {content.approach.heading}
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-charcoal/80">
-              {content.approach.intro}
-            </p>
+            <p className="mt-4 text-base leading-relaxed text-charcoal/80" dangerouslySetInnerHTML={{ __html: content.approach.intro }}></p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {content.approach.points.map((item) => (
                 <div
@@ -156,6 +211,20 @@ export default function HomePage() {
         </section>
 
         <WhatWeDo content={content.whatWeDo} />
+        
+        {/* Free Group Coaching Banner */}
+        <section className="py-6">
+          <div className="mx-auto max-w-5xl px-4">
+            <div className="mt-6 rounded-2xl border border-peach/50 bg-peach/20 p-5 text-charcoal">
+              <p className="text-sm font-semibold uppercase tracking-wide text-coral">
+                Research phase
+              </p>
+              <p className="mt-2 text-base leading-relaxed text-charcoal/80">
+                The programm is currently free while we are running the reasearch of the most common pain points to provide my clients with the most usefull and relevant information in my app. Nonetheless this is just the research stage, my goal is to offer this programm in a way that you will achieve your goals. If you feel this is the prblem you are struggling with, I will be happy to see you on board.
+              </p>
+            </div>
+          </div>
+        </section>
         <FormSignup content={content.signup} social={content.social} />
       </main>
 

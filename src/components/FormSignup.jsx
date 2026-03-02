@@ -8,14 +8,18 @@ export default function FormSignup({ content, social }) {
     email: "",
     phone: "",
     goal: "",
-    why: ""
+    why: "",
+    researchAgreement: false
   });
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = event.target;
+    setFormData((prev) => ({ 
+      ...prev, 
+      [name]: type === 'checkbox' ? checked : value 
+    }));
   };
 
   const handleSubmit = async (event) => {
@@ -50,14 +54,18 @@ export default function FormSignup({ content, social }) {
             <h3 className="text-2xl font-semibold text-charcoal">
               {content.ctaHeading}
             </h3>
-            <p className="mt-3 text-base leading-relaxed text-charcoal/80">
-              {content.ctaText}
-            </p>
+            <div className="mt-3 text-base leading-relaxed text-charcoal/80" dangerouslySetInnerHTML={{ __html: content.ctaText }}>
+            </div>
           </div>
           <div className="rounded-3xl border border-beige bg-white p-8 shadow-soft">
             <h2 className="text-3xl font-semibold text-charcoal">
               {content.heading}
             </h2>
+            {content.startDate && (
+              <p className="mt-4 text-lg font-medium text-darkgreen">
+                {content.startDate}
+              </p>
+            )}
 
             {status === "success" ? (
               <div className="mt-6 space-y-4">
@@ -149,6 +157,19 @@ export default function FormSignup({ content, social }) {
                     onChange={handleChange}
                     className="rounded-xl border border-beige bg-warmwhite px-4 py-3 text-sm outline-none focus:border-coral"
                   />
+                </label>
+                <label className="flex items-start gap-3 text-sm leading-relaxed text-charcoal">
+                  <input
+                    type="checkbox"
+                    name="researchAgreement"
+                    required
+                    checked={formData.researchAgreement}
+                    onChange={handleChange}
+                    className="mt-1 h-4 w-4 rounded border border-beige bg-warmwhite text-darkgreen focus:ring-darkgreen"
+                  />
+                  <span>
+                    The research phase is aimed at collecting real pain points from people struggling with food organization during their weight management journey. We do not ask for any money at this stage - only your consistent feedback on your problems, our proposed solutions, and the content in our application. By signing up for our free coaching, you agree to complete all feedback forms that our team will send to you.
+                  </span>
                 </label>
                 {status === "error" && (
                   <p className="text-sm text-coral">{error}</p>

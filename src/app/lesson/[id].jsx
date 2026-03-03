@@ -1,6 +1,10 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Lesson1 from './1';
+import Lesson2 from './2';
+import Lesson3 from './3';
+import Lesson4 from './4';
+import Lesson5 from './5';
 
 export default function LessonPage() {
   const router = useRouter();
@@ -9,6 +13,18 @@ export default function LessonPage() {
   // Route to specific lesson components
   if (id === '1') {
     return <Lesson1 />;
+  }
+  if (id === '2') {
+    return <Lesson2 />;
+  }
+  if (id === '3') {
+    return <Lesson3 />;
+  }
+  if (id === '4') {
+    return <Lesson4 />;
+  }
+  if (id === '5') {
+    return <Lesson5 />;
   }
 
   // Mock lesson content for other lessons

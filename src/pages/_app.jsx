@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Poppins, Inter } from "next/font/google";
+import { SessionProvider } from "next-auth/react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -13,10 +14,12 @@ const inter = Inter({
   variable: "--font-inter"
 });
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    <div className={`${poppins.variable} ${inter.variable}`}>
-      <Component {...pageProps} />
-    </div>
+    <SessionProvider session={session}>
+      <div className={`${poppins.variable} ${inter.variable}`}>
+        <Component {...pageProps} />
+      </div>
+    </SessionProvider>
   );
 }

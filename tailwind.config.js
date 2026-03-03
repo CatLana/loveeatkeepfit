@@ -14,6 +14,7 @@ module.exports = {
         beige: "#F2E8DA",
         charcoal: "#3A2F2A",
         leaf: "#7BAF7B",
+        leafgreen: "#2d5a3d",
         darkgreen: "#4F7A4F"
       },
       fontFamily: {

@@ -1,0 +1,59 @@
+{
+  "lessons": [
+    {
+      "id": 1,
+      "title": "First Steps with the program and Calories target",
+      "slug": "first-steps-calories-target",
+      "order": 1,
+      "themes": ["Getting Started", "Goal Setting", "TDEE", "Calorie Deficit"],
+      "description": "Welcome to your journey! Learn how this program works and discover your personalized calorie target for sustainable fat loss.",
+      "readTime": "5-7 min",
+      "isDefaultUnlocked": true,
+      "fiveWeekOutcome": "Starting with the right calorie target means 85% higher adherence to your plan vs guessing. You'll understand exactly how much to eat for steady, sustainable progress."
+    },
+    {
+      "id": 2,
+      "title": "Calories In vs Calories Out",
+      "slug": "calories-in-out",
+      "order": 2,
+      "themes": ["Energy Balance", "CICO", "Weight Loss Fundamentals"],
+      "description": "Understand the energy balance equation and why calories matter. This is the foundation of every successful fat loss journey.",
+      "readTime": "5-7 min",
+      "isDefaultUnlocked": true,
+      "fiveWeekOutcome": "Understanding CICO helps 78% of people stay consistent with their goals because they stop vilifying specific foods and focus on balance instead."
+    },
+    {
+      "id": 3,
+      "title": "Macros Made Simple",
+      "slug": "macros-made-simple",
+      "order": 3,
+      "themes": ["Macronutrients", "Protein", "Carbs", "Fats", "Muscle Maintenance"],
+      "description": "Demystify protein, carbs, and fats. Learn how to balance your macros for optimal fat loss while maintaining muscle and energy.",
+      "readTime": "6-8 min",
+      "isDefaultUnlocked": false,
+      "fiveWeekOutcome": "Proper macro balance helps preserve 93% of muscle during fat loss and keeps your metabolism running strong—no restrictive diets needed."
+    },
+    {
+      "id": 4,
+      "title": "Protein Power",
+      "slug": "protein-power",
+      "order": 4,
+      "themes": ["Protein", "Muscle Maintenance", "Satiety", "Meal Timing"],
+      "description": "Deep dive into the MVP macro. Discover why protein is non-negotiable for fat loss, how much you need, and when to eat it.",
+      "readTime": "6-8 min",
+      "isDefaultUnlocked": false,
+      "fiveWeekOutcome": "Adequate protein (1.6g/kg bodyweight) reduces hunger by 60% and boosts metabolism by 15-30% via the thermic effect. You'll feel fuller and burn more calories naturally."
+    },
+    {
+      "id": 5,
+      "title": "Carbs & Fats Without Fear",
+      "slug": "carbs-fats-without-fear",
+      "order": 5,
+      "themes": ["Carbohydrates", "Healthy Fats", "Energy", "Portion Control"],
+      "description": "Let go of food fear. Learn how to enjoy carbs and fats strategically for energy, hormones, and satisfaction—without derailing your progress.",
+      "readTime": "7-9 min",
+      "isDefaultUnlocked": false,
+      "fiveWeekOutcome": "Accurate fat tracking reveals 300-500 hidden calories daily for most people. Mastering portions means you can enjoy your favorite foods and still reach your goals."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// User model for authentication
+model User {
+  id              String             @id @default(cuid())
+  email           String             @unique
+  name            String?
+  password        String
+  createdAt       DateTime           @default(now())
+  lastLogin       DateTime?
+  
+  // Relations
+  lessonProgress  LessonProgress[]
+  submissions     HomeworkSubmission[]
+  checkIns        CheckIn[]
+  
+  @@map("users")
+}
+
+// Lesson model - stores lesson metadata
+model Lesson {
+  id                Int                @id @default(autoincrement())
+  title             String
+  slug              String             @unique
+  order             Int                @unique
+  themes            String[]
+  description       String
+  readTime          String             @default("5-7 min")
+  isDefaultUnlocked Boolean            @default(false)
+  fiveWeekOutcome   String?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  
+  // Relations
+  progress          LessonProgress[]
+  submissions       HomeworkSubmission[]
+  checkIns          CheckIn[]
+  
+  @@map("lessons")
+}
+
+// Tracks user progress through lessons
+model LessonProgress {
+  id          String    @id @default(cuid())
+  userId      String
+  lessonId    Int
+  status      String    @default("locked") // "locked", "unlocked", "completed"
+  unlockedAt  DateTime?
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  // Relations
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson      Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, lessonId])
+  @@map("lesson_progress")
+}
+
+// Stores homework submissions
+model HomeworkSubmission {
+  id             String   @id @default(cuid())
+  userId         String
+  lessonId       Int
+  homeworkAnswer String   @db.Text
+  submittedAt    DateTime @default(now())
+  
+  // Relations
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson         Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  
+  @@map("homework_submissions")
+}
+
+// Stores daily check-ins
+model CheckIn {
+  id            String   @id @default(cuid())
+  userId        String
+  lessonId      Int?
+  date          DateTime @default(now())
+  winToday      String?  @db.Text
+  problemToday  String?  @db.Text
+  keyTakeaway   String?  @db.Text
+  
+  // Relations
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson        Lesson?  @relation(fields: [lessonId], references: [id], onDelete: SetNull)
+  
+  @@map("check_ins")
+}
+

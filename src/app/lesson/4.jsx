@@ -30,7 +30,7 @@ export default function Lesson4() {
       });
 
       if (response.ok) {
-        setSubmitSuccess = true;
+        setSubmitSuccess(true);
         setFormData({ weekendDay: '', workingDay: '', photos: '', comments: '' });
       } else {
         alert('Submission failed. Please try again.');

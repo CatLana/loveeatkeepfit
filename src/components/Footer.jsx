@@ -1,6 +1,7 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
 
-const whatsappUrl = "https://wa.me/+353834753468";
+const whatsappUrl = 'https://wa.me/+353834753468';
 
 export default function Footer({ footer, social }) {
   return (
@@ -16,12 +17,20 @@ export default function Footer({ footer, social }) {
           />
           <div className="flex flex-col gap-1">
             <p className="text-sm text-charcoal/70 max-w-md">{footer.disclaimer}</p>
-            <a
-              href="/privacy"
-              className="text-xs text-charcoal/50 hover:text-charcoal/70 underline transition-colors"
-            >
-              Privacy Policy
-            </a>
+            <nav aria-label="Legal" className="flex flex-wrap gap-x-3 gap-y-1 mt-1">
+              <Link href="/privacy" className="text-xs text-charcoal/50 hover:text-charcoal/70 underline transition-colors">
+                Privacy Policy
+              </Link>
+              <span className="text-xs text-charcoal/30" aria-hidden="true">&bull;</span>
+              <Link href="/terms" className="text-xs text-charcoal/50 hover:text-charcoal/70 underline transition-colors">
+                Terms of Service
+              </Link>
+              <span className="text-xs text-charcoal/30" aria-hidden="true">&bull;</span>
+              <Link href="/cookies" className="text-xs text-charcoal/50 hover:text-charcoal/70 underline transition-colors">
+                Cookie Policy
+              </Link>
+            </nav>
+            <p className="text-xs text-charcoal/40 mt-1">&copy; {new Date().getFullYear()} We Make IT. All rights reserved.</p>
           </div>
         </div>
         <div className="flex items-center gap-4">
@@ -31,12 +40,7 @@ export default function Footer({ footer, social }) {
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-leaf px-4 py-2 text-sm font-semibold text-leaf transition hover:bg-leaf hover:text-white"
           >
-            <Image
-              src="/icons/whatsapp.svg"
-              alt="WhatsApp"
-              width={18}
-              height={18}
-            />
+            <Image src="/icons/whatsapp.svg" alt="WhatsApp" width={18} height={18} />
             {footer.contact}
           </a>
           <a
@@ -45,12 +49,7 @@ export default function Footer({ footer, social }) {
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-coral px-4 py-2 text-sm font-semibold text-coral transition hover:bg-coral hover:text-white"
           >
-            <Image
-              src="/icons/instagram.svg"
-              alt="Instagram"
-              width={18}
-              height={18}
-            />
+            <Image src="/icons/instagram.svg" alt="Instagram" width={18} height={18} />
             {footer.contactInstagram}
           </a>
         </div>
@@ -58,3 +57,4 @@ export default function Footer({ footer, social }) {
     </footer>
   );
 }
+

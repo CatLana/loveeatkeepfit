@@ -1022,16 +1022,48 @@ export default function IntakeForm({ content }) {
             <p className="text-sm text-coral">{content.intake?.messages?.error || error}</p>
           )}
 
-          <label className="flex items-start gap-2 text-sm text-charcoal mb-4">
+          {/* Art. 6(1)(b) — general data processing consent */}
+          <label className="flex items-start gap-2 text-sm text-charcoal mb-3">
             <input
               type="checkbox"
               required
               className="accent-leaf mt-0.5 flex-shrink-0"
             />
             <span>
-              By clicking the submit button, I consent to the processing of my personal data as described in the <a href="/privacy" target="_blank" rel="noopener noreferrer" className="underline text-coral hover:text-darkgreen">privacy policy</a>.
+              I have read and agree to the{' '}
+              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="underline text-coral hover:text-darkgreen">
+                Privacy Policy
+              </a>{' '}
+              and{' '}
+              <a href="/terms" target="_blank" rel="noopener noreferrer" className="underline text-coral hover:text-darkgreen">
+                Terms of Service
+              </a>.
+              I confirm I am at least 16 years old.
             </span>
           </label>
+
+          {/* Art. 9(2)(a) — explicit consent for special-category health data */}
+          <label className="flex items-start gap-2 text-sm text-charcoal mb-4 bg-amber-50 border border-amber-200 rounded-lg p-3">
+            <input
+              type="checkbox"
+              required
+              className="accent-leaf mt-0.5 flex-shrink-0"
+            />
+            <span>
+              <strong>Health data consent (required):</strong> I explicitly consent to We Make IT processing
+              my health and nutrition data (including weight, height, dietary habits, medical conditions
+              and health goals) for the purpose of providing personalised nutrition coaching, as described
+              in the{' '}
+              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="underline text-coral hover:text-darkgreen">
+                Privacy Policy
+              </a>.
+              I understand I can withdraw this consent at any time by contacting{' '}
+              <a href="mailto:loveeatkeepfitblog@gmail.com" className="underline text-coral hover:text-darkgreen">
+                loveeatkeepfitblog@gmail.com
+              </a>.
+            </span>
+          </label>
+
           <button
             type="submit"
             disabled={status === "loading"}

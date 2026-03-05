@@ -4,13 +4,10 @@
  */
 
 import { useState } from 'react';
-import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
 
 export default function SignUp() {
-  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,6 +15,7 @@ export default function SignUp() {
     confirmPassword: '',
   });
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -30,9 +28,9 @@ export default function SignUp() {
       return;
     }
 
-    // Validate password length
-    if (formData.password.length < 6) {
-      setError('Password must be at least 6 characters');
+    // Validate password length (must match API-side requirement)
+    if (formData.password.length < 8) {
+      setError('Password must be at least 8 characters');
       return;
     }
 
@@ -57,17 +55,9 @@ export default function SignUp() {
         return;
       }
 
-      // Success! Auto sign-in and redirect to dashboard
-      const result = await signIn('credentials', {
-        email: formData.email,
-        password: formData.password,
-        redirect: false,
-      });
-      if (result?.ok) {
-        router.push('/app/lessons');
-      } else {
-        router.push('/auth/signin?message=Account created! Please sign in.');
-      }
+      // Account created — prompt user to verify email
+      setSuccess(true);
+      setIsLoading(false);
     } catch (err) {
       setError('An unexpected error occurred');
       setIsLoading(false);
@@ -75,11 +65,42 @@ export default function SignUp() {
   };
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  if (success) {
+    return (
+      <>
+        <Head>
+          <title>Check Your Email | LoveEatKeepFit</title>
+        </Head>
+        <div className="min-h-screen bg-gradient-to-br from-warmwhite via-white to-beige/30 flex items-center justify-center px-4 py-12">
+          <div className="max-w-md w-full">
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-3">Check your inbox</h2>
+              <p className="text-gray-600 mb-2">
+                We&apos;ve sent a verification link to <strong>{formData.email}</strong>.
+              </p>
+              <p className="text-gray-500 text-sm mb-6">
+                Click the link in the email to activate your account. The link expires in 24 hours.
+              </p>
+              <Link
+                href="/auth/signin"
+                className="inline-block py-3 px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-colors"
+              >
+                Go to Sign In
+              </Link>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -120,7 +141,7 @@ export default function SignUp() {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
                   placeholder="Jamie Smith"
                 />
-                <p className="mt-1 text-xs text-gray-500">Optional - we'll use this to personalize your experience</p>
+                <p className="mt-1 text-xs text-gray-500">Optional — used to personalise your experience</p>
               </div>
 
               <div>
@@ -150,10 +171,11 @@ export default function SignUp() {
                   value={formData.password}
                   onChange={handleChange}
                   required
+                  minLength={8}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
                   placeholder="••••••••"
                 />
-                <p className="mt-1 text-xs text-gray-500">Minimum 6 characters</p>
+                <p className="mt-1 text-xs text-gray-500">Minimum 8 characters, including at least one letter and one number</p>
               </div>
 
               <div>
@@ -167,6 +189,7 @@ export default function SignUp() {
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   required
+                  minLength={8}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
                   placeholder="••••••••"
                 />
@@ -179,6 +202,15 @@ export default function SignUp() {
               >
                 {isLoading ? 'Creating account...' : 'Create Account'}
               </button>
+
+              {/* Legal notice — GDPR Art. 13 informed consent */}
+              <p className="text-xs text-gray-500 text-center">
+                By creating an account you agree to our{' '}
+                <Link href="/terms" className="underline hover:text-gray-700">Terms of Service</Link>{' '}
+                and{' '}
+                <Link href="/privacy" className="underline hover:text-gray-700">Privacy Policy</Link>.
+                You must be at least 16 years old to register.
+              </p>
             </form>
 
             {/* Sign In Link */}
@@ -194,7 +226,7 @@ export default function SignUp() {
             {/* Back to Home */}
             <div className="mt-4 text-center">
               <Link href="/" className="text-sm text-gray-500 hover:text-gray-700">
-                ← Back to home
+                Back to home
               </Link>
             </div>
           </div>

@@ -16,19 +16,38 @@ datasource db {
 
 // User model for authentication
 model User {
-  id              String             @id @default(cuid())
-  email           String             @unique
-  name            String?
-  password        String
-  createdAt       DateTime           @default(now())
-  lastLogin       DateTime?
-  
+  id                 String              @id @default(cuid())
+  email              String              @unique
+  name               String?
+  password           String
+  emailVerified      DateTime?
+  createdAt          DateTime            @default(now())
+  lastLogin          DateTime?
+
+  // Account lockout (brute-force protection)
+  failedLoginCount   Int                 @default(0)
+  lockedUntil        DateTime?
+
   // Relations
-  lessonProgress  LessonProgress[]
-  submissions     HomeworkSubmission[]
-  checkIns        CheckIn[]
-  
+  lessonProgress     LessonProgress[]
+  submissions        HomeworkSubmission[]
+  checkIns           CheckIn[]
+
   @@map("users")
+}
+
+// Email verification & password-reset tokens
+model VerificationToken {
+  id         String   @id @default(cuid())
+  email      String
+  token      String   @unique
+  type       String   @default("email_verification") // "email_verification" | "password_reset"
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+
+  @@index([email])
+  @@index([token])
+  @@map("verification_tokens")
 }
 
 // Lesson model - stores lesson metadata

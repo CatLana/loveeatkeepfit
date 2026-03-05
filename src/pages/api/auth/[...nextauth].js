@@ -1,12 +1,20 @@
 /**
  * NextAuth API Route Handler
  * Handles all authentication endpoints: /api/auth/*
+ *
+ * Security controls applied:
+ *  - Account lockout: 10 failed attempts → 30-minute lock
+ *  - Email verification gate: unverified accounts cannot sign in
+ *  - Session maxAge: 7 days (reduced from 30)
  */
 
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
 import prisma from '@/lib/prisma';
+
+const LOCKOUT_THRESHOLD = 10;       // failed attempts before lockout
+const LOCKOUT_DURATION_MS = 30 * 60 * 1000; // 30 minutes
 
 export const authOptions = {
   providers: [
@@ -21,29 +29,60 @@ export const authOptions = {
           throw new Error('Please enter your email and password');
         }
 
+        // Normalise email
+        const email = credentials.email.toLowerCase().trim();
+
         // Find user by email
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email.toLowerCase() }
+          where: { email }
         });
 
         if (!user) {
-          throw new Error('No account found with this email');
+          // Generic message — do not reveal whether the email exists
+          throw new Error('Invalid email or password');
         }
 
-        // Verify password
-        const isPasswordValid = await bcrypt.compare(
-          credentials.password,
-          user.password
-        );
+        // ── Account lockout check ─────────────────────────────────────────
+        if (user.lockedUntil && user.lockedUntil > new Date()) {
+          const minutesLeft = Math.ceil((user.lockedUntil.getTime() - Date.now()) / 60000);
+          throw new Error(
+            `Account temporarily locked due to too many failed login attempts. ` +
+            `Try again in ${minutesLeft} minute${minutesLeft === 1 ? '' : 's'}.`
+          );
+        }
+
+        // ── Password verification ─────────────────────────────────────────
+        const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
 
         if (!isPasswordValid) {
-          throw new Error('Incorrect password');
+          // Increment failure counter; lock if threshold reached
+          const newCount = (user.failedLoginCount || 0) + 1;
+          const shouldLock = newCount >= LOCKOUT_THRESHOLD;
+          await prisma.user.update({
+            where: { id: user.id },
+            data: {
+              failedLoginCount: newCount,
+              lockedUntil: shouldLock ? new Date(Date.now() + LOCKOUT_DURATION_MS) : null,
+            },
+          });
+          throw new Error('Invalid email or password');
         }
 
-        // Update last login
+        // ── Email verification gate ───────────────────────────────────────
+        if (!user.emailVerified) {
+          throw new Error(
+            'EMAIL_NOT_VERIFIED'
+          );
+        }
+
+        // ── Success — reset failure counter and update lastLogin ──────────
         await prisma.user.update({
           where: { id: user.id },
-          data: { lastLogin: new Date() }
+          data: {
+            failedLoginCount: 0,
+            lockedUntil: null,
+            lastLogin: new Date(),
+          },
         });
 
         return {
@@ -56,7 +95,7 @@ export const authOptions = {
   ],
   session: {
     strategy: 'jwt',
-    maxAge: 30 * 24 * 60 * 60, // 30 days
+    maxAge: 7 * 24 * 60 * 60, // 7 days
   },
   pages: {
     signIn: '/auth/signin',

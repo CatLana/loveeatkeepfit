@@ -9,33 +9,48 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
 
+// Only allow relative paths that do not start with '//' (protocol-relative)
+function isSafeRedirect(url) {
+  if (typeof url !== 'string') return false;
+  if (!url.startsWith('/') || url.startsWith('//')) return false;
+  return true;
+}
+
 export default function SignIn() {
   const router = useRouter();
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
+  const [formData, setFormData] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
+  const [unverifiedEmail, setUnverifiedEmail] = useState('');
+  const [resendStatus, setResendStatus] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  // Pre-populate email if redirected from signup
+  const verifiedSuccess = router.query.verified === 'true';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setUnverifiedEmail('');
+    setResendStatus('');
     setIsLoading(true);
 
-    try {      const result = await signIn('credentials', {
+    try {
+      const result = await signIn('credentials', {
         email: formData.email,
         password: formData.password,
         redirect: false,
       });
 
       if (result?.error) {
-        setError(result.error);
+        if (result.error === 'EMAIL_NOT_VERIFIED') {
+          setUnverifiedEmail(formData.email);
+        } else {
+          setError(result.error);
+        }
         setIsLoading(false);
       } else {
-        // Redirect to lessons dashboard
         const callbackUrl = router.query.callbackUrl || '/app/lessons';
-        router.push(callbackUrl.startsWith('/') ? callbackUrl : '/app/lessons');
+        router.push(isSafeRedirect(callbackUrl) ? callbackUrl : '/app/lessons');
       }
     } catch (err) {
       setError('An unexpected error occurred');
@@ -43,11 +58,22 @@ export default function SignIn() {
     }
   };
 
+  const handleResendVerification = async () => {
+    setResendStatus('sending');
+    try {
+      await fetch('/api/auth/resend-verification', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: unverifiedEmail }),
+      });
+      setResendStatus('sent');
+    } catch {
+      setResendStatus('error');
+    }
+  };
+
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -69,9 +95,36 @@ export default function SignIn() {
           <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">Sign In</h2>
 
+            {/* Email verified success banner */}
+            {verifiedSuccess && (
+              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <p className="text-green-800 text-sm font-medium">Email verified! You can now sign in.</p>
+              </div>
+            )}
+
+            {/* Generic error */}
             {error && (
               <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
                 <p className="text-red-800 text-sm">{error}</p>
+              </div>
+            )}
+
+            {/* Email not verified banner */}
+            {unverifiedEmail && (
+              <div className="mb-6 p-4 bg-amber-50 border border-amber-300 rounded-lg">
+                <p className="text-amber-900 text-sm font-medium mb-2">Please verify your email before signing in.</p>
+                <p className="text-amber-800 text-sm mb-3">Check your inbox for a verification link.</p>
+                {resendStatus === 'sent' ? (
+                  <p className="text-green-700 text-sm font-medium">A new verification email has been sent.</p>
+                ) : (
+                  <button
+                    onClick={handleResendVerification}
+                    disabled={resendStatus === 'sending'}
+                    className="text-sm text-amber-800 underline hover:text-amber-900 disabled:opacity-50"
+                  >
+                    {resendStatus === 'sending' ? 'Sending...' : 'Resend verification email'}
+                  </button>
+                )}
               </div>
             )}
 
@@ -120,7 +173,7 @@ export default function SignIn() {
             {/* Sign Up Link */}
             <div className="mt-6 text-center">
               <p className="text-gray-600">
-                Don't have an account?{' '}
+                Don&apos;t have an account?{' '}
                 <Link href="/auth/signup" className="text-indigo-600 hover:text-indigo-700 font-semibold">
                   Sign up
                 </Link>
@@ -130,7 +183,7 @@ export default function SignIn() {
             {/* Back to Home */}
             <div className="mt-4 text-center">
               <Link href="/" className="text-sm text-gray-500 hover:text-gray-700">
-                ← Back to home
+                Back to home
               </Link>
             </div>
           </div>

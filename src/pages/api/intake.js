@@ -178,7 +178,7 @@ export default async function handler(req, res) {
       return res.status(500).json({ message: "Email failed to send" });
     }
   } else {
-    console.log("📧 Intake form would be sent (no RESEND_API_KEY):");
+    console.log("Intake form would be sent (no RESEND_API_KEY):");
     console.log("To:", recipient);
     console.log("From:", sender);
     console.log("Client:", name, email);

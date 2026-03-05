@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto;">
         <h1 style="color: #2d5a3d; border-bottom: 3px solid #e89f8e; padding-bottom: 10px;">
-          New Homework Submission 📝
+          New Homework Submission
         </h1>
 
         <div style="background: #fff8f3; padding: 20px; border-radius: 10px; margin: 20px 0;">
@@ -65,7 +65,7 @@ export default async function handler(req, res) {
 
         <div style="margin-top: 30px; padding: 15px; background: #e8f5e9; border-radius: 8px;">
           <p style="margin: 0; color: #2d5a3d;">
-            <strong>💡 Next Steps:</strong> Review the student's food diary and provide personalized feedback.
+            <strong>Next Steps:</strong> Review the student's food diary and provide personalized feedback.
             You can reply directly to this email or use the coaching dashboard.
           </p>
         </div>
@@ -83,7 +83,7 @@ export default async function handler(req, res) {
     const data = await resend.emails.send({
       from: sender,
       to: recipient,
-      subject: `📝 New Homework: ${lessonTitle} - ${userName || 'Guest'}`,
+      subject: `New Homework: ${lessonTitle} - ${userName || 'Guest'}`,
       html: emailHtml,
     });
 

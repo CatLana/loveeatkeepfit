@@ -44,7 +44,7 @@ export default async function handler(req, res) {
       return res.status(500).json({ message: "Email failed to send" });
     }
   } else {
-    console.log("📧 Email would be sent (no RESEND_API_KEY):");
+    console.log("Email would be sent (no RESEND_API_KEY):");
     console.log("To:", recipient);
     console.log("From:", sender);
     console.log("Data:", { name, email, subject, message });

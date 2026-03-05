@@ -56,24 +56,26 @@ export default function Lesson2() {
             ← Back to Lessons
           </Link>
           <h1 className="text-3xl font-bold text-gray-900 mt-2">Lesson 2: Calories In vs Calories Out</h1>
-          <p className="text-gray-600 mt-1">Welcome back, {userName}! 🎯</p>
+          <p className="text-gray-600 mt-1">Welcome back, {userName}!</p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Quick Links */}
         <div className="flex gap-4 mb-8">
-          <Link href="/app/faq" className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
-            📚 FAQ
+          <Link href="/app/faq" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+            FAQ
           </Link>
-          <Link href="/app/chat" className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
-            💬 Ask Your Coach
+          <Link href="/app/chat" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
+            Ask Your Coach
           </Link>
         </div>
 
         {/* Introduction */}
         <section className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6 mb-8 border border-blue-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">The Foundation of Fat Loss ⚖️</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">The Foundation of Fat Loss</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             In this lesson, we'll explore the most fundamental principle of weight management: 
             <strong> Energy Balance</strong>. Understanding this concept is the key to sustainable fat loss 
@@ -104,26 +106,26 @@ export default function Lesson2() {
 
             <div className="grid md:grid-cols-3 gap-4 my-6">
               <div className="border border-green-300 bg-green-50 rounded-lg p-4 text-center">
-                <h3 className="font-semibold text-green-900 mb-2">🟢 Calorie Deficit</h3>
+                <h3 className="font-semibold text-green-900 mb-2"><span className="inline-block w-3 h-3 rounded-full bg-green-500 mr-2 align-middle"></span>Calorie Deficit</h3>
                 <p className="text-sm text-green-800 mb-2">Eat LESS than you burn</p>
                 <p className="text-xs text-green-700">→ Weight Loss</p>
               </div>
               
               <div className="border border-blue-300 bg-blue-50 rounded-lg p-4 text-center">
-                <h3 className="font-semibold text-blue-900 mb-2">🔵 Maintenance</h3>
+                <h3 className="font-semibold text-blue-900 mb-2"><span className="inline-block w-3 h-3 rounded-full bg-blue-500 mr-2 align-middle"></span>Maintenance</h3>
                 <p className="text-sm text-blue-800 mb-2">Eat SAME as you burn</p>
                 <p className="text-xs text-blue-700">→ Weight Stays Same</p>
               </div>
 
               <div className="border border-red-300 bg-red-50 rounded-lg p-4 text-center">
-                <h3 className="font-semibold text-red-900 mb-2">🔴 Calorie Surplus</h3>
+                <h3 className="font-semibold text-red-900 mb-2"><span className="inline-block w-3 h-3 rounded-full bg-red-500 mr-2 align-middle"></span>Calorie Surplus</h3>
                 <p className="text-sm text-red-800 mb-2">Eat MORE than you burn</p>
                 <p className="text-xs text-red-700">→ Weight Gain</p>
               </div>
             </div>
 
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
-              <h3 className="font-semibold text-yellow-900 mb-2">💡 Key Insight</h3>
+              <h3 className="font-semibold text-yellow-900 mb-2">Key Insight</h3>
               <p className="text-yellow-800">
                 This principle applies regardless of <em>what</em> you eat. Whether it's pizza or salad, 
                 carbs or fats, organic or processed—your body ultimately responds to the total energy (calories) 
@@ -181,7 +183,7 @@ export default function Lesson2() {
 
         {/* Calories IN: What You Eat */}
         <section className="bg-white rounded-xl shadow-sm p-6 mb-8 border border-gray-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">📊 Calories IN: What You Eat</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Calories In: What You Eat</h2>
           
           <div className="space-y-4 text-gray-700">
             <p>
@@ -210,7 +212,7 @@ export default function Lesson2() {
             </div>
 
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-              <h3 className="font-semibold text-blue-900 mb-2">📝 Important Note:</h3>
+              <h3 className="font-semibold text-blue-900 mb-2">Important Note:</h3>
               <p className="text-blue-800">
                 Notice that fats contain more than twice the calories per gram compared to protein and carbs. 
                 This is why portion control is especially important for high-fat foods like oils, nuts, and cheese—
@@ -242,7 +244,7 @@ export default function Lesson2() {
 
         {/* Calories OUT: What You Burn */}
         <section className="bg-white rounded-xl shadow-sm p-6 mb-8 border border-gray-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">🔥 Calories OUT: What You Burn</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Calories Out: What You Burn</h2>
           
           <div className="space-y-4 text-gray-700">
             <p>
@@ -280,7 +282,7 @@ export default function Lesson2() {
             </div>
 
             <div className="bg-green-50 border border-green-200 rounded-lg p-5">
-              <h3 className="font-semibold text-green-900 mb-2">💪 Pro Tip:</h3>
+              <h3 className="font-semibold text-green-900 mb-2">Pro Tip:</h3>
               <p className="text-green-800">
                 Increasing NEAT (daily steps, taking stairs, standing more) can boost your calorie burn by 
                 300-500 calories per day—without formal exercise! This is often more impactful than adding 
@@ -326,7 +328,7 @@ export default function Lesson2() {
             </div>
 
             <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded">
-              <h3 className="font-semibold text-red-900 mb-2">⚠️ Avoid Aggressive Deficits</h3>
+              <h3 className="font-semibold text-red-900 mb-2">Avoid Aggressive Deficits</h3>
               <p className="text-red-800 mb-2">
                 Cutting calories too drastically (30%+ deficit) leads to:
               </p>
@@ -348,7 +350,7 @@ export default function Lesson2() {
 
         {/* Resources */}
         <section className="bg-indigo-50 rounded-xl p-6 mb-8 border border-indigo-100">
-          <h2 className="text-xl font-semibold text-indigo-900 mb-4">📖 Additional Resources</h2>
+          <h2 className="text-xl font-semibold text-indigo-900 mb-4">Additional Resources</h2>
           <ul className="space-y-2 text-indigo-800">
             <li>• <Link href="/app/faq" className="underline hover:text-indigo-600">Frequently Asked Questions</Link></li>
             <li>• <Link href="/app/chat" className="underline hover:text-indigo-600">Ask Your Coach a Question</Link></li>
@@ -359,7 +361,7 @@ export default function Lesson2() {
         {/* Homework Section */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8 border-2 border-indigo-200">
           <div className="flex items-center mb-6">
-            <span className="text-4xl mr-3">📝</span>
+            <svg className="w-8 h-8 mr-3 text-indigo-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Lesson 2 Assignment</h2>
               <p className="text-gray-600">Track your calories and reflect on your energy balance</p>
@@ -368,7 +370,7 @@ export default function Lesson2() {
 
           {submitSuccess ? (
             <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-              <span className="text-5xl mb-4 block">✅</span>
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg></div>
               <h3 className="text-xl font-semibold text-green-900 mb-2">Homework Submitted!</h3>
               <p className="text-green-800">Your coach will review your tracking and provide feedback soon.</p>
               <Link href="/app/lessons" className="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-medium">
@@ -378,7 +380,7 @@ export default function Lesson2() {
           ) : (
             <>
               <div className="bg-gray-50 rounded-lg p-5 mb-6">
-                <h3 className="font-semibold text-gray-900 mb-3">📋 Your Task (3-5 days):</h3>
+                <h3 className="font-semibold text-gray-900 mb-3">Your Task (3-5 days):</h3>
                 <p className="text-gray-700 mb-4">
                   Now that you understand CICO, track your calories for a <strong>typical weekend day</strong> and a 
                   <strong> typical working day</strong>. Use an app like MyFitnessPal, or simply write it down.
@@ -479,7 +481,7 @@ export default function Lesson2() {
 
         {/* Next Steps */}
         <section className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 border border-indigo-100">
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">🎯 Next Steps</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-3">Next Steps</h2>
           <ol className="list-decimal list-inside space-y-2 text-gray-700">
             <li>Track your calories for 2 typical days (weekend + working day)</li>
             <li>Submit your tracking homework for review</li>
@@ -495,7 +497,7 @@ export default function Lesson2() {
       {/* Footer */}
       <footer className="text-center text-sm text-gray-500 py-8 border-t mt-12">
         <p>With love,</p>
-        <p className="font-semibold text-gray-700 mt-1">Lana • Food Coach @ Love. Eat. Keep Fit. ♥️</p>
+        <p className="font-semibold text-gray-700 mt-1">Lana • Food Coach @ Love. Eat. Keep Fit. ♥</p>
         <p className="mt-4 text-xs">&copy; {new Date().getFullYear()} LoveEatKeepFit</p>
       </footer>
     </main>

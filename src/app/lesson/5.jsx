@@ -56,24 +56,26 @@ export default function Lesson5() {
             ← Back to Lessons
           </Link>
           <h1 className="text-3xl font-bold text-gray-900 mt-2">Lesson 5: Carbs & Fats Without Fear</h1>
-          <p className="text-gray-600 mt-1">Let's end the food fear, {userName}! 🍞🥑</p>
+          <p className="text-gray-600 mt-1">Let's end the food fear, {userName}!</p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Quick Links */}
         <div className="flex gap-4 mb-8">
-          <Link href="/app/faq" className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
-            📚 FAQ
+          <Link href="/app/faq" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+            FAQ
           </Link>
-          <Link href="/app/chat" className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
-            💬 Ask Your Coach
+          <Link href="/app/chat" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
+            Ask Your Coach
           </Link>
         </div>
 
         {/* Introduction */}
         <section className="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 mb-8 border border-green-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Release the Food Fear 🌟</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Release the Food Fear</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             You've likely heard conflicting advice: <em>"Carbs make you fat!" "No,  fats make you fat!" "Avoid both!"</em> 
             The truth? <strong>Neither carbs nor fats are the enemy</strong>. Both play essential roles in your health, 
@@ -87,7 +89,7 @@ export default function Lesson5() {
 
         {/* The Truth About Carbs */}
         <section className="bg-white rounded-xl shadow-sm p-6 mb-8 border border-gray-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">🍞 Carbs: Your Body's Preferred Fuel</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Carbs: Your Body's Preferred Fuel</h2>
           
           <div className="space-y-4 text-gray-700">
             <p>
@@ -96,7 +98,7 @@ export default function Lesson5() {
 
             <div className="space-y-3 my-6">
               <div className="border-l-4 border-orange-500 bg-orange-50 p-4 rounded">
-                <h3 className="font-semibold text-orange-900 mb-1">1. 🧠 Brain & Cognitive Function</h3>
+                <h3 className="font-semibold text-orange-900 mb-1">1. Brain &amp; Cognitive Function</h3>
                 <p className="text-sm text-orange-800">
                   Your brain uses ~120g of glucose daily. Low carbs can lead to brain fog, poor concentration, 
                   and mood swings.
@@ -104,7 +106,7 @@ export default function Lesson5() {
               </div>
 
               <div className="border-l-4 border-yellow-500 bg-yellow-50 p-4 rounded">
-                <h3 className="font-semibold text-yellow-900 mb-1">2. ⚡ Energy & Performance</h3>
+                <h3 className="font-semibold text-yellow-900 mb-1">2. Energy &amp; Performance</h3>
                 <p className="text-sm text-yellow-800">
                   Carbs fuel high-intensity exercise and daily activities. Without adequate carbs, workouts 
                   feel harder and you'll struggle to maintain intensity.
@@ -112,7 +114,7 @@ export default function Lesson5() {
               </div>
 
               <div className="border-l-4 border-pink-500 bg-pink-50 p-4 rounded">
-                <h3 className="font-semibold text-pink-900 mb-1">3. 😊 Mood & Serotonin Production</h3>
+                <h3 className="font-semibold text-pink-900 mb-1">3. Mood &amp; Serotonin Production</h3>
                 <p className="text-sm text-pink-800">
                   Carbs boost serotonin, the "feel-good" neurotransmitter. Very low-carb diets often cause 
                   irritability, anxiety, and low mood.
@@ -120,7 +122,7 @@ export default function Lesson5() {
               </div>
 
               <div className="border-l-4 border-purple-500 bg-purple-50 p-4 rounded">
-                <h3 className="font-semibold text-purple-900 mb-1">4. 🔥 Metabolic Health</h3>
+                <h3 className="font-semibold text-purple-900 mb-1">4. Metabolic Health</h3>
                 <p className="text-sm text-purple-800">
                   Adequate carbs support thyroid function and keep your metabolism running optimally. Too-low 
                   carbs can slow metabolism down.
@@ -128,7 +130,7 @@ export default function Lesson5() {
               </div>
 
               <div className="border-l-4 border-green-500 bg-green-50 p-4 rounded">
-                <h3 className="font-semibold text-green-900 mb-1">5. 💪 Recovery & Glycogen</h3>
+                <h3 className="font-semibold text-green-900 mb-1">5. Recovery &amp; Glycogen</h3>
                 <p className="text-sm text-green-800">
                   After workouts, carbs replenish muscle glycogen, supporting recovery and preventing muscle 
                   breakdown.
@@ -137,7 +139,7 @@ export default function Lesson5() {
             </div>
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-5">
-              <h3 className="font-semibold text-blue-900 mb-2">💡 The Bottom Line:</h3>
+              <h3 className="font-semibold text-blue-900 mb-2">The Bottom Line:</h3>
               <p className="text-blue-800">
                 Carbs don't make you fat. <strong>Excess calories</strong> make you fat. You can lose weight eating 
                 200g+ carbs per day if you're in a calorie deficit. Carbs are your friend, not your enemy!
@@ -153,7 +155,7 @@ export default function Lesson5() {
           <div className="space-y-4 text-gray-700">
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-green-50 border border-green-300 rounded-lg p-5">
-                <h3 className="font-semibold text-green-900 mb-3">🟢 Complex Carbs (Prioritize)</h3>
+                <h3 className="font-semibold text-green-900 mb-3"><span className="inline-block w-3 h-3 rounded-full bg-green-500 mr-2 align-middle"></span>Complex Carbs (Prioritize)</h3>
                 <p className="text-sm text-green-800 mb-3">
                   Fiber-rich, nutrient-dense, slower digesting. Keep you full longer.
                 </p>
@@ -168,7 +170,7 @@ export default function Lesson5() {
               </div>
 
               <div className="bg-yellow-50 border border-yellow-300 rounded-lg p-5">
-                <h3 className="font-semibold text-yellow-900 mb-3">🟡 Simple Carbs (In Moderation)</h3>
+                <h3 className="font-semibold text-yellow-900 mb-3"><span className="inline-block w-3 h-3 rounded-full bg-yellow-400 mr-2 align-middle"></span>Simple Carbs (In Moderation)</h3>
                 <p className="text-sm text-yellow-800 mb-3">
                   Faster digesting, less filling. Fine in moderation, especially around workouts.
                 </p>
@@ -184,7 +186,7 @@ export default function Lesson5() {
             </div>
 
             <div className="bg-orange-50 border-l-4 border-orange-400 p-4 rounded">
-              <h3 className="font-semibold text-orange-900 mb-2">⚠️ Treats & Refined Carbs</h3>
+              <h3 className="font-semibold text-orange-900 mb-2">Treats &amp; Refined Carbs</h3>
               <p className="text-sm text-orange-800">
                 Cookies, cakes, candy, soda—these are fine <strong>in moderation</strong> if they fit your 
                 calories. The 80/20 rule: 80% nutrient-dense foods, 20% flexibility for treats. Don't deprive 
@@ -196,7 +198,7 @@ export default function Lesson5() {
 
         {/* The Truth About Fats */}
         <section className="bg-white rounded-xl shadow-sm p-6 mb-8 border border-gray-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">🥑 Fats: Essential for Health & Hormones</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Fats: Essential for Health &amp; Hormones</h2>
           
           <div className="space-y-4 text-gray-700">
             <p>
@@ -205,7 +207,7 @@ export default function Lesson5() {
 
             <div className="space-y-3 my-6">
               <div className="border-l-4 border-yellow-500 bg-yellow-50 p-4 rounded">
-                <h3 className="font-semibold text-yellow-900 mb-1">1. 🧬 Hormone Production</h3>
+                <h3 className="font-semibold text-yellow-900 mb-1">1. Hormone Production</h3>
                 <p className="text-sm text-yellow-800">
                   Fats are required to produce testosterone, estrogen, and other hormones. Too-low fat intake 
                   can disrupt menstrual cycles, reduce libido, and impact mood.
@@ -213,7 +215,7 @@ export default function Lesson5() {
               </div>
 
               <div className="border-l-4 border-green-500 bg-green-50 p-4 rounded">
-                <h3 className="font-semibold text-green-900 mb-1">2. 💊 Vitamin Absorption</h3>
+                <h3 className="font-semibold text-green-900 mb-1">2. Vitamin Absorption</h3>
                 <p className="text-sm text-green-800">
                   Vitamins A, D, E, and K are fat-soluble—you need dietary fat to absorb them. Low-fat diets 
                   can lead to nutrient deficiencies.
@@ -221,7 +223,7 @@ export default function Lesson5() {
               </div>
 
               <div className="border-l-4 border-blue-500 bg-blue-50 p-4 rounded">
-                <h3 className="font-semibold text-blue-900 mb-1">3. 🧠 Brain Health</h3>
+                <h3 className="font-semibold text-blue-900 mb-1">3. Brain Health</h3>
                 <p className="text-sm text-blue-800">
                   Your brain is 60% fat! Omega-3 fatty acids (from fish, walnuts, flaxseeds) support cognitive 
                   function, memory, and mental health.
@@ -229,7 +231,7 @@ export default function Lesson5() {
               </div>
 
               <div className="border-l-4 border-pink-500 bg-pink-50 p-4 rounded">
-                <h3 className="font-semibold text-pink-900 mb-1">4. 🍽️ Satiety & Satisfaction</h3>
+                <h3 className="font-semibold text-pink-900 mb-1">4. Satiety &amp; Satisfaction</h3>
                 <p className="text-sm text-pink-800">
                   Fats slow digestion, keeping you fuller longer. They also make food taste better and more 
                   satisfying (important for adherence!).
@@ -237,7 +239,7 @@ export default function Lesson5() {
               </div>
 
               <div className="border-l-4 border-purple-500 bg-purple-50 p-4 rounded">
-                <h3 className="font-semibold text-purple-900 mb-1">5. 🛡️ Cell Membranes & Inflammation</h3>
+                <h3 className="font-semibold text-purple-900 mb-1">5. Cell Membranes &amp; Inflammation</h3>
                 <p className="text-sm text-purple-800">
                   Every cell in your body has a membrane made of fats. Healthy fats (especially omega-3s) 
                   reduce inflammation and support overall health.
@@ -246,7 +248,7 @@ export default function Lesson5() {
             </div>
 
             <div className="bg-red-50 border border-red-200 rounded-lg p-5">
-              <h3 className="font-semibold text-red-900 mb-2">⚠️ Minimum Fat Intake:</h3>
+              <h3 className="font-semibold text-red-900 mb-2">Minimum Fat Intake:</h3>
               <p className="text-red-800">
                 Never go below <strong>0.5g per kg bodyweight</strong> (e.g., 35g for a 70kg person). Going too 
                 low can cause hormone disruption, hair loss, dry skin, low energy, and mood issues.
@@ -262,7 +264,7 @@ export default function Lesson5() {
           <div className="space-y-4 text-gray-700">
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-green-50 border border-green-300 rounded-lg p-4">
-                <h3 className="font-semibold text-green-900 mb-2">🟢 Unsaturated Fats</h3>
+                <h3 className="font-semibold text-green-900 mb-2"><span className="inline-block w-3 h-3 rounded-full bg-green-500 mr-2 align-middle"></span>Unsaturated Fats</h3>
                 <p className="text-xs text-green-800 mb-3">(Prioritize these)</p>
                 <ul className="space-y-1 text-sm text-green-700">
                   <li>• Olive oil</li>
@@ -275,7 +277,7 @@ export default function Lesson5() {
               </div>
 
               <div className="bg-yellow-50 border border-yellow-300 rounded-lg p-4">
-                <h3 className="font-semibold text-yellow-900 mb-2">🟡 Saturated Fats</h3>
+                <h3 className="font-semibold text-yellow-900 mb-2"><span className="inline-block w-3 h-3 rounded-full bg-yellow-400 mr-2 align-middle"></span>Saturated Fats</h3>
                 <p className="text-xs text-yellow-800 mb-3">(Moderate amounts OK)</p>
                 <ul className="space-y-1 text-sm text-yellow-700">
                   <li>• Butter</li>
@@ -288,7 +290,7 @@ export default function Lesson5() {
               </div>
 
               <div className="bg-red-50 border border-red-300 rounded-lg p-4">
-                <h3 className="font-semibold text-red-900 mb-2">🔴 Trans Fats</h3>
+                <h3 className="font-semibold text-red-900 mb-2"><span className="inline-block w-3 h-3 rounded-full bg-red-500 mr-2 align-middle"></span>Trans Fats</h3>
                 <p className="text-xs text-red-800 mb-3">(Avoid when possible)</p>
                 <ul className="space-y-1 text-sm text-red-700">
                   <li>• Hydrogenated oils</li>
@@ -322,7 +324,7 @@ export default function Lesson5() {
             
             <div className="space-y-3">
               <div className="bg-yellow-50 rounded-lg p-4">
-                <h4 className="font-semibold text-yellow-900 mb-2">🔸 Cooking Oils</h4>
+                <h4 className="font-semibold text-yellow-900 mb-2">Cooking Oils</h4>
                 <p className="text-sm text-yellow-800 mb-2">
                   1 tablespoon olive oil = 120 calories. Easy to pour 2-3 tablespoons without thinking!
                 </p>
@@ -332,7 +334,7 @@ export default function Lesson5() {
               </div>
 
               <div className="bg-orange-50 rounded-lg p-4">
-                <h4 className="font-semibold text-orange-900 mb-2">🔸 Nuts & Nut Butters</h4>
+                <h4 className="font-semibold text-orange-900 mb-2">Nuts &amp; Nut Butters</h4>
                 <p className="text-sm text-orange-800 mb-2">
                   A "handful" of almonds can be 200-300 calories. 2 tablespoons peanut butter = 190 calories.
                 </p>
@@ -342,7 +344,7 @@ export default function Lesson5() {
               </div>
 
               <div className="bg-pink-50 rounded-lg p-4">
-                <h4 className="font-semibold text-pink-900 mb-2">🔸 Cheese</h4>
+                <h4 className="font-semibold text-pink-900 mb-2">Cheese</h4>
                 <p className="text-sm text-pink-800 mb-2">
                   "A little cheese" can easily be 150-250 calories. Parmesan, feta, cheddar—all adds up fast.
                 </p>
@@ -352,7 +354,7 @@ export default function Lesson5() {
               </div>
 
               <div className="bg-purple-50 rounded-lg p-4">
-                <h4 className="font-semibold text-purple-900 mb-2">🔸 Salad Dressings & Sauces</h4>
+                <h4 className="font-semibold text-purple-900 mb-2">Salad Dressings &amp; Sauces</h4>
                 <p className="text-sm text-purple-800 mb-2">
                   2 tablespoons ranch dressing = 140 calories. Mayo, aioli, creamy sauces—all very calorie-dense.
                 </p>
@@ -362,7 +364,7 @@ export default function Lesson5() {
               </div>
 
               <div className="bg-blue-50 rounded-lg p-4">
-                <h4 className="font-semibold text-blue-900 mb-2">🔸 Avocados</h4>
+                <h4 className="font-semibold text-blue-900 mb-2">Avocados</h4>
                 <p className="text-sm text-blue-800 mb-2">
                   One whole avocado = 240-320 calories. Healthy, yes—but still needs to be tracked!
                 </p>
@@ -476,7 +478,7 @@ export default function Lesson5() {
 
         {/* Resources */}
         <section className="bg-indigo-50 rounded-xl p-6 mb-8 border border-indigo-100">
-          <h2 className="text-xl font-semibold text-indigo-900 mb-4">📖 Additional Resources</h2>
+          <h2 className="text-xl font-semibold text-indigo-900 mb-4">Additional Resources</h2>
           <ul className="space-y-2 text-indigo-800">
             <li>• <Link href="/app/cookbook" className="underline hover:text-indigo-600">Balanced Macro Recipes</Link></li>
             <li>• <Link href="/app/faq" className="underline hover:text-indigo-600">Frequently Asked Questions</Link></li>
@@ -487,7 +489,7 @@ export default function Lesson5() {
         {/* Homework Section */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8 border-2 border-indigo-200">
           <div className="flex items-center mb-6">
-            <span className="text-4xl mr-3">📝</span>
+            <svg className="w-8 h-8 mr-3 text-indigo-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Lesson 5 Assignment</h2>
               <p className="text-gray-600">Track your full macro balance and portion sizes</p>
@@ -496,10 +498,10 @@ export default function Lesson5() {
 
           {submitSuccess ? (
             <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-              <span className="text-5xl mb-4 block">✅</span>
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg></div>
               <h3 className="text-xl font-semibold text-green-900 mb-2">Homework Submitted!</h3>
               <p className="text-green-800 mb-4">Your coach will review your tracking and provide your finalized macro targets.</p>
-              <p className="text-green-900 font-semibold">🎉 Congratulations on completing all 5 foundational lessons!</p>
+              <p className="text-green-900 font-semibold">Congratulations on completing all 5 foundational lessons!</p>
               <Link href="/app/lessons" className="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-medium">
                 Return to Lessons →
               </Link>
@@ -507,7 +509,7 @@ export default function Lesson5() {
           ) : (
             <>
               <div className="bg-gray-50 rounded-lg p-5 mb-6">
-                <h3 className="font-semibold text-gray-900 mb-3">📋 Your Task (5-7 days):</h3>
+                <h3 className="font-semibold text-gray-900 mb-3">Your Task (5-7 days):</h3>
                 <p className="text-gray-700 mb-4">
                   Track your <strong>complete macro breakdown</strong> (protein, carbs, fats) for one full week. 
                   Pay special attention to <strong>portion sizes of fats</strong>—oils, nuts, cheese, dressings.
@@ -606,7 +608,7 @@ export default function Lesson5() {
 
         {/* Congratulations */}
         <section className="bg-gradient-to-r from-purple-50 via-pink-50 to-orange-50 rounded-xl p-8 border-2 border-purple-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">🎉 You've Completed the Foundation!</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">You've Completed the Foundation!</h2>
           <p className="text-gray-700 text-center mb-6">
             You now understand the science and strategy behind sustainable fat loss. You're ready to implement 
             your personalized plan with confidence!
@@ -639,7 +641,7 @@ export default function Lesson5() {
           </div>
 
           <div className="mt-6 text-center">
-            <p className="text-lg font-semibold text-gray-900 mb-2">🎯 Next Steps:</p>
+            <p className="text-lg font-semibold text-gray-900 mb-2">Next Steps:</p>
             <p className="text-gray-700">
               Your coach will review all your homework and create your personalized macro plan. Once you 
               receive it, you'll start your fat loss phase with clarity, confidence, and all the tools you 
@@ -652,7 +654,7 @@ export default function Lesson5() {
       {/* Footer */}
       <footer className="text-center text-sm text-gray-500 py-8 border-t mt-12">
         <p>With love,</p>
-        <p className="font-semibold text-gray-700 mt-1">Lana • Food Coach @ Love. Eat. Keep Fit. ♥️</p>
+        <p className="font-semibold text-gray-700 mt-1">Lana • Food Coach @ Love. Eat. Keep Fit. ♥</p>
         <p className="mt-4 text-xs">&copy; {new Date().getFullYear()} LoveEatKeepFit</p>
       </footer>
     </main>

@@ -9,12 +9,12 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient({});
 
 async function main() {
-  console.log('🌱 Starting database seed...');
+  console.log('Starting database seed...');
 
   // Check if lessons already exist
   const existingLessons = await prisma.lesson.count();
   if (existingLessons > 0) {
-    console.log(`⚠️  Database already has ${existingLessons} lessons. Skipping seed.`);
+    console.log(`Database already has ${existingLessons} lessons. Skipping seed.`);
     console.log('   To re-seed, delete lessons and run again.');
     return;
   }
@@ -73,7 +73,7 @@ async function main() {
     },
   ];
 
-  console.log('📚 Creating lessons...');
+  console.log('Creating lessons...');
   
   for (const lessonData of lessons) {
     const lesson = await prisma.lesson.create({
@@ -82,13 +82,13 @@ async function main() {
     console.log(`   ✓ Created: ${lesson.title}`);
   }
 
-  console.log('✅ Database seed completed successfully!');
-  console.log(`   📖 ${lessons.length} lessons created`);
+  console.log('Database seed completed successfully!');
+  console.log(`   ${lessons.length} lessons created`);
 }
 
 main()
   .catch((e) => {
-    console.error('❌ Error seeding database:', e);
+    console.error('Error seeding database:', e);
     process.exit(1);
   })
   .finally(async () => {

@@ -28,7 +28,7 @@ export default function StoryBlock({ content }) {
                 <div className={`mt-1 text-lg ${
                   challenge.type === 'positive' ? 'text-leaf' : 'text-coral'
                 }`}>
-                  {challenge.type === 'positive' ? '✔' : '❌'}
+                  {challenge.type === 'positive' ? '✔' : '✗'}
                 </div>
                 <p className="text-base leading-relaxed text-charcoal" dangerouslySetInnerHTML={{ __html: challenge.text }}>
                 </p>
@@ -71,7 +71,7 @@ export default function StoryBlock({ content }) {
                     className="flex items-start gap-3 p-4 rounded-lg bg-coral/10 border border-coral/20"
                   >
                     <div className="mt-1 text-lg text-coral">
-                      ❌
+                      ✗
                     </div>
                     <p className="text-base leading-relaxed text-charcoal">
                       {point}

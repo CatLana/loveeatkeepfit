@@ -175,7 +175,7 @@ export default function Lessons() {
                         
                         {/* Lock message */}
                         <div className="ml-11 text-sm text-gray-500 italic">
-                          🔒 Complete Lesson {lesson.order - 1} to unlock
+                          Complete Lesson {lesson.order - 1} to unlock
                         </div>
                       </div>
                     </div>

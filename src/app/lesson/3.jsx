@@ -56,24 +56,26 @@ export default function Lesson3() {
             ← Back to Lessons
           </Link>
           <h1 className="text-3xl font-bold text-gray-900 mt-2">Lesson 3: Macros Made Simple</h1>
-          <p className="text-gray-600 mt-1">Let's dive deeper, {userName}!  🍖🍞🥑</p>
+          <p className="text-gray-600 mt-1">Let's dive deeper, {userName}!</p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Quick Links */}
         <div className="flex gap-4 mb-8">
-          <Link href="/app/faq" className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
-            📚 FAQ
+          <Link href="/app/faq" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+            FAQ
           </Link>
-          <Link href="/app/chat" className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
-            💬 Ask Your Coach
+          <Link href="/app/chat" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
+            Ask Your Coach
           </Link>
         </div>
 
         {/* Introduction */}
         <section className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 mb-8 border border-purple-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Beyond Calories: The Power of Macros 🧬</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Beyond Calories: The Power of Macros</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             You now understand that <strong>calories determine weight loss</strong>. But <strong>macronutrients (macros)</strong>—
             protein, carbs, and fats—determine what <em>kind</em> of weight you lose, and how you <em>feel</em> during the process.
@@ -91,7 +93,7 @@ export default function Lesson3() {
           <div className="space-y-6 text-gray-700">
             {/* Protein */}
             <div className="border-l-4 border-purple-500 bg-purple-50 rounded-lg p-5">
-              <h3 className="text-xl font-bold text-purple-900 mb-3">🍖 Protein: The MVP Macro</h3>
+              <h3 className="text-xl font-bold text-purple-900 mb-3">Protein: The MVP Macro</h3>
               <p className="text-purple-800 mb-3">
                 <strong>4 calories per gram</strong>
               </p>
@@ -125,7 +127,7 @@ export default function Lesson3() {
 
             {/* Carbohydrates */}
             <div className="border-l-4 border-orange-500 bg-orange-50 rounded-lg p-5">
-              <h3 className="text-xl font-bold text-orange-900 mb-3">🍞 Carbohydrates: Your Energy Source</h3>
+              <h3 className="text-xl font-bold text-orange-900 mb-3">Carbohydrates: Your Energy Source</h3>
               <p className="text-orange-800 mb-3">
                 <strong>4 calories per gram</strong>
               </p>
@@ -159,7 +161,7 @@ export default function Lesson3() {
 
             {/* Fats */}
             <div className="border-l-4 border-yellow-500 bg-yellow-50 rounded-lg p-5">
-              <h3 className="text-xl font-bold text-yellow-900 mb-3">🥑 Fats: Essential for Health</h3>
+              <h3 className="text-xl font-bold text-yellow-900 mb-3">Fats: Essential for Health</h3>
               <p className="text-yellow-800 mb-3">
                 <strong>9 calories per gram</strong> (more than double protein and carbs!)
               </p>
@@ -204,7 +206,7 @@ export default function Lesson3() {
 
             <div className="grid md:grid-cols-2 gap-4 my-6">
               <div className="border border-red-300 bg-red-50 rounded-lg p-4">
-                <h3 className="font-semibold text-red-900 mb-3">❌ Poor Macro Balance</h3>
+                <h3 className="font-semibold text-red-900 mb-3">Poor Macro Balance</h3>
                 <p className="text-sm text-red-800 mb-2">1,800 calories/day:</p>
                 <ul className="text-sm text-red-700 space-y-1">
                   <li>• Low protein (50g)</li>
@@ -231,7 +233,7 @@ export default function Lesson3() {
             </div>
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-5">
-              <h3 className="font-semibold text-blue-900 mb-2">📊 Research Insight:</h3>
+              <h3 className="font-semibold text-blue-900 mb-2">Research Insight:</h3>
               <p className="text-blue-800">
                 Studies show that higher protein intake (1.6-2.2g per kg bodyweight) during fat loss helps 
                 preserve <strong>93% of muscle mass</strong> compared to lower protein diets, while also 
@@ -276,7 +278,7 @@ export default function Lesson3() {
             </div>
 
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
-              <h3 className="font-semibold text-yellow-900 mb-2">💡 Important Notes:</h3>
+              <h3 className="font-semibold text-yellow-900 mb-2">Important Notes:</h3>
               <ul className="text-yellow-800 space-y-2 text-sm">
                 <li>• <strong>Protein is non-negotiable</strong> — prioritize this first</li>
                 <li>• <strong>Fats shouldn't go too low</strong> — minimum 0.5g/kg for hormone health</li>
@@ -305,7 +307,7 @@ export default function Lesson3() {
           
           <div className="space-y-4 text-gray-700">
             <div className="bg-purple-50 rounded-lg p-5">
-              <h3 className="font-semibold text-purple-900 mb-3">🍖 Getting Enough Protein:</h3>
+              <h3 className="font-semibold text-purple-900 mb-3">Getting Enough Protein:</h3>
               <ul className="space-y-2 text-purple-800 text-sm">
                 <li>• Include protein at every meal (20-40g per meal)</li>
                 <li>• Choose lean sources: chicken breast, fish, egg whites, Greek yogurt</li>
@@ -315,7 +317,7 @@ export default function Lesson3() {
             </div>
 
             <div className="bg-orange-50 rounded-lg p-5">
-              <h3 className="font-semibold text-orange-900 mb-3">🍞 Managing Carbs:</h3>
+              <h3 className="font-semibold text-orange-900 mb-3">Managing Carbs:</h3>
               <ul className="space-y-2 text-orange-800 text-sm">
                 <li>• Time carbs around workouts for better energy and recovery</li>
                 <li>• Choose whole grains, fruits, and starchy vegetables for nutrients</li>
@@ -325,7 +327,7 @@ export default function Lesson3() {
             </div>
 
             <div className="bg-yellow-50 rounded-lg p-5">
-              <h3 className="font-semibold text-yellow-900 mb-3">🥑 Controlling Fats:</h3>
+              <h3 className="font-semibold text-yellow-900 mb-3">Controlling Fats:</h3>
               <ul className="space-y-2 text-yellow-800 text-sm">
                 <li>• Measure oils, nuts, and nut butters — they're very calorie-dense</li>
                 <li>• 1 tablespoon oil = 120 calories (easy to over-pour!)</li>
@@ -338,7 +340,7 @@ export default function Lesson3() {
 
         {/* Flexibility */}
         <section className="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 mb-8 border border-green-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">🌟 Flexibility is Key</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Flexibility is Key</h2>
           <p className="text-gray-700 mb-4">
             Don't stress about hitting your macros <em>perfectly</em> every single day. Aim for consistency 
             over the week, not perfection each day.
@@ -365,7 +367,7 @@ export default function Lesson3() {
 
         {/* Resources */}
         <section className="bg-indigo-50 rounded-xl p-6 mb-8 border border-indigo-100">
-          <h2 className="text-xl font-semibold text-indigo-900 mb-4">📖 Additional Resources</h2>
+          <h2 className="text-xl font-semibold text-indigo-900 mb-4">Additional Resources</h2>
           <ul className="space-y-2 text-indigo-800">
             <li>• <Link href="/app/cookbook" className="underline hover:text-indigo-600">High-Protein Recipe Ideas</Link></li>
             <li>• <Link href="/app/faq" className="underline hover:text-indigo-600">Frequently Asked Questions</Link></li>
@@ -376,7 +378,7 @@ export default function Lesson3() {
         {/* Homework Section */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8 border-2 border-indigo-200">
           <div className="flex items-center mb-6">
-            <span className="text-4xl mr-3">📝</span>
+            <svg className="w-8 h-8 mr-3 text-indigo-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Lesson 3 Assignment</h2>
               <p className="text-gray-600">Track your macros and see where you are now</p>
@@ -385,7 +387,7 @@ export default function Lesson3() {
 
           {submitSuccess ? (
             <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-              <span className="text-5xl mb-4 block">✅</span>
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg></div>
               <h3 className="text-xl font-semibold text-green-900 mb-2">Homework Submitted!</h3>
               <p className="text-green-800">Your coach will review your macro tracking and provide personalized targets.</p>
               <Link href="/app/lessons" className="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-medium">
@@ -395,7 +397,7 @@ export default function Lesson3() {
           ) : (
             <>
               <div className="bg-gray-50 rounded-lg p-5 mb-6">
-                <h3 className="font-semibold text-gray-900 mb-3">📋 Your Task (3-5 days):</h3>
+                <h3 className="font-semibold text-gray-900 mb-3">Your Task (3-5 days):</h3>
                 <p className="text-gray-700 mb-4">
                   Track your <strong>macronutrients</strong> (protein, carbs, fats) for a typical <strong>weekend day</strong> and 
                   a <strong>working day</strong>. Use MyFitnessPal or similar app for accurate tracking.
@@ -495,7 +497,7 @@ export default function Lesson3() {
 
         {/* Next Steps */}
         <section className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 border border-indigo-100">
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">🎯 Next Steps</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-3">Next Steps</h2>
           <ol className="list-decimal list-inside space-y-2 text-gray-700">
             <li>Track your macros for 2 typical days (weekend + working day)</li>
             <li>Submit your macro tracking homework</li>
@@ -511,7 +513,7 @@ export default function Lesson3() {
       {/* Footer */}
       <footer className="text-center text-sm text-gray-500 py-8 border-t mt-12">
         <p>With love,</p>
-        <p className="font-semibold text-gray-700 mt-1">Lana • Food Coach @ Love. Eat. Keep Fit. ♥️</p>
+        <p className="font-semibold text-gray-700 mt-1">Lana • Food Coach @ Love. Eat. Keep Fit. ♥</p>
         <p className="mt-4 text-xs">&copy; {new Date().getFullYear()} LoveEatKeepFit</p>
       </footer>
     </main>

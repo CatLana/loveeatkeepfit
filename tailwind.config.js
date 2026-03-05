@@ -18,8 +18,8 @@ module.exports = {
         darkgreen: "#4F7A4F"
       },
       fontFamily: {
-        heading: ["var(--font-poppins)", "sans-serif"],
-        body: ["var(--font-inter)", "sans-serif"]
+        heading: ["var(--font-display)", "Georgia", "serif"],
+        body: ["var(--font-sans)", "system-ui", "sans-serif"]
       },
       boxShadow: {
         soft: "0 10px 30px rgba(58, 47, 42, 0.12)"

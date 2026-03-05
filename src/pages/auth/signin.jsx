@@ -33,8 +33,9 @@ export default function SignIn() {
         setError(result.error);
         setIsLoading(false);
       } else {
-        // Redirect to app dashboard
-        router.push('/app');
+        // Redirect to lessons dashboard
+        const callbackUrl = router.query.callbackUrl || '/app/lessons';
+        router.push(callbackUrl.startsWith('/') ? callbackUrl : '/app/lessons');
       }
     } catch (err) {
       setError('An unexpected error occurred');

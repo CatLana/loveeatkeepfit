@@ -4,6 +4,7 @@
  */
 
 import { useState } from 'react';
+import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -56,8 +57,17 @@ export default function SignUp() {
         return;
       }
 
-      // Success! Redirect to sign in
-      router.push('/auth/signin?message=Account created! Please sign in.');
+      // Success! Auto sign-in and redirect to dashboard
+      const result = await signIn('credentials', {
+        email: formData.email,
+        password: formData.password,
+        redirect: false,
+      });
+      if (result?.ok) {
+        router.push('/app/lessons');
+      } else {
+        router.push('/auth/signin?message=Account created! Please sign in.');
+      }
     } catch (err) {
       setError('An unexpected error occurred');
       setIsLoading(false);

@@ -56,37 +56,21 @@ export default async function handler(req, res) {
       }
     });
 
-    // Create unlocked progress for default lessons
-    await Promise.all(
-      defaultLessons.map(lesson =>
-        prisma.lessonProgress.create({
-          data: {
-            userId: user.id,
-            lessonId: lesson.id,
-            status: 'unlocked',
-            unlockedAt: new Date(),
-          }
-        })
-      )
-    );
-
-    // Create locked progress for remaining lessons
     const allLessons = await prisma.lesson.findMany();
-    const lockedLessons = allLessons.filter(
-      lesson => !defaultLessons.some(dl => dl.id === lesson.id)
-    );
+    const defaultLessonIds = new Set(defaultLessons.map(l => l.id));
 
-    await Promise.all(
-      lockedLessons.map(lesson =>
-        prisma.lessonProgress.create({
-          data: {
-            userId: user.id,
-            lessonId: lesson.id,
-            status: 'locked',
-          }
-        })
-      )
-    );
+    await prisma.lessonProgress.createMany({
+      data: allLessons.map(lesson => ({
+        id: require('crypto').randomUUID(),
+        userId: user.id,
+        lessonId: lesson.id,
+        status: defaultLessonIds.has(lesson.id) ? 'unlocked' : 'locked',
+        unlockedAt: defaultLessonIds.has(lesson.id) ? new Date() : null,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      })),
+      skipDuplicates: true,
+    });
 
     return res.status(201).json({
       message: 'Account created successfully',

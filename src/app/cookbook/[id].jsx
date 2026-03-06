@@ -4,7 +4,6 @@ import { recipes } from './recipes';
 export default function RecipePage({ id }) {
   const recipe = recipes.find((r) => r.id === Number(id));
   if (!recipe) {
-import prisma from '@/lib/prisma';
     return (
       <main className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">

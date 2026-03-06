@@ -14,6 +14,7 @@ export default function LessonTemplate({
   submitSuccess = false
 }) {
   const { data: session } = useSession();
+  const userName = session?.user?.name || null;
 
   // Theme tag color mapping
   const getThemeColor = (theme) => {
@@ -41,18 +42,50 @@ export default function LessonTemplate({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-warmwhite via-white to-beige/20 py-8 px-4">
-      <div className="max-w-4xl mx-auto">
-        {/* Back Navigation */}
-        <Link 
-          href="/app/lessons" 
-          className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6 font-medium"
-        >
-          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Lessons
-        </Link>
+    <div className="min-h-screen bg-gradient-to-br from-warmwhite via-white to-beige/20">
+      {/* Top Bar */}
+      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+          {/* Left: Back + greeting */}
+          <div className="flex items-center gap-4 min-w-0">
+            <Link
+              href="/app/lessons"
+              className="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-medium text-sm whitespace-nowrap"
+            >
+              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Lessons
+            </Link>
+            {userName && (
+              <span className="text-sm text-gray-500 truncate hidden sm:block">
+                Hi, <span className="font-medium text-gray-700">{userName}</span>
+              </span>
+            )}
+          </div>
+
+          {/* Right: Chat (prominent) + FAQ (subtle) */}
+          <div className="flex items-center gap-3">
+            <Link
+              href="/app/faq"
+              className="text-xs text-gray-400 hover:text-gray-600 transition-colors hidden sm:block"
+            >
+              FAQ
+            </Link>
+            <Link
+              href="/app/chat"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-full transition-colors shadow-sm"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+              </svg>
+              Chat with Coach
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 py-8">
 
         {/* Lesson Header */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-6 border border-gray-100">
@@ -119,7 +152,7 @@ export default function LessonTemplate({
           </div>
         )}
 
-        {/* Quick Links */}
+        {/* Bottom Links */}
         <div className="mt-8 flex flex-wrap gap-4 justify-center">
           <Link 
             href="/app" 

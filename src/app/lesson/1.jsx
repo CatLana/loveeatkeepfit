@@ -1,341 +1,450 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
+/**
+ * Lesson 1 — First Steps with the Program and Calories Target
+ */
 
+import { useState } from 'react';
+import Link from 'next/link';
+import { useSession } from 'next-auth/react';
+import LessonTemplate from '@/components/LessonTemplate';
+import Quiz from '@/components/Quiz';
+import RecipeCard from '@/components/RecipeCard';
+import SOSButton from '@/components/SOSButton';
+import lessonsData from '@/data/lessons.json';
+
+const lesson = lessonsData.lessons.find((l) => l.id === 1);
+
+// ─── Quiz ────────────────────────────────────────────────────────────────────
+const QUIZ_QUESTIONS = [
+  {
+    question: 'What does TDEE stand for?',
+    options: [
+      'Total Diet and Exercise Evaluation',
+      'Total Daily Energy Expenditure',
+      'Timed Daily Eating Estimate',
+    ],
+    correct: 1,
+  },
+  {
+    question: 'What can happen when you consistently eat far below your BMR?',
+    options: [
+      'You lose weight faster and keep it off permanently',
+      'Your metabolism can slow down and you risk losing muscle',
+      'Your body adapts and automatically burns more fat',
+    ],
+    correct: 1,
+  },
+  {
+    question: 'What is the purpose of the 3-day food diary this week?',
+    options: [
+      'To start cutting calories and eating less straight away',
+      'To track your real, everyday eating habits without any changes',
+      'To identify which foods to eliminate first',
+    ],
+    correct: 1,
+  },
+];
+
+// ─── Recipe ───────────────────────────────────────────────────────────────────
+const RECIPE = {
+  title: 'Baked Salmon with Roasted Vegetables',
+  intro: 'An easy, whole-food meal that is wonderfully simple to calorie-track.',
+  videoUrl: '', // add a YouTube or Instagram URL when ready
+  ingredients: [
+    { name: 'Salmon fillet', qty: '180 g' },
+    { name: 'Sweet potato', qty: '150 g' },
+    { name: 'Broccoli florets', qty: '150 g' },
+    { name: 'Olive oil', qty: '1 tbsp' },
+    { name: 'Garlic, salt, pepper', qty: 'to taste' },
+    { name: 'Lemon', qty: '½ (to serve)' },
+  ],
+  steps: [
+    'Preheat oven to 200 °C.',
+    'Cube sweet potato, toss with half the oil and seasoning.',
+    'Roast sweet potato 15 min.',
+    'Add broccoli, drizzle remaining oil, roast 15 min more.',
+    'Season salmon, add to tray, bake 12–15 min until flaky.',
+    'Squeeze lemon over everything and serve.',
+  ],
+  macrosPerPortion: {
+    calories: 420,
+    protein: 36,
+    carbs: 22,
+    fat: 18,
+  },
+};
+
+// ─── Component ────────────────────────────────────────────────────────────────
 export default function Lesson1() {
-  const [userName, setUserName] = useState('Guest'); // TODO: Replace with actual auth user name
+  const { data: session } = useSession();
+
+  const [formData, setFormData] = useState({ day1: '', day2: '', day3: '', photos: '', comments: '' });
+  const [reflection, setReflection] = useState('');
+  const [win, setWin] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [formData, setFormData] = useState({
-    weekendDay: '',
-    workingDay: '',
-    photos: '',
-    comments: ''
-  });
+
+  const handleChange = (e) =>
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
-      const response = await fetch('/api/homework', {
+      const res = await fetch('/api/homework', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           lessonId: 1,
-          lessonTitle: 'Volume Eating',
-          userName,
+          lessonTitle: lesson.title,
+          userName: session?.user?.name || 'Student',
           ...formData,
-          submittedAt: new Date().toISOString()
-        })
+          reflection,
+          win,
+          submittedAt: new Date().toISOString(),
+        }),
       });
-
-      if (response.ok) {
+      if (res.ok) {
         setSubmitSuccess(true);
-        setFormData({ weekendDay: '', workingDay: '', photos: '', comments: '' });
       } else {
-        alert('Submission failed. Please try again.');
+        const body = await res.json().catch(() => ({}));
+        alert(body.message || 'Submission failed. Please try again.');
       }
-    } catch (error) {
-      console.error('Submission error:', error);
+    } catch {
       alert('An error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Header */}
-      <div className="bg-white shadow-sm border-b">
-        <div className="max-w-4xl mx-auto px-4 py-6">
-          <Link href="/app/lessons" className="text-indigo-600 hover:text-indigo-800 text-sm mb-2 inline-block">
-            ← Back to Lessons
-          </Link>
-          <h1 className="text-3xl font-bold text-gray-900 mt-2">Lesson 1: Volume Eating</h1>
-          <p className="text-gray-600 mt-1">Welcome, {userName}!</p>
-        </div>
-      </div>
+    <LessonTemplate lesson={lesson}>
+      {/* ──────────────────────────────────────────────────────────────────────
+       * 1. ARTICLE
+       * ──────────────────────────────────────────────────────────────────── */}
+      <article className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 space-y-8" aria-label="Lesson content">
 
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        {/* Quick Links */}
-        <div className="flex gap-4 mb-8">
-          <Link href="/app/faq" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
-            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
-            FAQ
-          </Link>
-          <Link href="/app/chat" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
-            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
-            Ask Your Coach
-          </Link>
-        </div>
-
-        {/* Introduction */}
-        <section className="bg-gradient-to-r from-pink-50 to-orange-50 rounded-xl p-6 mb-8 border border-pink-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Welcome to Your Journey</h2>
+        {/* Welcome */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Welcome to the programme</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Welcome to <strong>Love. Eat. Keep Fit.</strong> — a unique programme designed to help you build small, 
-            sustainable habits and gently reshape your approach to food throughout your weight‑loss journey.
+            You've taken the first step — and that matters more than you know. <strong>Love. Eat. Keep Fit.</strong> is not
+            a diet. It is a coaching programme built around small, sustainable habits that add up to real, lasting results.
           </p>
-          <p className="text-gray-700 leading-relaxed">
-            This lesson introduces you to <strong>Volume Eating</strong> — a foundational concept that will help you 
-            feel full and satisfied while losing weight steadily and sustainably.
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Each lesson builds on the last. You will read, reflect, complete a short assignment, and then — only when
+            you are ready — move to the next one. There is no rush. Steady progress always beats a fast sprint that
+            burns out.
+          </p>
+          <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-xl">
+            <p className="text-green-800 font-medium">
+              🌱 One important rule for this week: <strong>do not change anything about the way you eat yet.</strong>
+              Just observe. We start with information, not restriction.
+            </p>
+          </div>
+        </section>
+
+        {/* What are calories */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">What are calories?</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            A calorie is simply a unit of energy — the fuel your body uses to do everything from breathing to thinking
+            to taking a walk. Every food and drink (except plain water) contains calories.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Calories are not the enemy. They are <strong>information</strong>. When we understand how much energy we
+            are taking in versus how much our body needs, we gain the clarity to make choices that feel good rather
+            than choices driven by guilt or confusion.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4 mt-6">
+            <div className="bg-blue-50 rounded-xl p-4 border border-blue-100">
+              <p className="text-xs font-bold text-blue-600 uppercase tracking-wide mb-1">Too few calories</p>
+              <p className="text-sm text-blue-800">Tiredness, hunger, muscle loss, a metabolism that adapts downward</p>
+            </div>
+            <div className="bg-rose-50 rounded-xl p-4 border border-rose-100">
+              <p className="text-xs font-bold text-rose-600 uppercase tracking-wide mb-1">Too many calories</p>
+              <p className="text-sm text-rose-800">Energy stored as body fat over time — even from &ldquo;healthy&rdquo; foods</p>
+            </div>
+          </div>
+        </section>
+
+        {/* BMR */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Base Metabolism (BMR)</h2>
+          <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-6 mb-4">
+            <h3 className="font-semibold text-indigo-900 mb-2">Basal Metabolic Rate</h3>
+            <p className="text-indigo-800 leading-relaxed">
+              Your BMR is the number of calories your body burns just to stay alive — keeping your heart beating,
+              your lungs breathing, your organs functioning — <em>without any movement at all</em>.
+            </p>
+          </div>
+          <p className="text-gray-700 leading-relaxed mb-3">
+            This number is personal to you. It depends on your age, height, weight, and sex. A common
+            rough guide: BMR for women is typically 1,300–1,600 kcal/day; for men 1,600–2,000 kcal/day.
+          </p>
+          <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-xl">
+            <p className="text-amber-900 font-semibold">
+              ⚠️ Never eat below your BMR. Consistently eating under it sends your body into a conservation
+              mode where it slows metabolism and breaks down muscle for fuel — the opposite of what we want.
+            </p>
+          </div>
+        </section>
+
+        {/* TDEE */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">TDEE — your total energy needs</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            <strong>Total Daily Energy Expenditure (TDEE)</strong> is your BMR plus all the energy you burn
+            through movement — walking, working, exercising, even fidgeting. This is how much you need to eat
+            to maintain your current weight.
+          </p>
+          <div className="bg-gray-50 rounded-xl p-5 border border-gray-200">
+            <p className="text-sm font-bold text-gray-600 uppercase tracking-wide mb-3">TDEE = BMR × Activity Multiplier</p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              {[
+                ['Mostly desk-based, little movement', '× 1.2'],
+                ['Light activity 1–3 days/week', '× 1.375'],
+                ['Moderate activity 3–5 days/week', '× 1.55'],
+                ['Active or physical job + training', '× 1.725'],
+              ].map(([label, mult]) => (
+                <li key={label} className="flex justify-between gap-4">
+                  <span>{label}</span>
+                  <span className="font-semibold text-gray-900 whitespace-nowrap">{mult}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Your coach will help you find your personal TDEE based on your intake diary. That is exactly
+            what the assignment below is for.
           </p>
         </section>
 
-        {/* Understanding Your Metabolism */}
-        <section className="bg-white rounded-xl shadow-sm p-6 mb-8 border border-gray-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Understanding Your Metabolism</h2>
-          
-          <div className="space-y-4 text-gray-700">
-            <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-              <h3 className="font-semibold text-blue-900 mb-2">Your Base Metabolism (BMR)</h3>
-              <p className="text-blue-800">
-                Your BMR is the amount of energy your body needs simply to function — breathing, thinking, and keeping you alive — 
-                without any additional movement. <strong>Never eat below this number.</strong>
-              </p>
+        {/* Calorie deficit */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">The calorie deficit — slow and steady</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            To lose fat, you need to eat slightly less than your TDEE — creating a calorie deficit. The key
+            word is <em>slightly</em>. Research consistently shows that a deficit of <strong>15–20%</strong>
+            below TDEE is the sweet spot for sustainable fat loss of roughly 0.25–0.5 kg per week.
+          </p>
+          <div className="grid sm:grid-cols-3 gap-3 text-center text-sm">
+            <div className="bg-red-50 border border-red-100 rounded-xl p-4">
+              <p className="text-2xl font-bold text-red-600 mb-1">−50%</p>
+              <p className="text-red-700 font-medium">Crash diet</p>
+              <p className="text-red-600 text-xs mt-1">Muscle loss, fatigue, rebound weight gain</p>
             </div>
-
-            <p>
-              When you eat too little, your metabolism can adapt downward. This means you may find yourself eating the 
-              same foods as before but gaining weight instead of losing it. One of our key goals is to 
-              <strong> keep your metabolism strong and responsive</strong> while you lose weight.
-            </p>
-
-            <p>
-              This makes the process far more enjoyable, because you'll still have room for plenty of food while making progress.
+            <div className="bg-green-50 border-2 border-green-400 rounded-xl p-4">
+              <p className="text-2xl font-bold text-green-700 mb-1">−15–20%</p>
+              <p className="text-green-700 font-semibold">Recommended</p>
+              <p className="text-green-600 text-xs mt-1">Steady fat loss, good energy, no hunger spiral</p>
+            </div>
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+              <p className="text-2xl font-bold text-gray-500 mb-1">0%</p>
+              <p className="text-gray-600 font-medium">Maintenance</p>
+              <p className="text-gray-500 text-xs mt-1">Eating at TDEE — weight stays stable</p>
+            </div>
+          </div>
+          <div className="mt-5 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-xl">
+            <p className="text-yellow-900">
+              <strong>Not yet.</strong> There is no need to calculate or apply any deficit right now.
+              Your only job this week is to record what you already eat. We will work out the numbers together
+              from there.
             </p>
           </div>
         </section>
+      </article>
 
-        {/* What is Volume Eating? */}
-        <section className="bg-white rounded-xl shadow-sm p-6 mb-8 border border-gray-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">What is Volume Eating?</h2>
-          
-          <div className="space-y-4 text-gray-700">
-            <p>
-              <strong>Volume eating</strong> is a strategy where you prioritize foods that are low in calories but high in volume. 
-              This means you can eat larger portions that physically fill your stomach, keeping you satisfied, without consuming 
-              too many calories.
-            </p>
+      {/* ──────────────────────────────────────────────────────────────────────
+       * 2. KNOWLEDGE CHECK QUIZ
+       * ──────────────────────────────────────────────────────────────────── */}
+      <section aria-labelledby="quiz-heading">
+        <div className="mb-4">
+          <h2 id="quiz-heading" className="text-2xl font-bold text-gray-900">Quick knowledge check</h2>
+          <p className="text-gray-500 text-sm mt-1">3 questions — one at a time. See how much you have picked up.</p>
+        </div>
+        <Quiz questions={QUIZ_QUESTIONS} />
+      </section>
 
-            <div className="bg-green-50 rounded-lg p-5 my-4">
-              <h3 className="font-semibold text-green-900 mb-3">Key Principles:</h3>
-              <ul className="space-y-2 text-green-800">
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Choose foods with <strong>high water content</strong> (fruits, vegetables, soups)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Prioritize <strong>fiber-rich foods</strong> that promote fullness</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Include <strong>lean protein</strong> to support satiety and muscle preservation</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Enjoy <strong>larger portions</strong> without the guilt</span>
-                </li>
-              </ul>
-            </div>
+      {/* ──────────────────────────────────────────────────────────────────────
+       * 3. RECIPE
+       * ──────────────────────────────────────────────────────────────────── */}
+      <section aria-labelledby="recipe-heading">
+        <div className="mb-4">
+          <h2 id="recipe-heading" className="text-2xl font-bold text-gray-900">Try this recipe</h2>
+          <p className="text-gray-500 text-sm mt-1">Whole foods, balanced macros, and easy to track. Perfect for getting started.</p>
+        </div>
+        <RecipeCard recipe={RECIPE} />
+      </section>
 
-            <h3 className="font-semibold text-lg mt-6 mb-3">Practical Examples:</h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="border border-gray-200 rounded-lg p-4">
-                <h4 className="font-semibold text-red-600 mb-2"><span className="inline-block w-3 h-3 rounded-full bg-red-500 mr-2 align-middle"></span>Lower Volume</h4>
-                <p className="text-sm">100g of chips = ~540 calories</p>
-                <p className="text-xs text-gray-600 mt-1">Small handful, high calories</p>
-              </div>
-              <div className="border border-green-500 rounded-lg p-4 bg-green-50">
-                <h4 className="font-semibold text-green-700 mb-2"><span className="inline-block w-3 h-3 rounded-full bg-green-500 mr-2 align-middle"></span>Higher Volume</h4>
-                <p className="text-sm">400g of roasted vegetables = ~200 calories</p>
-                <p className="text-xs text-gray-600 mt-1">Large plate, fewer calories</p>
-              </div>
-            </div>
+      {/* ──────────────────────────────────────────────────────────────────────
+       * 4. REFLECTION
+       * ──────────────────────────────────────────────────────────────────── */}
+      <section aria-labelledby="reflection-heading" className="bg-purple-50 rounded-2xl border border-purple-100 p-8">
+        <h2 id="reflection-heading" className="text-2xl font-bold text-gray-900 mb-2">What did you learn today?</h2>
+        <p className="text-gray-600 text-sm mb-5">Write one thing that was new to you, surprised you, or that you want to remember.</p>
+        <textarea
+          value={reflection}
+          onChange={(e) => setReflection(e.target.value)}
+          rows={4}
+          className="w-full border border-purple-200 rounded-xl p-4 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-purple-400 focus:border-transparent resize-none"
+          placeholder="e.g. I didn't realise TDEE includes activity level — not just resting metabolism…"
+        />
+      </section>
+
+      {/* ──────────────────────────────────────────────────────────────────────
+       * 5. ASSIGNMENT
+       * ──────────────────────────────────────────────────────────────────── */}
+      <section aria-labelledby="assignment-heading" className="bg-white rounded-2xl shadow-sm border-2 border-indigo-200 p-8">
+        <div className="flex items-start gap-4 mb-6">
+          <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center">
+            <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
           </div>
-        </section>
-
-        {/* Why Volume Eating Matters */}
-        <section className="bg-white rounded-xl shadow-sm p-6 mb-8 border border-gray-100">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Why This Matters for Your Journey</h2>
-          
-          <div className="space-y-4 text-gray-700">
-            <p>
-              For slow, steady fat loss (around 0.25–0.5 kg per week), a gentle <strong>15–20% calorie deficit</strong> 
-              from your maintenance intake is recommended.
-            </p>
-
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded my-4">
-              <h3 className="font-semibold text-yellow-900 mb-2">Important Note</h3>
-              <p className="text-yellow-800">
-                There is no need to follow a calorie deficit <em>yet</em>. For now, continue eating normally. 
-                We'll make adjustments together based on your food diary and how your body responds.
-              </p>
-            </div>
-
-            <p>
-              Volume eating allows you to create this deficit while still enjoying satisfying meals. By choosing 
-              nutrient-dense, high-volume foods, you'll avoid the excessive hunger and fatigue that often derail 
-              weight loss efforts.
-            </p>
+          <div>
+            <h2 id="assignment-heading" className="text-2xl font-bold text-gray-900">Your assignment</h2>
+            <p className="text-gray-500 text-sm mt-0.5">Track your food for 3 real days</p>
           </div>
-        </section>
+        </div>
 
-        {/* Resources */}
-        <section className="bg-indigo-50 rounded-xl p-6 mb-8 border border-indigo-100">
-          <h2 className="text-xl font-semibold text-indigo-900 mb-4">Additional Resources</h2>
-          <ul className="space-y-2 text-indigo-800">
-            <li>• <Link href="/app/cookbook" className="underline hover:text-indigo-600">Browse Volume Eating Recipes</Link></li>
-            <li>• <Link href="/app/faq" className="underline hover:text-indigo-600">Frequently Asked Questions</Link></li>
-            <li>• <Link href="/app/chat" className="underline hover:text-indigo-600">Ask Your Coach a Question</Link></li>
+        <div className="bg-indigo-50 rounded-xl p-6 mb-6 space-y-3 text-gray-700 leading-relaxed">
+          <p>Over the next 3 days, record everything you eat and drink. You can use any method you like:</p>
+          <ul className="list-none space-y-1.5 ml-2">
+            {[
+              'A food tracking app like MyFitnessPal — screenshots or export are fine',
+              'Photos of your plates',
+              'A written diary — please include approximate quantities (e.g. "200g chicken, handful of rice")',
+            ].map((item, i) => (
+              <li key={i} className="flex items-start gap-2">
+                <span className="text-indigo-400 mt-0.5">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
           </ul>
-        </section>
-
-        {/* Homework Section */}
-        <section className="bg-white rounded-xl shadow-lg p-8 mb-8 border-2 border-indigo-200">
-          <div className="flex items-center mb-6">
-            <svg className="w-8 h-8 mr-3 text-indigo-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900">Your First Assignment</h2>
-              <p className="text-gray-600">Help us understand your current eating patterns</p>
-            </div>
+          <div className="border-t border-indigo-200 pt-4">
+            <p className="font-semibold text-indigo-900 mb-2">Please — do NOT change anything about how you eat this week.</p>
+            <p>
+              Show me your real life. The stress days, the no-time-to-cook days, the junk food days,
+              even the kilo-of-chocolate day. All of it is welcome here.
+            </p>
+            <p className="mt-2">
+              <strong>There is no judgement.</strong> We learn far more from our imperfect days than our
+              perfect ones. When everything goes to plan there is nothing to improve — and we improve by
+              looking honestly at what actually happens, not what we wish happened. Imperfection is where
+              real growth lives.
+            </p>
           </div>
+        </div>
 
-          {submitSuccess ? (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg></div>
-              <h3 className="text-xl font-semibold text-green-900 mb-2">Homework Submitted!</h3>
-              <p className="text-green-800">Your coach will review your diary and provide feedback soon.</p>
-              <Link href="/app/lessons" className="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-medium">
-                Return to Lessons →
-              </Link>
+        {submitSuccess ? (
+          <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-green-100 mb-4">
+              <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
             </div>
-          ) : (
-            <>
-              <div className="bg-gray-50 rounded-lg p-5 mb-6">
-                <h3 className="font-semibold text-gray-900 mb-3">Your Task (2-3 days):</h3>
-                <p className="text-gray-700 mb-4">
-                  Track your food and show what a typical <strong>weekend day</strong> and <strong>working day</strong> look like for you.
-                </p>
-                <p className="text-gray-700 mb-2">
-                  Please submit a short diary with as much detail as possible about what you eat. This can be:
-                </p>
-                <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
-                  <li>Text descriptions of meals</li>
-                  <li>Photos of your food</li>
-                  <li>Screenshots from tracking apps (MyFitnessPal, etc.)</li>
-                  <li>Your own comments and observations</li>
-                </ul>
-                <p className="text-sm text-gray-600 mt-4">
-                  <strong>Note:</strong> You don't have to use an app if you don't want to — simple notes and pictures are perfectly fine.
-                </p>
+            <h3 className="text-xl font-semibold text-green-900 mb-2">Assignment submitted!</h3>
+            <p className="text-green-700">Your coach will review your diary and get back to you with personalised feedback within 24–48 hours.</p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {[
+              { name: 'day1', label: 'Day 1 food diary *', required: true, placeholder: 'Breakfast (8am): porridge with berries and honey\nLunch (1pm): chicken wrap, apple\nDinner (7pm): pasta bolognese\nSnacks: biscuits, coffee with milk' },
+              { name: 'day2', label: 'Day 2 food diary *', required: true, placeholder: 'Breakfast: skipped\nLunch (2pm): takeaway burger and fries\nDinner (8pm): scrambled eggs on toast…' },
+              { name: 'day3', label: 'Day 3 food diary (optional — add if you have a third day)', required: false, placeholder: '' },
+            ].map(({ name, label, required, placeholder }) => (
+              <div key={name}>
+                <label htmlFor={name} className="block text-sm font-semibold text-gray-700 mb-1.5">{label}</label>
+                <textarea
+                  id={name}
+                  name={name}
+                  value={formData[name]}
+                  onChange={handleChange}
+                  required={required}
+                  rows={name === 'day3' ? 4 : 6}
+                  className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none text-gray-800 placeholder-gray-400"
+                  placeholder={placeholder}
+                />
               </div>
+            ))}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="weekendDay" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Weekend Day Food Diary *
-                  </label>
-                  <textarea
-                    id="weekendDay"
-                    name="weekendDay"
-                    value={formData.weekendDay}
-                    onChange={handleChange}
-                    required
-                    rows="6"
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    placeholder="Example:&#10;Breakfast (9am): 2 eggs, toast with avocado, coffee&#10;Lunch (1pm): Chicken salad with olive oil dressing&#10;Dinner (7pm): Pasta with vegetables..."
-                  />
-                </div>
+            <div>
+              <label htmlFor="photos" className="block text-sm font-semibold text-gray-700 mb-1.5">Photo links or app screenshots (optional)</label>
+              <textarea id="photos" name="photos" value={formData.photos} onChange={handleChange} rows={3}
+                className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none text-gray-800 placeholder-gray-400"
+                placeholder="Paste links to photos or describe screenshots you've taken…" />
+            </div>
 
-                <div>
-                  <label htmlFor="workingDay" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Working Day Food Diary *
-                  </label>
-                  <textarea
-                    id="workingDay"
-                    name="workingDay"
-                    value={formData.workingDay}
-                    onChange={handleChange}
-                    required
-                    rows="6"
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    placeholder="Example:&#10;Breakfast (7am): Oatmeal with berries&#10;Snack (10am): Apple and almonds&#10;Lunch (12:30pm): Sandwich and soup..."
-                  />
-                </div>
+            <div>
+              <label htmlFor="comments" className="block text-sm font-semibold text-gray-700 mb-1.5">Comments or questions (optional)</label>
+              <textarea id="comments" name="comments" value={formData.comments} onChange={handleChange} rows={3}
+                className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none text-gray-800 placeholder-gray-400"
+                placeholder="Anything on your mind — questions, observations, things that felt hard to track…" />
+            </div>
 
-                <div>
-                  <label htmlFor="photos" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Photo Links or App Screenshots (Optional)
-                  </label>
-                  <textarea
-                    id="photos"
-                    name="photos"
-                    value={formData.photos}
-                    onChange={handleChange}
-                    rows="3"
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    placeholder="Paste links to photos or describe screenshots you've taken..."
-                  />
-                </div>
+            <button type="submit" disabled={isSubmitting}
+              className="w-full py-4 px-6 bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-400 text-white text-base font-semibold rounded-xl transition-colors shadow-md">
+              {isSubmitting ? 'Submitting…' : 'Submit assignment'}
+            </button>
+            <p className="text-xs text-gray-400 text-center">Your coach will review your submission and provide personalised feedback within 24–48 hours.</p>
+          </form>
+        )}
+      </section>
 
-                <div>
-                  <label htmlFor="comments" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Additional Comments or Questions
-                  </label>
-                  <textarea
-                    id="comments"
-                    name="comments"
-                    value={formData.comments}
-                    onChange={handleChange}
-                    rows="4"
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    placeholder="Any observations, challenges, or questions about your current eating habits..."
-                  />
-                </div>
+      {/* ──────────────────────────────────────────────────────────────────────
+       * 6. WIN SECTION
+       * ──────────────────────────────────────────────────────────────────── */}
+      <section aria-labelledby="win-heading" className="bg-amber-50 rounded-2xl border border-amber-100 p-8">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="text-3xl" aria-hidden="true">🏆</span>
+          <h2 id="win-heading" className="text-2xl font-bold text-gray-900">What&rsquo;s your win?</h2>
+        </div>
+        <p className="text-gray-700 mb-5 leading-relaxed">
+          Did you make any small step towards a better you recently? Even the tiniest thing counts —
+          choosing water over a fizzy drink, getting an extra 15 minutes of sleep, going for a short walk.
+          Share it here. We want to celebrate it with you!
+        </p>
+        <textarea
+          value={win}
+          onChange={(e) => setWin(e.target.value)}
+          rows={3}
+          className="w-full border border-amber-200 rounded-xl p-4 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-amber-400 focus:border-transparent resize-none"
+          placeholder="My win this week was…"
+        />
+      </section>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 px-6 bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-400 text-white font-semibold rounded-lg shadow-md transition-colors duration-200"
-                >
-                  {isSubmitting ? 'Submitting...' : 'Submit Homework'}
-                </button>
+      {/* ──────────────────────────────────────────────────────────────────────
+       * 7. SOS BUTTON
+       * ──────────────────────────────────────────────────────────────────── */}
+      <SOSButton />
 
-                <p className="text-sm text-gray-600 text-center">
-                  Your coach will review your submission and provide personalized feedback within 24-48 hours.
-                </p>
-              </form>
-            </>
-          )}
-        </section>
-
-        {/* Next Steps */}
-        <section className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 border border-indigo-100">
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">Next Steps</h2>
-          <ol className="list-decimal list-inside space-y-2 text-gray-700">
-            <li>Complete and submit your food diary homework</li>
-            <li>Continue eating normally (no deficit yet)</li>
-            <li>Wait for your coach's personalized feedback</li>
-            <li>Once approved, move on to Lesson 2: Macros</li>
-          </ol>
-          <p className="mt-4 text-sm text-gray-600">
-            Questions? <Link href="/app/chat" className="text-indigo-600 underline hover:text-indigo-800">Message your coach anytime</Link>
+      {/* ──────────────────────────────────────────────────────────────────────
+       * 8. COMPLETION & NEXT LESSON
+       * ──────────────────────────────────────────────────────────────────── */}
+      <section className="bg-gradient-to-r from-indigo-600 to-purple-700 rounded-2xl p-8 text-white text-center shadow-lg">
+        <div className="text-4xl mb-4" aria-hidden="true">🎉</div>
+        <h2 className="text-2xl font-bold mb-2">Well done for completing Lesson 1!</h2>
+        <p className="text-indigo-100 leading-relaxed max-w-lg mx-auto mb-6">
+          You&rsquo;ve laid the groundwork. Once you submit your 3-day diary assignment above, Lesson 2 will
+          unlock and your coach will be in touch with personal feedback.
+        </p>
+        <div className="bg-white/15 rounded-xl p-5 mb-6 text-left max-w-md mx-auto">
+          <p className="text-indigo-100 text-sm leading-relaxed">
+            <strong className="text-white">Lesson 2 unlocks 24 hours after you complete this one.</strong>{' '}
+            We would love for the ideas you&rsquo;ve just learned to settle in your mind before you move on.
+            In the meantime, explore the recipe above or browse the{' '}
+            <Link href="/app/cookbook" className="underline text-white font-medium hover:text-indigo-200">Cookbook</Link>{' '}
+            for something that catches your eye.
           </p>
-        </section>
-      </div>
-
-      {/* Footer */}
-      <footer className="text-center text-sm text-gray-500 py-8 border-t mt-12">
-        <p>With love,</p>
-        <p className="font-semibold text-gray-700 mt-1">Lana • Food Coach @ Love. Eat. Keep Fit. ♥</p>
-        <p className="mt-4 text-xs">&copy; {new Date().getFullYear()} LoveEatKeepFit</p>
-      </footer>
-    </main>
+        </div>
+        <Link href="/app/lessons"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-indigo-700 font-semibold rounded-xl hover:bg-indigo-50 transition-colors shadow">
+          Back to all lessons
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </section>
+    </LessonTemplate>
   );
 }

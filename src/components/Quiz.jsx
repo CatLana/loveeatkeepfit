@@ -25,18 +25,35 @@ export default function Quiz({ questions = [], onComplete }) {
     const isCorrect = optionIndex === q.correct;
     const newAnswers = [...answers, isCorrect];
 
-    setTimeout(() => {
-      if (current + 1 < total) {
-        setAnswers(newAnswers);
-        setCurrent(current + 1);
-        setSelected(null);
-      } else {
-        setAnswers(newAnswers);
-        setFinished(true);
-        const score = newAnswers.filter(Boolean).length;
-        onComplete?.(score, total);
-      }
-    }, 900);
+    if (isCorrect) {
+      // Correct: auto-advance after a short pause
+      setTimeout(() => {
+        if (current + 1 < total) {
+          setAnswers(newAnswers);
+          setCurrent(current + 1);
+          setSelected(null);
+        } else {
+          setAnswers(newAnswers);
+          setFinished(true);
+          const score = newAnswers.filter(Boolean).length;
+          onComplete?.(score, total);
+        }
+      }, 900);
+    } else {
+      // Incorrect: record answer but wait for user to press Next
+      setAnswers(newAnswers);
+    }
+  };
+
+  const handleNext = () => {
+    if (current + 1 < total) {
+      setCurrent(current + 1);
+      setSelected(null);
+    } else {
+      setFinished(true);
+      const score = answers.filter(Boolean).length;
+      onComplete?.(score, total);
+    }
   };
 
   const handleRetake = () => {
@@ -54,18 +71,22 @@ export default function Quiz({ questions = [], onComplete }) {
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center">
         <div className="mb-4">
           {pct === 100 ? (
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 text-5xl mb-2">
-              🎉
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 mb-2">
+              <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
           ) : (
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-amber-100 text-5xl mb-2">
-              💪
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-amber-100 mb-2">
+              <svg className="w-10 h-10 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
             </div>
           )}
         </div>
 
         <h3 className="text-2xl font-bold text-gray-900 mb-1">
-          {score} out of {total} correct — {pct}%
+          {score} out of {total} correct: {pct}%
         </h3>
 
         {pct === 100 ? (
@@ -146,6 +167,24 @@ export default function Quiz({ questions = [], onComplete }) {
           );
         })}
       </ul>
+
+      {/* Show Next arrow only when user answered incorrectly */}
+      {selected !== null && selected !== q.correct && (
+        <div className="mt-6 flex flex-col items-start gap-2">
+          <p className="text-sm text-red-600 font-medium">
+            The correct answer is highlighted above. Take a moment to read it before continuing.
+          </p>
+          <button
+            onClick={handleNext}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors"
+          >
+            {current + 1 < total ? 'Next question' : 'See results'}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      )}
     </div>
   );
 }

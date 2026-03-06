@@ -127,27 +127,83 @@ export default function Lesson1() {
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Welcome to the programme</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            You've taken the first step — and that matters more than you know. <strong>Love. Eat. Keep Fit.</strong> is not
+            You've taken the first step, and that matters more than you know. <strong>Love. Eat. Keep Fit.</strong> is not
             a diet. It is a coaching programme built around small, sustainable habits that add up to real, lasting results.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Each lesson builds on the last. You will read, reflect, complete a short assignment, and then — only when
-            you are ready — move to the next one. There is no rush. Steady progress always beats a fast sprint that
-            burns out.
+            A new lesson becomes available to you every day, as long as you have submitted all the required answers
+            to the questions at the end of the previous lesson and completed any exercises set. Each lesson unlocks
+            once per day because you need time to absorb, apply, and reflect on what you have just learned before
+            moving on.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            We do not believe in overwhelming the brain with large amounts of information at once. When we try to
+            take in too much too quickly, very little of it actually sticks. Each lesson is short by design. Reading
+            the content and completing the tasks should take you no more than 15 minutes a day.
           </p>
           <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-xl">
             <p className="text-green-800 font-medium">
-              🌱 One important rule for this week: <strong>do not change anything about the way you eat yet.</strong>
+              <svg className="inline w-4 h-4 mr-1 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19V6M6 9c0-3.314 2.686-6 6-6 3.314 0 6 2.686 6 6-2 0-4 1-6 3-2-2-4-3-6-3z" /></svg>{' '}One important rule for this week: <strong>do not change anything about the way you eat yet.</strong>
               Just observe. We start with information, not restriction.
             </p>
           </div>
+        </section>
+
+        {/* Atomic habits */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Small habits, lasting change</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            This programme is built on a simple but powerful idea: lasting change does not come from dramatic
+            overhauls. It comes from small improvements, repeated consistently over time. The concept is often
+            called <strong>atomic habits</strong> and it is the foundation of everything we do here.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            An atomic habit is a tiny behaviour that seems almost too small to matter. On its own, eating one
+            more vegetable, drinking one extra glass of water, or understanding how a single nutrient works in
+            your body feels insignificant. But these small actions compound. Over weeks and months, they reshape
+            the way you think about food and the way your body responds to it.
+          </p>
+          <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-5 mb-4">
+            <h3 className="font-semibold text-indigo-900 mb-3">How atomic habits work</h3>
+            <ul className="space-y-3 text-sm text-indigo-800">
+              <li className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><strong>Make it tiny.</strong> A new behaviour should require almost no willpower to start. If it feels hard, it is still too big.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><strong>Build on knowledge.</strong> Every small habit here is grounded in how food actually works in your body, not in rules someone invented.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><strong>Let them stack.</strong> Each lesson introduces one idea. That idea becomes a habit. The next lesson adds another layer on top, slowly building a way of eating that fits your life.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><strong>Consistency beats intensity.</strong> Showing up for 15 minutes every day will always produce better results than an intense week followed by burnout.</span>
+              </li>
+            </ul>
+          </div>
+          <p className="text-gray-700 leading-relaxed">
+            Our goal is not to give you a meal plan to follow for 30 days and then abandon. Our goal is to help
+            you understand food well enough that you no longer need a plan. That understanding is built one
+            small lesson at a time.
+          </p>
         </section>
 
         {/* What are calories */}
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">What are calories?</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            A calorie is simply a unit of energy — the fuel your body uses to do everything from breathing to thinking
+            A calorie is simply a unit of energy: the fuel your body uses to do everything from breathing to thinking
             to taking a walk. Every food and drink (except plain water) contains calories.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
@@ -162,7 +218,7 @@ export default function Lesson1() {
             </div>
             <div className="bg-rose-50 rounded-xl p-4 border border-rose-100">
               <p className="text-xs font-bold text-rose-600 uppercase tracking-wide mb-1">Too many calories</p>
-              <p className="text-sm text-rose-800">Energy stored as body fat over time — even from &ldquo;healthy&rdquo; foods</p>
+              <p className="text-sm text-rose-800">Energy stored as body fat over time, even from &ldquo;healthy&rdquo; foods</p>
             </div>
           </div>
         </section>
@@ -173,8 +229,8 @@ export default function Lesson1() {
           <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-6 mb-4">
             <h3 className="font-semibold text-indigo-900 mb-2">Basal Metabolic Rate</h3>
             <p className="text-indigo-800 leading-relaxed">
-              Your BMR is the number of calories your body burns just to stay alive — keeping your heart beating,
-              your lungs breathing, your organs functioning — <em>without any movement at all</em>.
+              Your BMR is the number of calories your body burns just to stay alive: keeping your heart beating,
+              your lungs breathing, your organs functioning, <em>without any movement at all</em>.
             </p>
           </div>
           <p className="text-gray-700 leading-relaxed mb-3">
@@ -183,18 +239,18 @@ export default function Lesson1() {
           </p>
           <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-xl">
             <p className="text-amber-900 font-semibold">
-              ⚠️ Never eat below your BMR. Consistently eating under it sends your body into a conservation
-              mode where it slows metabolism and breaks down muscle for fuel — the opposite of what we want.
+              <svg className="inline w-4 h-4 mr-1 text-amber-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" /></svg>{' '}Never eat below your BMR. Consistently eating under it sends your body into a conservation
+              mode where it slows metabolism and breaks down muscle for fuel, the opposite of what we want.
             </p>
           </div>
         </section>
 
         {/* TDEE */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">TDEE — your total energy needs</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Your total energy needs (TDEE)</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             <strong>Total Daily Energy Expenditure (TDEE)</strong> is your BMR plus all the energy you burn
-            through movement — walking, working, exercising, even fidgeting. This is how much you need to eat
+            through movement: walking, working, exercising, even fidgeting. This is how much you need to eat
             to maintain your current weight.
           </p>
           <div className="bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -221,9 +277,9 @@ export default function Lesson1() {
 
         {/* Calorie deficit */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">The calorie deficit — slow and steady</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">The calorie deficit: slow and steady</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            To lose fat, you need to eat slightly less than your TDEE — creating a calorie deficit. The key
+            To lose fat, you need to eat slightly less than your TDEE, creating a calorie deficit. The key
             word is <em>slightly</em>. Research consistently shows that a deficit of <strong>15–20%</strong>
             below TDEE is the sweet spot for sustainable fat loss of roughly 0.25–0.5 kg per week.
           </p>
@@ -241,7 +297,7 @@ export default function Lesson1() {
             <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
               <p className="text-2xl font-bold text-gray-500 mb-1">0%</p>
               <p className="text-gray-600 font-medium">Maintenance</p>
-              <p className="text-gray-500 text-xs mt-1">Eating at TDEE — weight stays stable</p>
+              <p className="text-gray-500 text-xs mt-1">Eating at TDEE, weight stays stable</p>
             </div>
           </div>
           <div className="mt-5 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-xl">
@@ -260,7 +316,7 @@ export default function Lesson1() {
       <section aria-labelledby="quiz-heading">
         <div className="mb-4">
           <h2 id="quiz-heading" className="text-2xl font-bold text-gray-900">Quick knowledge check</h2>
-          <p className="text-gray-500 text-sm mt-1">3 questions — one at a time. See how much you have picked up.</p>
+          <p className="text-gray-500 text-sm mt-1">3 questions, one at a time. See how much you have picked up.</p>
         </div>
         <Quiz questions={QUIZ_QUESTIONS} />
       </section>

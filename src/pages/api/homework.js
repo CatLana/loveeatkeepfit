@@ -106,9 +106,9 @@ export default async function handler(req, res) {
 
         ${safeComments ? `<h2 style="color: #2d5a3d; border-bottom: 2px solid #e5d5c8; padding-bottom: 8px;">Comments &amp; Questions</h2><div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; white-space: pre-wrap;">${safeComments}</div>` : ''}
 
-        ${safeReflection ? `<h2 style="color: #7c6daa; border-bottom: 2px solid #e5d5c8; padding-bottom: 8px;">Reflection — What I Learned</h2><div style="background: #f5f0ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; white-space: pre-wrap;">${safeReflection}</div>` : ''}
+        ${safeReflection ? `<h2 style="color: #7c6daa; border-bottom: 2px solid #e5d5c8; padding-bottom: 8px;">Reflection: What I Learned</h2><div style="background: #f5f0ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; white-space: pre-wrap;">${safeReflection}</div>` : ''}
 
-        ${safeWin ? `<h2 style="color: #b45309; border-bottom: 2px solid #fde68a; padding-bottom: 8px;">🏆 My Win</h2><div style="background: #fffbeb; padding: 15px; border-radius: 8px; margin-bottom: 20px; white-space: pre-wrap;">${safeWin}</div>` : ''}
+        ${safeWin ? `<h2 style="color: #b45309; border-bottom: 2px solid #fde68a; padding-bottom: 8px;">My Win</h2><div style="background: #fffbeb; padding: 15px; border-radius: 8px; margin-bottom: 20px; white-space: pre-wrap;">${safeWin}</div>` : ''}
 
         <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
         <p style="text-align: center; color: #666; font-size: 12px;">Love. Eat. Keep Fit. &bull; Homework Submission System</p>

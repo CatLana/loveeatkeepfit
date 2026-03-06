@@ -37,6 +37,12 @@ export default function Lessons() {
   };
 
   const getLessonStatus = (lessonId) => {
+    // Lesson 1 is always unlocked — every new user must be able to access it
+    const lesson = lessonsData.lessons.find(l => l.id === lessonId);
+    if (lesson?.order === 1 || lesson?.isDefaultUnlocked) {
+      const progress = lessonProgress.find(p => p.lessonId === lessonId);
+      return progress?.status || 'unlocked';
+    }
     const progress = lessonProgress.find(p => p.lessonId === lessonId);
     return progress?.status || 'locked';
   };

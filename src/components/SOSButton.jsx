@@ -28,7 +28,7 @@ export default function SOSButton({ className = '' }) {
 
         <div className="text-left">
           <p className="font-semibold text-sm">Need help or feeling stuck?</p>
-          <p className="text-xs text-rose-500">Your coach is here — message them anytime</p>
+          <p className="text-xs text-rose-500">Your coach is here. Message them anytime.</p>
         </div>
 
         <svg

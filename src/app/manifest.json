@@ -1,6 +1,6 @@
 {
-  "name": "LoveEatKeepFit Coaching App",
-  "short_name": "LEKF App",
+  "name": "Love. Eat. KeepFit.",
+  "short_name": "Love. Eat. KeepFit.",
   "start_url": "/app/",
   "display": "standalone",
   "background_color": "#ffffff",

@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Nav({ items }) {
   return (
     <nav className="flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-charcoal md:gap-6 md:text-sm">
@@ -68,6 +69,9 @@ export default function Nav({ items }) {
           </a>
         );
       })}
+      <Link href="/app" className="transition-colors hover:text-coral">
+        App
+      </Link>
     </nav>
   );
 }

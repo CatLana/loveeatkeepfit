@@ -576,8 +576,13 @@ export default function Lesson5() {
 
                 <div>
                   <label htmlFor="comments" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Reflections & Questions *
+                    Your feedback *
                   </label>
+                  <p className="text-xs text-gray-500 mb-2">
+                    Please share a few words about your experience with this lesson, or anything at all on your mind about the app.
+                    In the free version I rely entirely on your feedback to make it better and better.
+                    The most active feedback leavers will receive the paid version for free forever. With Love ♥
+                  </p>
                   <textarea
                     id="comments"
                     name="comments"
@@ -586,7 +591,7 @@ export default function Lesson5() {
                     required
                     rows="6"
                     className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    placeholder="What fat sources did you underestimate before? Did you discover any hidden calories? Which macro balance felt best (higher carb vs higher fat)? How were your energy, hunger, and mood? Any patterns you noticed? Questions about creating your personalized plan?"
+                    placeholder="What did you think of this lesson? How are you finding the app overall? Any suggestions?"
                   />
                 </div>
 

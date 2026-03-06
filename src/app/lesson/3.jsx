@@ -466,8 +466,13 @@ export default function Lesson3() {
 
                 <div>
                   <label htmlFor="comments" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Reflections & Questions
+                    Your feedback (optional)
                   </label>
+                  <p className="text-xs text-gray-500 mb-2">
+                    Please share a few words about your experience with this lesson, or anything at all on your mind about the app.
+                    In the free version I rely entirely on your feedback to make it better and better.
+                    The most active feedback leavers will receive the paid version for free forever. With Love ♥
+                  </p>
                   <textarea
                     id="comments"
                     name="comments"
@@ -475,7 +480,7 @@ export default function Lesson3() {
                     onChange={handleChange}
                     rows="4"
                     className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    placeholder="How does your current macro split feel? Do you stay full? Are you getting enough protein? Any challenges finding high-protein foods? Questions?"
+                    placeholder="What did you think of this lesson? Anything confusing, helpful, or that you'd like to see improved?"
                   />
                 </div>
 

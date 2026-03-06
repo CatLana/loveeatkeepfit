@@ -101,7 +101,9 @@ export default function Lesson2() {
           lessonId: 2,
           lessonTitle: lesson.title,
           userName: session?.user?.name || 'Student',
-          ...formData,
+          day1: formData.calorieAnswer,          // main answer → diary slot 1
+          day2: formData.trackerUsed || 'N/A',  // tracker used → diary slot 2
+          comments: formData.comments,
           reflection,
           win,
           submittedAt: new Date().toISOString(),
@@ -362,8 +364,13 @@ export default function Lesson2() {
 
             <div>
               <label htmlFor="comments" className="block text-sm font-semibold text-gray-700 mb-1">
-                Questions or comments for your coach (optional)
+                Your feedback (optional)
               </label>
+              <p className="text-xs text-gray-500 mb-2">
+                Please share a few words about your experience with this lesson, or anything at all on your mind about the app.
+                In the free version I rely entirely on your feedback to make it better and better.
+                The most active feedback leavers will receive the paid version for free forever. With Love ♥
+              </p>
               <textarea
                 id="comments"
                 name="comments"
@@ -371,7 +378,7 @@ export default function Lesson2() {
                 onChange={handleChange}
                 rows={3}
                 className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
-                placeholder="Anything you found confusing, want to ask about, or want to flag..."
+                placeholder="What did you think of this lesson? Anything confusing, helpful, or that you'd like to see improved?"
               />
             </div>
 

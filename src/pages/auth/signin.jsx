@@ -8,6 +8,7 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
+import { useGuest } from '@/lib/guestSession';
 
 // Only allow relative paths that do not start with '//' (protocol-relative)
 function isSafeRedirect(url) {
@@ -18,13 +19,18 @@ function isSafeRedirect(url) {
 
 export default function SignIn() {
   const router = useRouter();
+  const { enterAsGuest } = useGuest();
+
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
   const [unverifiedEmail, setUnverifiedEmail] = useState('');
   const [resendStatus, setResendStatus] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // Pre-populate email if redirected from signup
+  // Guest name modal state
+  const [showGuestModal, setShowGuestModal] = useState(false);
+  const [guestName, setGuestName] = useState('');
+
   const verifiedSuccess = router.query.verified === 'true';
 
   const handleSubmit = async (e) => {
@@ -42,6 +48,14 @@ export default function SignIn() {
       });
 
       if (result?.error) {
+        if (result.error === 'USER_NOT_FOUND') {
+          // Seamless handoff to sign-up: temporarily store password in sessionStorage
+          // so it can be pre-filled in the signup form. Cleared immediately after read.
+          try { sessionStorage.setItem('lekf_signup_password', formData.password); } catch { /* ignore */ }
+          const params = new URLSearchParams({ email: formData.email, ref: 'login' });
+          router.push(`/auth/signup?${params.toString()}`);
+          return;
+        }
         if (result.error === 'EMAIL_NOT_VERIFIED') {
           setUnverifiedEmail(formData.email);
         } else {
@@ -74,6 +88,13 @@ export default function SignIn() {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleEnterAsGuest = (e) => {
+    e.preventDefault();
+    const name = guestName.trim() || 'Guest';
+    enterAsGuest(name);
+    router.push('/app/lesson/1');
   };
 
   return (
@@ -180,8 +201,61 @@ export default function SignIn() {
               </p>
             </div>
 
+            {/* ── Guest divider ──────────────────────────────────────────── */}
+            <div className="mt-6 relative">
+              <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                <div className="w-full border-t border-gray-200" />
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="bg-white px-4 text-gray-500">or</span>
+              </div>
+            </div>
+
+            {!showGuestModal ? (
+              <button
+                type="button"
+                onClick={() => setShowGuestModal(true)}
+                className="mt-6 w-full py-3 px-4 border-2 border-dashed border-gray-300 hover:border-indigo-400 hover:bg-indigo-50 text-gray-600 hover:text-indigo-700 font-medium rounded-lg transition-colors duration-200 text-sm"
+              >
+                Continue as Guest
+                <span className="block text-xs text-gray-400 mt-0.5 font-normal">
+                  Access Lesson 1 without an account
+                </span>
+              </button>
+            ) : (
+              <form onSubmit={handleEnterAsGuest} className="mt-6 bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                <h3 className="text-sm font-semibold text-indigo-900 mb-1">Enter as Guest</h3>
+                <p className="text-xs text-indigo-700 mb-3">
+                  We&apos;ll use your name to personalise Lesson 1. Your progress won&apos;t be saved.
+                </p>
+                <input
+                  type="text"
+                  value={guestName}
+                  onChange={(e) => setGuestName(e.target.value)}
+                  className="w-full px-4 py-3 border border-indigo-200 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-shadow mb-3 text-sm"
+                  placeholder="Your first name (optional)"
+                  autoFocus
+                />
+                <div className="flex gap-2">
+                  <button
+                    type="submit"
+                    className="flex-1 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg transition-colors"
+                  >
+                    Start Lesson 1 as Guest
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowGuestModal(false)}
+                    className="px-4 py-2.5 text-gray-500 hover:text-gray-700 text-sm rounded-lg transition-colors"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            )}
+
             {/* Back to Home */}
-            <div className="mt-4 text-center">
+            <div className="mt-6 text-center">
               <Link href="/" className="text-sm text-gray-500 hover:text-gray-700">
                 Back to home
               </Link>

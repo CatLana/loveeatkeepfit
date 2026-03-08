@@ -5,7 +5,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
+import { useGuest } from '@/lib/guestSession';
 import LessonTemplate from '@/components/LessonTemplate';
+import AuthRequiredModal from '@/components/AuthRequiredModal';
 import Quiz from '@/components/Quiz';
 import RecipeCard from '@/components/RecipeCard';
 import SOSButton from '@/components/SOSButton';
@@ -76,18 +78,25 @@ const RECIPE = {
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function Lesson1() {
   const { data: session } = useSession();
+  const { isGuest } = useGuest();
 
   const [formData, setFormData] = useState({ day1: '', day2: '', day3: '', photos: '', comments: '' });
   const [reflection, setReflection] = useState('');
   const [win, setWin] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
 
   const handleChange = (e) =>
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Guests cannot submit homework — prompt them to create an account
+    if (isGuest && !session) {
+      setAuthModalOpen(true);
+      return;
+    }
     setIsSubmitting(true);
     try {
       const res = await fetch('/api/homework', {
@@ -118,6 +127,11 @@ export default function Lesson1() {
 
   return (
     <LessonTemplate lesson={lesson}>
+      <AuthRequiredModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        message="Create a free account to submit your homework diary and receive personalised feedback from your coach."
+      />
       {/* ──────────────────────────────────────────────────────────────────────
        * 1. ARTICLE
        * ──────────────────────────────────────────────────────────────────── */}
@@ -269,6 +283,32 @@ export default function Lesson1() {
               ))}
             </ul>
           </div>
+
+          {/* TDEE Calculator callout */}
+          <div className="mt-5 bg-warmwhite border-l-4 border-coral rounded-r-xl p-5">
+            <div className="flex items-start gap-3">
+              <svg className="w-5 h-5 text-coral flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <div>
+                <p className="font-semibold text-gray-900 mb-1">Haven&rsquo;t calculated your recommended calorie intake yet?</p>
+                <p className="text-gray-700 text-sm mb-3">
+                  Use our free TDEE calculator — it takes 2 minutes and gives you a personalised
+                  calorie and macro target based on your exact measurements and activity level.
+                </p>
+                <Link
+                  href="/intake"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg transition-colors shadow-sm"
+                >
+                  Calculate my TDEE
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+
           <p className="text-gray-700 leading-relaxed mt-4">
             Your coach will help you find your personal TDEE based on your intake diary. That is exactly
             what the assignment below is for.

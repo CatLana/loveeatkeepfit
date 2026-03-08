@@ -38,8 +38,10 @@ export const authOptions = {
         });
 
         if (!user) {
-          // Generic message — do not reveal whether the email exists
-          throw new Error('Invalid email or password');
+          // Intentional UX trade-off: surface USER_NOT_FOUND so the sign-in
+          // page can transparently redirect to the sign-up form with the email
+          // and password pre-filled, avoiding dead-end "wrong password" frustration.
+          throw new Error('USER_NOT_FOUND');
         }
 
         // ── Account lockout check ─────────────────────────────────────────

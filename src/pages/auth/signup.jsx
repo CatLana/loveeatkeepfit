@@ -3,11 +3,13 @@
  * New user registration interface
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
 
 export default function SignUp() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +19,30 @@ export default function SignUp() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [fromLoginHandoff, setFromLoginHandoff] = useState(false);
+
+  // Pre-fill email from URL and password from sessionStorage (login→signup handoff)
+  useEffect(() => {
+    if (!router.isReady) return;
+    const updates = {};
+    if (router.query.email) {
+      updates.email = decodeURIComponent(router.query.email);
+    }
+    if (router.query.ref === 'login') {
+      setFromLoginHandoff(true);
+    }
+    try {
+      const tempPw = sessionStorage.getItem('lekf_signup_password');
+      if (tempPw) {
+        updates.password = tempPw;
+        updates.confirmPassword = tempPw;
+        sessionStorage.removeItem('lekf_signup_password'); // clear immediately after read
+      }
+    } catch { /* ignore */ }
+    if (Object.keys(updates).length > 0) {
+      setFormData((prev) => ({ ...prev, ...updates }));
+    }
+  }, [router.isReady, router.query.email, router.query.ref]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -120,6 +146,15 @@ export default function SignUp() {
           {/* Sign Up Card */}
           <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">Create Account</h2>
+
+            {/* Handoff banner — shown when redirected from sign-in with an unknown email */}
+            {fromLoginHandoff && (
+              <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <p className="text-blue-800 text-sm font-medium">
+                  No account found for that email — complete your registration below.
+                </p>
+              </div>
+            )}
 
             {error && (
               <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">

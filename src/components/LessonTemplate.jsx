@@ -4,7 +4,10 @@
  */
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { useSession } from 'next-auth/react';
+import { useGuest } from '@/lib/guestSession';
+import AuthRequiredModal from '@/components/AuthRequiredModal';
 
 export default function LessonTemplate({ 
   lesson,
@@ -14,7 +17,11 @@ export default function LessonTemplate({
   submitSuccess = false
 }) {
   const { data: session } = useSession();
-  const userName = session?.user?.name || null;
+  const { guestName } = useGuest();
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+
+  // Real user name takes priority; fall back to guest name
+  const userName = session?.user?.name || guestName || null;
 
   // Theme tag color mapping
   const getThemeColor = (theme) => {
@@ -43,6 +50,10 @@ export default function LessonTemplate({
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-warmwhite via-white to-beige/20">
+      <AuthRequiredModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+      />
       {/* Top Bar */}
       <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-4">

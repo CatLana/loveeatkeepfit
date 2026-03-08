@@ -9,16 +9,23 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import lessonsData from '@/data/lessons.json';
+import { useGuest } from '@/lib/guestSession';
 
 export default function Lessons() {
   const { data: session, status } = useSession();
   const router = useRouter();
+  const { isGuest, guestName } = useGuest();
   const [lessonProgress, setLessonProgress] = useState([]);
   const [loading, setLoading] = useState(true);
+  // Which lesson card has the guest popover open
+  const [guestPopoverLesson, setGuestPopoverLesson] = useState(null);
 
   useEffect(() => {
     if (status === 'authenticated') {
       fetchLessonProgress();
+    } else if (status === 'unauthenticated') {
+      // Guest or truly unauthenticated — no progress to fetch
+      setLoading(false);
     }
   }, [status]);
 
@@ -51,7 +58,7 @@ export default function Lessons() {
     return lessonProgress.filter(p => p.status === 'completed').length;
   };
 
-  if (status === 'loading' || loading) {
+  if (status === 'loading' || (status === 'authenticated' && loading)) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-warmwhite via-white to-beige/20">
         <div className="text-center">
@@ -69,7 +76,10 @@ export default function Lessons() {
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-3">Your Learning Journey</h1>
           <p className="text-gray-600 text-lg">
-            Welcome, {session?.user?.name || 'there'}! Complete each lesson to unlock the next one.
+            Welcome, {session?.user?.name || guestName || 'there'}!{' '}
+            {isGuest && !session
+              ? 'Lesson 1 is open for you. Create a free account to unlock all lessons.'
+              : 'Complete each lesson to unlock the next one.'}
           </p>
           
           {/* Progress Indicator */}
@@ -77,32 +87,104 @@ export default function Lessons() {
             <svg className="w-5 h-5 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            <span className="font-semibold text-gray-900">
-              {getCompletionCount()} of {lessonsData.lessons.length} lessons completed
-            </span>
+            {isGuest && !session ? (
+              <span className="font-semibold text-gray-900">
+                0 of {lessonsData.lessons.length} lessons completed
+                {' — '}
+                <Link href="/auth/signup" className="text-indigo-600 hover:text-indigo-700 underline">
+                  sign up free to track progress
+                </Link>
+              </span>
+            ) : (
+              <span className="font-semibold text-gray-900">
+                {getCompletionCount()} of {lessonsData.lessons.length} lessons completed
+              </span>
+            )}
           </div>
         </div>
 
         {/* Lessons Grid */}
         <div className="space-y-4">
           {lessonsData.lessons.map((lesson, idx) => {
-            const status = getLessonStatus(lesson.id);
-            const isLocked = status === 'locked';
-            const isCompleted = status === 'completed';
-            const isUnlocked = status === 'unlocked' || isCompleted;
+            // Determine effective status for this lesson
+            const isGuestMode = isGuest && !session;
+            let lessonStatus;
+            if (isGuestMode) {
+              // Guests: Lesson 1 is open, all others are "guest-locked"
+              lessonStatus = lesson.order === 1 ? 'unlocked' : 'guest-locked';
+            } else {
+              lessonStatus = getLessonStatus(lesson.id);
+            }
+
+            const isLocked = lessonStatus === 'locked';
+            const isGuestLocked = lessonStatus === 'guest-locked';
+            const isCompleted = lessonStatus === 'completed';
+            const isUnlocked = lessonStatus === 'unlocked' || isCompleted;
+            const popoverOpen = guestPopoverLesson === lesson.id;
 
             return (
               <div
                 key={lesson.id}
                 className={`bg-white rounded-xl shadow-md border-2 transition-all duration-200 ${
-                  isLocked 
+                  isLocked || isGuestLocked
                     ? 'border-gray-200 opacity-60' 
                     : isCompleted
                     ? 'border-green-300 hover:shadow-lg'
                     : 'border-indigo-200 hover:shadow-lg hover:border-indigo-300'
                 }`}
               >
-                {isUnlocked ? (
+                {isGuestLocked ? (
+                  /* Guest-locked card: click reveals a popover */
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setGuestPopoverLesson(popoverOpen ? null : lesson.id)}
+                      className="w-full text-left p-6 cursor-pointer focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-400 rounded-xl"
+                      aria-expanded={popoverOpen}
+                    >
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center mb-2">
+                            <span className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3 bg-gray-300 text-gray-500">
+                              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                              </svg>
+                            </span>
+                            <h2 className="text-xl font-semibold text-gray-500">{lesson.title}</h2>
+                          </div>
+                          <p className="text-gray-400 ml-11 mb-3">{lesson.description}</p>
+                          <div className="ml-11 text-sm text-gray-400 italic">Lesson {lesson.order} of 5</div>
+                        </div>
+                      </div>
+                    </button>
+
+                    {/* Popover */}
+                    {popoverOpen && (
+                      <div className="mx-6 mb-6 bg-amber-50 border border-amber-200 rounded-xl p-4">
+                        <p className="text-amber-900 text-sm font-medium mb-1">
+                          Complete Lesson 1 exercises first
+                        </p>
+                        <p className="text-amber-800 text-xs mb-3">
+                          Submit your Lesson 1 homework, then create a free account to unlock the full programme and track your progress.
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          <Link
+                            href="/app/lesson/1"
+                            className="inline-flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-lg transition-colors"
+                          >
+                            Go to Lesson 1
+                          </Link>
+                          <Link
+                            href="/auth/signup"
+                            className="inline-flex items-center px-4 py-2 bg-white border border-indigo-300 hover:bg-indigo-50 text-indigo-700 text-xs font-semibold rounded-lg transition-colors"
+                          >
+                            Sign up free
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : isUnlocked ? (
                   <Link href={`/app/lesson/${lesson.id}`}>
                     <div className="p-6 cursor-pointer">
                       <div className="flex items-start justify-between">

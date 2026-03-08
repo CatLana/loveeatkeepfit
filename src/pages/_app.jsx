@@ -3,6 +3,7 @@ import { Playfair_Display, Nunito } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
 import { Analytics } from "@vercel/analytics/next";
 import { CookieConsentProvider, useCookieConsent } from "@/lib/cookieConsent";
+import { GuestProvider } from "@/lib/guestSession";
 import CookieBanner from "@/components/CookieBanner";
 
 // Playfair Display: elegant warm serif for headings — conveys care, expertise and femininity
@@ -35,9 +36,11 @@ function AppInner({ Component, pageProps }) {
 export default function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-      <CookieConsentProvider>
-        <AppInner Component={Component} pageProps={pageProps} />
-      </CookieConsentProvider>
+      <GuestProvider>
+        <CookieConsentProvider>
+          <AppInner Component={Component} pageProps={pageProps} />
+        </CookieConsentProvider>
+      </GuestProvider>
     </SessionProvider>
   );
 }
